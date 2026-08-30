@@ -256,19 +256,18 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
 .irs-link::after{content:"↗";position:absolute;right:1rem;top:1rem;color:var(--gold);font-size:.9rem}
 @media (hover:hover){.irs-link:hover{background:#352A20;border-color:var(--gold)}}
 
-.pick--hot{border-color:rgba(226,59,59,.55)}
-.pick--hot em{color:#FF6B6B}
-.pick--hot[aria-pressed="true"]{background:#C41E1E;border-color:#C41E1E;color:#fff;box-shadow:0 8px 18px rgba(196,30,30,.35)}
-.pick--hot[aria-pressed="true"] em{color:#fff}
+.pick--hot{border-color:rgba(167,84,62,.5)}
+.pick--hot em{color:#D4A07A}
+.pick--hot[aria-pressed="true"]{background:#8A4034;border-color:#8A4034;color:#F4EFE4;box-shadow:0 8px 18px rgba(26,20,16,.28)}
+.pick--hot[aria-pressed="true"] em{color:#F4EFE4}
 @media (hover:hover){
-  .pick--hot:hover{border-color:#FF6B6B;background:rgba(196,30,30,.12)}
-  .pick--hot[aria-pressed="true"]:hover{background:#C41E1E;color:#fff;filter:none}
+  .pick--hot:hover{border-color:#D4A07A;background:rgba(138,64,52,.12)}
+  .pick--hot[aria-pressed="true"]:hover{background:#8A4034;color:#F4EFE4;filter:none}
 }
-.decode-body.is-hot{background:#3A1212;border-color:#E23B3B}
-.decode-body.is-hot .decode-urg{background:#E23B3B;color:#fff}
-.decode-body.is-hot .fee-cta .dial{background:#C41E1E;color:#fff}
-.decode-body.is-hot .dial__k,.decode-body.is-hot .dial__n{color:#fff}
-#decoder .tool-lead{color:#E8B4B4}
+.decode-body.is-hot{background:#2A1C18;border-color:rgba(167,84,62,.55)}
+.decode-body.is-hot .decode-urg{background:#8A4034;color:#F4EFE4}
+.decode-body.is-hot .fee-cta .dial{background:#8A4034;color:#F4EFE4}
+.decode-body.is-hot .dial__k,.decode-body.is-hot .dial__n{color:#F4EFE4}
 
 @media(max-width:720px){
   .irs-row{grid-template-columns:1fr}
@@ -446,12 +445,12 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
         <h3>លិខិត IRS មានន័យយ៉ាងណា</h3>
         <p class="tool-lead">IRS ផ្ញើអ្វីមកអ្នក? បើរង់ចាំ លិខិតបន្ទាប់ជាធម្មតាអាក្រក់ជាង។ នេះមិនមែនជាការណែនាំពន្ធទេ។ ថ្ងៃកំណត់ជាការពិត។</p>
         <div class="picks" role="group" aria-label="ប្រភេទលិខិត IRS">
-          <button type="button" class="pick pick--hot" data-letter="cp14" aria-pressed="false">CP14 / វិក្កយបត្រ ខ្ញុំជំពាក់<em>ការប្រាក់កំពុងកើន</em></button>
+          <button type="button" class="pick" data-letter="cp14" aria-pressed="false">CP14 / វិក្កយបត្រ ខ្ញុំជំពាក់<em>ការប្រាក់កំពុងកើន</em></button>
           <button type="button" class="pick pick--hot" data-letter="cp504" aria-pressed="false">CP504 ឬលិខិតប្រមូលប្រាក់ក្រោយ<em>levy អាចមកបន្ទាប់</em></button>
           <button type="button" class="pick pick--hot" data-letter="levy" aria-pressed="false">Levy, កាត់ប្រាក់ខែ ឬបង្កកគណនី<em>គេអាចយកប្រាក់ថ្ងៃនេះ</em></button>
-          <button type="button" class="pick pick--hot" data-letter="cp2000" aria-pressed="false">CP2000 / គេនិយាយថាខ្ញុំរាយការណ៍មិនគ្រប់<em>មានថ្ងៃកំណត់</em></button>
-          <button type="button" class="pick pick--hot" data-letter="sfr" aria-pressed="false">ឆ្នាំមិនបានប្រកាស / គេប្រកាសជំនួស (SFR)<em>គេបានប្រកាសជំនួសអ្នកហើយ</em></button>
-          <button type="button" class="pick pick--hot" data-letter="unsure" aria-pressed="false">មានលិខិត តែមិនច្បាស់ថាមួយណា<em>កុំទុកចោល</em></button>
+          <button type="button" class="pick" data-letter="cp2000" aria-pressed="false">CP2000 / គេនិយាយថាខ្ញុំរាយការណ៍មិនគ្រប់<em>មានថ្ងៃកំណត់</em></button>
+          <button type="button" class="pick" data-letter="sfr" aria-pressed="false">ឆ្នាំមិនបានប្រកាស / គេប្រកាសជំនួស (SFR)<em>គេបានប្រកាសជំនួសអ្នកហើយ</em></button>
+          <button type="button" class="pick" data-letter="unsure" aria-pressed="false">មានលិខិត តែមិនច្បាស់ថាមួយណា<em>កុំទុកចោល</em></button>
           <button type="button" class="pick" data-letter="noletter" aria-pressed="false">គ្មានលិខិត ខ្ញុំគ្រាន់តែត្រូវការប្រកាសពន្ធ</button>
         </div>
 
@@ -757,7 +756,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
       var panel = document.getElementById("decode-" + id);
       if(panel){
         panel.hidden = false;
-        var hot = {levy:1, cp504:1, cp14:1, sfr:1, unsure:1, cp2000:1};
+        var hot = {levy:1, cp504:1};
         panel.classList.toggle("is-hot", !!hot[id]);
       }
       if(id === "noletter"){

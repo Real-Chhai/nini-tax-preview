@@ -284,19 +284,18 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
 .irs-link::after{content:"↗";position:absolute;right:1rem;top:1rem;color:var(--gold);font-size:.9rem}
 @media (hover:hover){.irs-link:hover{background:#352A20;border-color:var(--gold)}}
 
-.pick--hot{border-color:rgba(226,59,59,.55)}
-.pick--hot em{color:#FF6B6B}
-.pick--hot[aria-pressed="true"]{background:#C41E1E;border-color:#C41E1E;color:#fff;box-shadow:0 8px 18px rgba(196,30,30,.35)}
-.pick--hot[aria-pressed="true"] em{color:#fff}
+.pick--hot{border-color:rgba(167,84,62,.5)}
+.pick--hot em{color:#D4A07A}
+.pick--hot[aria-pressed="true"]{background:#8A4034;border-color:#8A4034;color:#F4EFE4;box-shadow:0 8px 18px rgba(26,20,16,.28)}
+.pick--hot[aria-pressed="true"] em{color:#F4EFE4}
 @media (hover:hover){
-  .pick--hot:hover{border-color:#FF6B6B;background:rgba(196,30,30,.12)}
-  .pick--hot[aria-pressed="true"]:hover{background:#C41E1E;color:#fff;filter:none}
+  .pick--hot:hover{border-color:#D4A07A;background:rgba(138,64,52,.12)}
+  .pick--hot[aria-pressed="true"]:hover{background:#8A4034;color:#F4EFE4;filter:none}
 }
-.decode-body.is-hot{background:#3A1212;border-color:#E23B3B}
-.decode-body.is-hot .decode-urg{background:#E23B3B;color:#fff}
-.decode-body.is-hot .fee-cta .dial{background:#C41E1E;color:#fff}
-.decode-body.is-hot .dial__k,.decode-body.is-hot .dial__n{color:#fff}
-#decoder .tool-lead{color:#E8B4B4}
+.decode-body.is-hot{background:#2A1C18;border-color:rgba(167,84,62,.55)}
+.decode-body.is-hot .decode-urg{background:#8A4034;color:#F4EFE4}
+.decode-body.is-hot .fee-cta .dial{background:#8A4034;color:#F4EFE4}
+.decode-body.is-hot .dial__k,.decode-body.is-hot .dial__n{color:#F4EFE4}
 
 @media(max-width:720px){
   .irs-row{grid-template-columns:1fr}
@@ -578,12 +577,12 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
         <h3>Letter decoder</h3>
         <p class="tool-lead">What did the IRS send you? If you wait, the next letter is usually worse. This is not tax advice. Deadlines are real.</p>
         <div class="picks" role="group" aria-label="IRS letter type">
-          <button type="button" class="pick pick--hot" data-letter="cp14" aria-pressed="false">CP14 / bill, I owe<em>Due date · interest running</em></button>
+          <button type="button" class="pick" data-letter="cp14" aria-pressed="false">CP14 / bill, I owe<em>Due date · interest running</em></button>
           <button type="button" class="pick pick--hot" data-letter="cp504" aria-pressed="false">CP504 or later collection letter<em>Levy can be next</em></button>
           <button type="button" class="pick pick--hot" data-letter="levy" aria-pressed="false">Levy, garnishment, or bank freeze<em>They can take the money today</em></button>
-          <button type="button" class="pick pick--hot" data-letter="cp2000" aria-pressed="false">CP2000 / they say I underreported<em>Deadline on the page</em></button>
-          <button type="button" class="pick pick--hot" data-letter="sfr" aria-pressed="false">Unfiled years / they filed for me (SFR)<em>They already filed for you</em></button>
-          <button type="button" class="pick pick--hot" data-letter="unsure" aria-pressed="false">I have a letter, not sure which<em>Don't set it down</em></button>
+          <button type="button" class="pick" data-letter="cp2000" aria-pressed="false">CP2000 / they say I underreported<em>Deadline on the page</em></button>
+          <button type="button" class="pick" data-letter="sfr" aria-pressed="false">Unfiled years / they filed for me (SFR)<em>They already filed for you</em></button>
+          <button type="button" class="pick" data-letter="unsure" aria-pressed="false">I have a letter, not sure which<em>Don't set it down</em></button>
           <button type="button" class="pick" data-letter="noletter" aria-pressed="false">No letter, I just need a return</button>
         </div>
 
@@ -1003,7 +1002,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
       var panel = document.getElementById("decode-" + id);
       if(panel){
         panel.hidden = false;
-        var hot = {levy:1, cp504:1, cp14:1, sfr:1, unsure:1, cp2000:1};
+        var hot = {levy:1, cp504:1};
         panel.classList.toggle("is-hot", !!hot[id]);
       }
       if(id === "noletter"){
