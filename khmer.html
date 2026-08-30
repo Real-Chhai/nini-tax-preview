@@ -199,55 +199,65 @@ p{margin:0}
 .bar a{flex:1;padding:1rem .5rem;text-align:center;font-size:.875rem;font-weight:500;color:var(--ink)}
 .bar a.p{background:var(--gold);color:var(--gold-ink);font-family:var(--s);font-weight:700}
 @media(max-width:860px){.bar{display:flex}body{padding-bottom:4.25rem}html{scroll-padding-top:70px}}
-/* tools — native to this page, not a borrowed widget */
-.tools{background:var(--surface);border-block:1px solid var(--hair)}
-.tool-stack{display:grid;gap:1.5rem;margin-top:2.5rem}
-.tool{background:var(--page);padding:1.7rem 1.45rem 1.8rem;border-left:3px solid var(--gold);box-shadow:0 1px 0 var(--hair)}
-.tool h3{font-size:1.45rem;margin-bottom:.4rem}
-.tool h3[lang="en"]{font-family:var(--d);font-weight:400;line-height:1.22}
-.tool > .tool-lead{font-size:1.0625rem;color:var(--muted);margin-bottom:1.15rem;line-height:1.65;max-width:40rem}
-.tool__q{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:1.25rem 0 .6rem}
+/* tools — dark band, gold result */
+.tools{background:var(--ink);color:#F4EFE4;border:0}
+.tools .h2{color:#F4EFE4}
+.tools .lead{color:#C9C0B5;max-width:38rem}
+.tools .over{color:var(--gold)}
+.tool-stack{display:grid;gap:1.35rem;margin-top:2.5rem}
+.tool{background:#2C241C;padding:1.75rem 1.5rem 1.85rem;border:1px solid rgba(224,168,26,.28);border-radius:10px;box-shadow:0 22px 40px rgba(0,0,0,.28)}
+.tool h3{font-size:1.55rem;margin-bottom:.4rem;color:#F4EFE4}
+.tool > .tool-lead{font-size:1.0625rem;color:#C9C0B5;margin-bottom:1.15rem;line-height:1.65;max-width:40rem}
+.tool__q{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:1.25rem 0 .7rem}
 html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:500;font-size:.875rem}
-.picks{display:flex;flex-wrap:wrap;gap:.55rem}
+.picks{display:grid;grid-template-columns:repeat(auto-fit,minmax(11.5rem,1fr));gap:.6rem}
 .pick{
   appearance:none;-webkit-appearance:none;
-  display:inline-flex;align-items:center;justify-content:center;
-  min-height:48px;padding:.75rem 1.05rem;
-  border:1px solid var(--ink);background:var(--page);color:var(--ink);
-  font-family:inherit;font-size:1rem;font-weight:700;line-height:1.3;
-  border-radius:6px;cursor:pointer;text-align:center;
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
+  min-height:56px;padding:.85rem 1.05rem;gap:.15rem;
+  border:1.5px solid rgba(244,239,228,.28);background:transparent;color:#F4EFE4;
+  font-family:inherit;font-size:1.02rem;font-weight:700;line-height:1.3;
+  border-radius:8px;cursor:pointer;text-align:left;transition:background .15s ease,border-color .15s ease,transform .15s ease;
 }
-.pick[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--gold-ink)}
+.pick em{font-style:normal;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.pick[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--gold-ink);transform:translateY(-1px);box-shadow:0 8px 18px rgba(224,168,26,.28)}
+.pick[aria-pressed="true"] em{color:var(--gold-ink)}
 @media (hover:hover){
-  .pick:hover{background:var(--ink);color:var(--page)}
-  .pick[aria-pressed="true"]:hover{background:var(--gold);color:var(--gold-ink);filter:brightness(.97)}
+  .pick:hover{border-color:#F4EFE4;background:rgba(244,239,228,.06)}
+  .pick[aria-pressed="true"]:hover{background:var(--gold);color:var(--gold-ink);filter:brightness(.98)}
 }
 .tool-sub{margin-top:.15rem}
 .tool-sub[hidden],.decode-body[hidden]{display:none !important}
-.fee-out{margin-top:1.4rem;padding-top:1.3rem;border-top:1px solid var(--hair)}
-.fee-out__num{font-family:var(--d);font-size:clamp(1.85rem,4.2vw,2.45rem);color:var(--ink);line-height:1.12;margin:0 0 .55rem;font-optical-sizing:auto;font-variant-numeric:tabular-nums}
-.fee-out p{color:var(--body);font-size:1.0625rem;margin:0 0 .65rem;line-height:1.7}
-.fee-out .disc{margin-top:.7rem;margin-bottom:.15rem}
+.fee-out{margin-top:1.35rem;padding:1.35rem 1.3rem 1.4rem;background:var(--gold);color:var(--gold-ink);border-radius:10px}
+.fee-out:empty,.fee-out:not(.is-on){background:transparent;padding:1.1rem 0 0;border-top:1px solid rgba(244,239,228,.12);border-radius:0;color:#C9C0B5}
+.fee-out__kicker{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:0 0 .15rem}
+.fee-out__num{font-family:var(--d);font-size:clamp(3rem,9vw,4.4rem);color:inherit;line-height:.95;margin:0 0 .45rem;font-optical-sizing:auto;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.fee-out p{color:inherit;font-size:1.05rem;margin:0 0 .55rem;line-height:1.65;opacity:.92}
+.fee-out .disc{margin-top:.55rem;margin-bottom:.1rem;opacity:.78;font-size:.8125rem}
 .fee-cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.05rem}
-.fee-cta .dial{min-width:0;flex:1 1 14rem;padding:.9rem 1.25rem 1rem}
-.fee-cta .dial__n{font-size:clamp(1.45rem,3vw,1.85rem)}
-.fee-cta .btn{min-width:0;flex:1 1 10rem;min-height:48px}
-.decode-body{margin-top:1.15rem;padding-top:1.15rem;border-top:1px solid var(--hair)}
-.decode-body p{margin:0 0 .75rem;color:var(--body);line-height:1.7;font-size:1.0625rem;max-width:40rem}
-.decode-foot{margin-top:1.15rem;font-size:.8125rem;color:var(--muted);line-height:1.75;max-width:40rem}
+.fee-cta .dial{min-width:0;flex:1 1 14rem;padding:.9rem 1.25rem 1rem;background:#1A1410;color:#F4EFE4;border:0}
+.fee-cta .dial__k{color:var(--gold)}
+.fee-cta .dial__n{font-size:clamp(1.45rem,3vw,1.85rem);color:#F4EFE4}
+.fee-out.is-on .fee-cta .btn{min-width:0;flex:1 1 10rem;min-height:48px;border-color:#1A1410;color:#1A1410;background:transparent}
+.fee-out.is-on .fee-cta .btn:hover{background:#1A1410;color:#F4EFE4}
+.decode-body{margin-top:1.15rem;padding:1.25rem 1.2rem 1.3rem;background:#1A1410;border-radius:10px;border:1px solid rgba(224,168,26,.35)}
+.decode-body p{margin:0 0 .75rem;color:#E8E0D4;line-height:1.7;font-size:1.0625rem;max-width:40rem}
+.decode-urg{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--gold);color:var(--gold-ink);padding:.28rem .55rem;margin:0 0 .85rem;border-radius:4px}
+.decode-foot{margin-top:1.15rem;font-size:.8125rem;color:#9A9288;line-height:1.75;max-width:40rem}
 .irs-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-top:.25rem}
 .irs-link{
   display:flex;flex-direction:column;justify-content:center;
-  min-height:56px;padding:1rem 1.1rem;
-  background:var(--surface);border:1px solid var(--hair);
-  font-weight:700;color:var(--ink);font-size:1rem;line-height:1.35;border-radius:6px
+  min-height:72px;padding:1.05rem 1.15rem;
+  background:#1A1410;border:1px solid rgba(224,168,26,.4);
+  font-weight:700;color:#F4EFE4;font-size:1.05rem;line-height:1.35;border-radius:8px;
+  position:relative
 }
-.irs-link span{font-family:var(--s);font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:.28rem}
-@media (hover:hover){.irs-link:hover{border-color:var(--ink);background:var(--page)}}
+.irs-link span{font-family:var(--s);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:.3rem}
+.irs-link::after{content:"↗";position:absolute;right:1rem;top:1rem;color:var(--gold);font-size:.9rem}
+@media (hover:hover){.irs-link:hover{background:#352A20;border-color:var(--gold)}}
 @media(max-width:720px){
   .irs-row{grid-template-columns:1fr}
-  .picks{flex-direction:column}
-  .pick{width:100%}
+  .picks{grid-template-columns:1fr}
 }
 
 </style>
@@ -421,9 +431,9 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
         <h3>លិខិត IRS មានន័យយ៉ាងណា</h3>
         <p class="tool-lead">IRS ផ្ញើអ្វីមកអ្នក? នេះជាភាសាសាមញ្ញ មិនមែនជាការណែនាំពន្ធទេ។ លិខិតមានថ្ងៃកំណត់។</p>
         <div class="picks" role="group" aria-label="ប្រភេទលិខិត IRS">
-          <button type="button" class="pick" data-letter="cp14" aria-pressed="false">CP14 / វិក្កយបត្រ ខ្ញុំជំពាក់</button>
-          <button type="button" class="pick" data-letter="cp504" aria-pressed="false">CP504 ឬលិខិតប្រមូលប្រាក់ក្រោយ</button>
-          <button type="button" class="pick" data-letter="levy" aria-pressed="false">Levy, កាត់ប្រាក់ខែ ឬបង្កកគណនី</button>
+          <button type="button" class="pick" data-letter="cp14" aria-pressed="false">CP14 / វិក្កយបត្រ ខ្ញុំជំពាក់<em>មានថ្ងៃកំណត់</em></button>
+          <button type="button" class="pick" data-letter="cp504" aria-pressed="false">CP504 ឬលិខិតប្រមូលប្រាក់ក្រោយ<em>សប្តាហ៍នេះ</em></button>
+          <button type="button" class="pick" data-letter="levy" aria-pressed="false">Levy, កាត់ប្រាក់ខែ ឬបង្កកគណនី<em>ទូរស័ព្ទថ្ងៃនេះ</em></button>
           <button type="button" class="pick" data-letter="cp2000" aria-pressed="false">CP2000 / គេនិយាយថាខ្ញុំរាយការណ៍មិនគ្រប់</button>
           <button type="button" class="pick" data-letter="sfr" aria-pressed="false">ឆ្នាំមិនបានប្រកាស / គេប្រកាសជំនួស (SFR)</button>
           <button type="button" class="pick" data-letter="unsure" aria-pressed="false">មានលិខិត តែមិនច្បាស់ថាមួយណា</button>
@@ -431,6 +441,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
         </div>
 
         <div class="decode-body" id="decode-cp14" hidden>
+          <p class="decode-urg">ថ្ងៃកំណត់នៅលើលិខិត</p>
           <p>នេះជាធម្មតាលិខិតប្រាប់ថា IRS គិតថាអ្នកមានបំណុលពន្ធសម្រាប់ឆ្នាំមួយ។ វាជាវិក្កយបត្រ មិនទាន់ជាការដកប្រាក់ពីគណនីទេ — តែមានថ្ងៃកំណត់ ហើយការប្រាក់នៅតែកើន។</p>
           <p>កុំមិនអើពើ ហើយកុំបង់ភ្លាមៗ គ្រាន់តែព្រោះលិខិតមកដល់។ ចំនួនប្រាក់ពេលខ្លះមិនត្រឹមត្រូវទេ។ គួរទូរស័ព្ទក្នុងពីរបីថ្ងៃ ទៅប៉ុន្មានសប្តាហ៍ មិនមែនទុកចោលទេ។</p>
           <p>ខ្ញុំអាចទាញ transcript ពិនិត្យថាការគិតប្រាក់ត្រឹមត្រូវឬអត់ ហើយនិយាយជាមួយ IRS ជំនួសអ្នកក្នុងនាម Enrolled Agent។ ការពិគ្រោះលើកដំបូងឥតគិតថ្លៃ។</p>
@@ -439,6 +450,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
           </div>
         </div>
         <div class="decode-body" id="decode-cp504" hidden>
+          <p class="decode-urg">សប្តាហ៍នេះ</p>
           <p>លិខិត CP504 និងលិខិតប្រមូលប្រាក់ក្រោយ មានន័យថា IRS កំពុងផ្លាស់ពី «អ្នកជំពាក់» ទៅការយកប្រាក់។ ពេលវេលានៅទីនេះគិតជាសប្តាហ៍ មិនមែនខែទេ — levy អាចមកបន្ទាប់។</p>
           <p>កុំរង់ចាំ។ បើអ្នកមានលិខិតនេះក្នុងដៃ សូមទូរស័ព្ទថ្ងៃនេះ។</p>
           <p>Enrolled Agent អាចស្នើ transcript បញ្ជាក់បំណុល និងតំណាងឱ្យអ្នក ដើម្បីឱ្យលិខិតមកខ្ញុំជំនួសអ្នក។ ការពិគ្រោះលើកដំបូងឥតគិតថ្លៃ។</p>
@@ -447,6 +459,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
           </div>
         </div>
         <div class="decode-body" id="decode-levy" hidden>
+          <p class="decode-urg">ទូរស័ព្ទថ្ងៃនេះ</p>
           <p>បើប្រាក់ខែកំពុងត្រូវបានកាត់ ឬគណនីធនាគារត្រូវបានបង្កក នេះជាការប្រមូលប្រាក់កំពុងដំណើរការ។ ទូរស័ព្ទថ្ងៃនេះ — កុំរង់ចាំសប្តាហ៍ក្រោយ។</p>
           <p>ខ្ញុំអាចដាក់ power of attorney ទាញ transcript និងធ្វើការដើម្បីបញ្ឈប់ការយកប្រាក់ អាស្រ័យលើកំណត់ត្រាពិត។</p>
           <p>ខ្ញុំមិនសន្យាលទ្ធផលជាចំនួនប្រាក់ជាក់លាក់នៅលើទំព័រនេះទេ។ ការពិគ្រោះលើកដំបូងឥតគិតថ្លៃ។</p>
@@ -455,6 +468,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
           </div>
         </div>
         <div class="decode-body" id="decode-cp2000" hidden>
+          <p class="decode-urg">ប៉ុន្មានសប្តាហ៍</p>
           <p>លិខិត CP2000 មានន័យថា IRS ឃើញ 1099 ឬ W-2 ដែលមិនមាននៅលើឯកសារពន្ធរបស់អ្នក ហើយស្នើពន្ធបន្ថែម។ អ្នកជាធម្មតាមានពេលជាច្រើនសប្តាហ៍ដើម្បីយល់ព្រម ឬមិនយល់ព្រម — មិនមែនពីរបីថ្ងៃទេ តែកុំទុកយូរ។</p>
           <p>កុំបង់ភ្លាមៗ។ ព័ត៌មានដែល IRS ផ្គូផ្គង ពេលខ្លះមិនពេញលេញ។ កុំមិនអើពើថ្ងៃកំណត់នៅលើលិខិតដែរ។</p>
           <p>ខ្ញុំអាចអានលិខិត ទាញ transcript និងឆ្លើយតបជំនួសអ្នក។ ការពិគ្រោះលើកដំបូងឥតគិតថ្លៃ។</p>
@@ -737,12 +751,15 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
   function renderFee(){
     if(!out) return;
     var html = "";
+    var on = false;
     if(!kind){
       html += "<p>" + esc(T.promptKind) + "</p>";
     } else if(kind === "w2"){
       if(!status){
         html += "<p>" + esc(T.promptStatus) + "</p>";
       } else {
+        on = true;
+        html += "<p class=\"fee-out__kicker\">Published starting fee</p>";
         html += "<p class=\"fee-out__num\">$" + PRICES[status] + "</p>";
         html += "<p>" + esc(T.w2.replace("{status}", STATUS_LABEL[status])) + "</p>";
       }
@@ -755,17 +772,20 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
         keys.forEach(function(k){
           if(PRICES[k] > max){ max = PRICES[k]; maxK = k; }
         });
+        on = true;
+        html += "<p class=\"fee-out__kicker\">" + esc(T.from.replace("from $","").replace("from $","").trim() || "from") + "</p>";
+        html += "<p class=\"fee-out__num\">$" + max + "</p>";
         if(keys.length === 1){
-          html += "<p class=\"fee-out__num\">" + esc(T.from) + max + "</p>";
           html += "<p>" + esc(T.seOne.replace("{name}", SCH_LABEL[maxK])) + "</p>";
         } else {
-          html += "<p class=\"fee-out__num\">" + esc(T.from) + max + esc(T.plus) + "</p>";
           html += "<p>" + esc(T.seMulti) + "</p>";
         }
       }
       html += "<p>" + esc(T.seExtra) + "</p>";
     } else if(kind === "biz"){
-      html += "<p class=\"fee-out__num\">" + esc(T.from) + "599</p>";
+      on = true;
+      html += "<p class=\"fee-out__kicker\">from</p>";
+      html += "<p class=\"fee-out__num\">$599</p>";
       html += "<p>" + esc(T.biz) + "</p>";
     }
     if(kind){
@@ -777,6 +797,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
       html += "<a class=\"btn\" href=\"#book\">" + esc(T.book) + "</a>";
       html += "</div>";
     }
+    out.classList.toggle("is-on", on);
     out.innerHTML = html;
   }
   renderFee();
