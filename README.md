@@ -53,3 +53,7 @@ Language toggles: EN → `khmer.html`, KM → `index.html`.
 - Corporate from $599
 - Bookkeeping: monthly, published on request
 - Tax relief: flat fee after a free transcript review
+
+## On-page tools (`#tools`)
+
+Live, no backend: a prep **fee picker** (published starting prices, not a refund or tax-owed number), an IRS **letter decoder** (plain-language, not advice), and three official IRS links (withholding estimator, Where’s My Refund, Get Transcript). Same tools on `khmer.html`.

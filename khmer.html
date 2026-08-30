@@ -90,7 +90,11 @@ p{margin:0}
 .nav__lang{font-family:var(--s);font-size:.8125rem;font-weight:700;color:#C9BFB2;letter-spacing:.04em}
 .nav__lang:hover{color:#F4EFE4}
 .nav__tel{font-family:var(--s);font-size:.875rem;font-weight:700;color:#F4EFE4}
+
+.nav__links{display:flex;gap:1.6rem;font-size:.95rem;font-weight:500;color:#C9BFB2}
+.nav__links a:hover{color:#F4EFE4}
 @media(max-width:860px){.nav__tel{display:none}.nav__in{height:58px}}
+
 @media(max-width:420px){.mark__w{display:none}}
 
 .hero{padding:clamp(2.25rem,5.5vw,4rem) 0 clamp(3rem,7vw,5.25rem)}
@@ -195,12 +199,66 @@ p{margin:0}
 .bar a{flex:1;padding:1rem .5rem;text-align:center;font-size:.875rem;font-weight:500;color:var(--ink)}
 .bar a.p{background:var(--gold);color:var(--gold-ink);font-family:var(--s);font-weight:700}
 @media(max-width:860px){.bar{display:flex}body{padding-bottom:4.25rem}html{scroll-padding-top:70px}}
+/* tools — native to this page, not a borrowed widget */
+.tools{background:var(--surface);border-block:1px solid var(--hair)}
+.tool-stack{display:grid;gap:1.5rem;margin-top:2.5rem}
+.tool{background:var(--page);padding:1.7rem 1.45rem 1.8rem;border-left:3px solid var(--gold);box-shadow:0 1px 0 var(--hair)}
+.tool h3{font-size:1.45rem;margin-bottom:.4rem}
+.tool h3[lang="en"]{font-family:var(--d);font-weight:400;line-height:1.22}
+.tool > .tool-lead{font-size:1.0625rem;color:var(--muted);margin-bottom:1.15rem;line-height:1.65;max-width:40rem}
+.tool__q{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:1.25rem 0 .6rem}
+html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:500;font-size:.875rem}
+.picks{display:flex;flex-wrap:wrap;gap:.55rem}
+.pick{
+  appearance:none;-webkit-appearance:none;
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:.75rem 1.05rem;
+  border:1px solid var(--ink);background:var(--page);color:var(--ink);
+  font-family:inherit;font-size:1rem;font-weight:700;line-height:1.3;
+  border-radius:6px;cursor:pointer;text-align:center;
+}
+.pick[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--gold-ink)}
+@media (hover:hover){
+  .pick:hover{background:var(--ink);color:var(--page)}
+  .pick[aria-pressed="true"]:hover{background:var(--gold);color:var(--gold-ink);filter:brightness(.97)}
+}
+.tool-sub{margin-top:.15rem}
+.tool-sub[hidden],.decode-body[hidden]{display:none !important}
+.fee-out{margin-top:1.4rem;padding-top:1.3rem;border-top:1px solid var(--hair)}
+.fee-out__num{font-family:var(--d);font-size:clamp(1.85rem,4.2vw,2.45rem);color:var(--ink);line-height:1.12;margin:0 0 .55rem;font-optical-sizing:auto;font-variant-numeric:tabular-nums}
+.fee-out p{color:var(--body);font-size:1.0625rem;margin:0 0 .65rem;line-height:1.7}
+.fee-out .disc{margin-top:.7rem;margin-bottom:.15rem}
+.fee-cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.05rem}
+.fee-cta .dial{min-width:0;flex:1 1 14rem;padding:.9rem 1.25rem 1rem}
+.fee-cta .dial__n{font-size:clamp(1.45rem,3vw,1.85rem)}
+.fee-cta .btn{min-width:0;flex:1 1 10rem;min-height:48px}
+.decode-body{margin-top:1.15rem;padding-top:1.15rem;border-top:1px solid var(--hair)}
+.decode-body p{margin:0 0 .75rem;color:var(--body);line-height:1.7;font-size:1.0625rem;max-width:40rem}
+.decode-foot{margin-top:1.15rem;font-size:.8125rem;color:var(--muted);line-height:1.75;max-width:40rem}
+.irs-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-top:.25rem}
+.irs-link{
+  display:flex;flex-direction:column;justify-content:center;
+  min-height:56px;padding:1rem 1.1rem;
+  background:var(--surface);border:1px solid var(--hair);
+  font-weight:700;color:var(--ink);font-size:1rem;line-height:1.35;border-radius:6px
+}
+.irs-link span{font-family:var(--s);font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:.28rem}
+@media (hover:hover){.irs-link:hover{border-color:var(--ink);background:var(--page)}}
+@media(max-width:720px){
+  .irs-row{grid-template-columns:1fr}
+  .picks{flex-direction:column}
+  .pick{width:100%}
+}
+
 </style>
 </head>
 <body>
 
 <nav class="nav"><div class="wrap nav__in">
   <a href="#top" class="mark"><span class="mark__n">NT</span><span class="mark__w">Nini Tax</span></a>
+  <div class="nav__links">
+    <a href="#tools">ឧបករណ៍</a>
+  </div>
   <div class="nav__end">
     <a href="index.html" class="nav__lang" hreflang="en" lang="en">English</a>
     <a href="tel:+19518897108" class="nav__tel">(951) 889-7108</a>
@@ -317,20 +375,143 @@ p{margin:0}
   </div>
 </section>
 
+<section class="section tools" id="tools">
+  <div class="wrap">
+    <p class="over">ឧបករណ៍</p>
+    <h2 class="h2">ប៉ះដើម្បីមើលតម្លៃ ឬមើលថាលិខិត IRS មានន័យយ៉ាងណា។</h2>
+    <p class="lead">មិនមែនជាការគណនាប្រាក់សងវិញ ឬចំនួនដែលអ្នកជំពាក់ IRS ទេ។ ការដោះស្រាយ IRS ប្រាប់តម្លៃបន្ទាប់ពីខ្ញុំអានកំណត់ត្រា។ ការពិគ្រោះលើកដំបូងឥតគិតថ្លៃ។</p>
+
+    <div class="tool-stack">
+      <div class="tool" id="fee-picker">
+        <h3 lang="en">Prep fee picker</h3>
+        <p class="tool-lead">ប៉ះតាមសំណួរ។ តម្លៃចាប់ផ្តើមដែលបានផ្សាយនឹងបង្ហាញភ្លាម។ ខ្ញុំនឹងបញ្ជាក់មុនពេលចាប់ផ្តើមការងារ។</p>
+
+        <p class="tool__q">1. ប្រភេទឯកសារពន្ធ?</p>
+        <div class="picks" role="group" aria-label="Kind of return">
+          <button type="button" class="pick" data-kind="w2" aria-pressed="false">Individual 1040 · W-2 only</button>
+          <button type="button" class="pick" data-kind="se" aria-pressed="false">Self-employed / extra schedules</button>
+          <button type="button" class="pick" data-kind="biz" aria-pressed="false">Business (1120 / 1120-S / 1065)</button>
+        </div>
+
+        <div class="tool-sub" id="fee-w2" hidden>
+          <p class="tool__q">2. Filing status</p>
+          <div class="picks" role="group" aria-label="Filing status">
+            <button type="button" class="pick" data-status="single" aria-pressed="false">Single · $89</button>
+            <button type="button" class="pick" data-status="mfs" aria-pressed="false">MFS · $119</button>
+            <button type="button" class="pick" data-status="hoh" aria-pressed="false">HOH · $169</button>
+            <button type="button" class="pick" data-status="widow" aria-pressed="false">Widow(er) · $169</button>
+            <button type="button" class="pick" data-status="mfj" aria-pressed="false">MFJ · $199</button>
+          </div>
+        </div>
+
+        <div class="tool-sub" id="fee-se" hidden>
+          <p class="tool__q">2. Schedule ណាខ្លះ? <span style="font-weight:400">(ប៉ះបានច្រើន)</span></p>
+          <div class="picks" role="group" aria-label="Schedules">
+            <button type="button" class="pick" data-sch="c" aria-pressed="false">Sch C · $189</button>
+            <button type="button" class="pick" data-sch="d" aria-pressed="false">Sch D · $229</button>
+            <button type="button" class="pick" data-sch="e" aria-pressed="false">Sch E · $279</button>
+            <button type="button" class="pick" data-sch="f" aria-pressed="false">Sch F · $279</button>
+          </div>
+        </div>
+
+        <div class="fee-out" id="fee-out" aria-live="polite"></div>
+      </div>
+
+      <div class="tool" id="decoder">
+        <h3>លិខិត IRS មានន័យយ៉ាងណា</h3>
+        <p class="tool-lead">IRS ផ្ញើអ្វីមកអ្នក? នេះជាភាសាសាមញ្ញ មិនមែនជាការណែនាំពន្ធទេ។ លិខិតមានថ្ងៃកំណត់។</p>
+        <div class="picks" role="group" aria-label="ប្រភេទលិខិត IRS">
+          <button type="button" class="pick" data-letter="cp14" aria-pressed="false">CP14 / វិក្កយបត្រ ខ្ញុំជំពាក់</button>
+          <button type="button" class="pick" data-letter="cp504" aria-pressed="false">CP504 ឬលិខិតប្រមូលប្រាក់ក្រោយ</button>
+          <button type="button" class="pick" data-letter="levy" aria-pressed="false">Levy, កាត់ប្រាក់ខែ ឬបង្កកគណនី</button>
+          <button type="button" class="pick" data-letter="cp2000" aria-pressed="false">CP2000 / គេនិយាយថាខ្ញុំរាយការណ៍មិនគ្រប់</button>
+          <button type="button" class="pick" data-letter="sfr" aria-pressed="false">ឆ្នាំមិនបានប្រកាស / គេប្រកាសជំនួស (SFR)</button>
+          <button type="button" class="pick" data-letter="unsure" aria-pressed="false">មានលិខិត តែមិនច្បាស់ថាមួយណា</button>
+          <button type="button" class="pick" data-letter="noletter" aria-pressed="false">គ្មានលិខិត ខ្ញុំគ្រាន់តែត្រូវការប្រកាសពន្ធ</button>
+        </div>
+
+        <div class="decode-body" id="decode-cp14" hidden>
+          <p>នេះជាធម្មតាលិខិតប្រាប់ថា IRS គិតថាអ្នកមានបំណុលពន្ធសម្រាប់ឆ្នាំមួយ។ វាជាវិក្កយបត្រ មិនទាន់ជាការដកប្រាក់ពីគណនីទេ — តែមានថ្ងៃកំណត់ ហើយការប្រាក់នៅតែកើន។</p>
+          <p>កុំមិនអើពើ ហើយកុំបង់ភ្លាមៗ គ្រាន់តែព្រោះលិខិតមកដល់។ ចំនួនប្រាក់ពេលខ្លះមិនត្រឹមត្រូវទេ។ គួរទូរស័ព្ទក្នុងពីរបីថ្ងៃ ទៅប៉ុន្មានសប្តាហ៍ មិនមែនទុកចោលទេ។</p>
+          <p>ខ្ញុំអាចទាញ transcript ពិនិត្យថាការគិតប្រាក់ត្រឹមត្រូវឬអត់ ហើយនិយាយជាមួយ IRS ជំនួសអ្នកក្នុងនាម Enrolled Agent។ ការពិគ្រោះលើកដំបូងឥតគិតថ្លៃ។</p>
+          <div class="fee-cta">
+            <a class="dial" href="tel:+19518897108"><span class="dial__k">ទូរស័ព្ទ</span><span class="dial__n">(951) 889-7108</span></a>
+          </div>
+        </div>
+        <div class="decode-body" id="decode-cp504" hidden>
+          <p>លិខិត CP504 និងលិខិតប្រមូលប្រាក់ក្រោយ មានន័យថា IRS កំពុងផ្លាស់ពី «អ្នកជំពាក់» ទៅការយកប្រាក់។ ពេលវេលានៅទីនេះគិតជាសប្តាហ៍ មិនមែនខែទេ — levy អាចមកបន្ទាប់។</p>
+          <p>កុំរង់ចាំ។ បើអ្នកមានលិខិតនេះក្នុងដៃ សូមទូរស័ព្ទថ្ងៃនេះ។</p>
+          <p>Enrolled Agent អាចស្នើ transcript បញ្ជាក់បំណុល និងតំណាងឱ្យអ្នក ដើម្បីឱ្យលិខិតមកខ្ញុំជំនួសអ្នក។ ការពិគ្រោះលើកដំបូងឥតគិតថ្លៃ។</p>
+          <div class="fee-cta">
+            <a class="dial" href="tel:+19518897108"><span class="dial__k">ទូរស័ព្ទ</span><span class="dial__n">(951) 889-7108</span></a>
+          </div>
+        </div>
+        <div class="decode-body" id="decode-levy" hidden>
+          <p>បើប្រាក់ខែកំពុងត្រូវបានកាត់ ឬគណនីធនាគារត្រូវបានបង្កក នេះជាការប្រមូលប្រាក់កំពុងដំណើរការ។ ទូរស័ព្ទថ្ងៃនេះ — កុំរង់ចាំសប្តាហ៍ក្រោយ។</p>
+          <p>ខ្ញុំអាចដាក់ power of attorney ទាញ transcript និងធ្វើការដើម្បីបញ្ឈប់ការយកប្រាក់ អាស្រ័យលើកំណត់ត្រាពិត។</p>
+          <p>ខ្ញុំមិនសន្យាលទ្ធផលជាចំនួនប្រាក់ជាក់លាក់នៅលើទំព័រនេះទេ។ ការពិគ្រោះលើកដំបូងឥតគិតថ្លៃ។</p>
+          <div class="fee-cta">
+            <a class="dial" href="tel:+19518897108"><span class="dial__k">ទូរស័ព្ទ</span><span class="dial__n">(951) 889-7108</span></a>
+          </div>
+        </div>
+        <div class="decode-body" id="decode-cp2000" hidden>
+          <p>លិខិត CP2000 មានន័យថា IRS ឃើញ 1099 ឬ W-2 ដែលមិនមាននៅលើឯកសារពន្ធរបស់អ្នក ហើយស្នើពន្ធបន្ថែម។ អ្នកជាធម្មតាមានពេលជាច្រើនសប្តាហ៍ដើម្បីយល់ព្រម ឬមិនយល់ព្រម — មិនមែនពីរបីថ្ងៃទេ តែកុំទុកយូរ។</p>
+          <p>កុំបង់ភ្លាមៗ។ ព័ត៌មានដែល IRS ផ្គូផ្គង ពេលខ្លះមិនពេញលេញ។ កុំមិនអើពើថ្ងៃកំណត់នៅលើលិខិតដែរ។</p>
+          <p>ខ្ញុំអាចអានលិខិត ទាញ transcript និងឆ្លើយតបជំនួសអ្នក។ ការពិគ្រោះលើកដំបូងឥតគិតថ្លៃ។</p>
+          <div class="fee-cta">
+            <a class="dial" href="tel:+19518897108"><span class="dial__k">ទូរស័ព្ទ</span><span class="dial__n">(951) 889-7108</span></a>
+          </div>
+        </div>
+        <div class="decode-body" id="decode-sfr" hidden>
+          <p>បើអ្នកមិនប្រកាសពន្ធ IRS អាចប្រកាសជំនួសអ្នក (Substitute for Return) ដោយយកចំណូលទាំងអស់ តែគ្មានការកាត់កង។ ចំនួននោះជាធម្មតាខ្ពស់ជាងអ្វីដែលអ្នកជំពាក់ពិតប្រាកដ។</p>
+          <p>ការប្រកាសឯកសារពិត ជាញឹកញាប់អាចបន្ថយបំណុល។ កុំមិនអើពើលិខិតប្រមូលប្រាក់ដែលមកក្រោយ SFR។</p>
+          <p>ខ្ញុំដោះស្រាយឆ្នាំមិនបានប្រកាស។ ការពិគ្រោះលើកដំបូង និងការពិនិត្យ transcript ឥតគិតថ្លៃ។</p>
+          <div class="fee-cta">
+            <a class="dial" href="tel:+19518897108"><span class="dial__k">ទូរស័ព្ទ</span><span class="dial__n">(951) 889-7108</span></a>
+          </div>
+        </div>
+        <div class="decode-body" id="decode-unsure" hidden>
+          <p>ធម្មតាណាស់ — លេខលិខិតនៅជ្រុងខាងលើស្តាំ ដូចជា CP14 ឬ CP2000 តែទំព័រនៅសល់ពិបាកអាន។</p>
+          <p>កុំទុកចោល។ លិខិតភាគច្រើនមានថ្ងៃកំណត់ ហើយភាគច្រើនអាចឆ្លើយបាន។</p>
+          <p>ថតរូប សូមទូរស័ព្ទ មកខ្ញុំអានជាមួយអ្នក។ ការពិគ្រោះលើកដំបូងឥតគិតថ្លៃ។</p>
+          <div class="fee-cta">
+            <a class="dial" href="tel:+19518897108"><span class="dial__k">ទូរស័ព្ទ</span><span class="dial__n">(951) 889-7108</span></a>
+          </div>
+        </div>
+        <div class="decode-body" id="decode-noletter" hidden>
+          <p>អ្នកមិនត្រូវការ decoder សម្រាប់រឿងនេះទេ។ ប្រើកម្មវិធីជ្រើសតម្លៃខាងលើសម្រាប់តម្លៃរៀបចំពន្ធដែលបានផ្សាយ។</p>
+          <p>បើក្រោយមកមានលិខិតពី IRS សូមត្រឡប់មកទីនេះ ឬទូរស័ព្ទ។ ការពិគ្រោះលើកដំបូងនៅតែឥតគិតថ្លៃ។</p>
+        </div>
+        <p class="decode-foot">នេះមិនមែនជាការណែនាំពន្ធទេ។ លិខិតមានថ្ងៃកំណត់។ ទូរស័ព្ទមក ខ្ញុំនឹងអានលិខិតរបស់អ្នក។</p>
+      </div>
+
+      <div class="tool" id="irs-tools">
+        <h3 lang="en">Official IRS tools</h3>
+        <p class="tool-lead">ទាំងនេះជាគេហទំព័រ IRS មិនមែនឧបករណ៍របស់ Nini Tax ទេ។ បើកផ្ទាំងថ្មី។</p>
+        <div class="irs-row">
+          <a class="irs-link" href="https://apps.irs.gov/app/tax-withholding-estimator" target="_blank" rel="noopener noreferrer"><span>IRS</span>Tax withholding estimator</a>
+          <a class="irs-link" href="https://www.irs.gov/refunds" target="_blank" rel="noopener noreferrer"><span>IRS</span>Where’s My Refund</a>
+          <a class="irs-link" href="https://www.irs.gov/individuals/get-transcript" target="_blank" rel="noopener noreferrer"><span>IRS</span>Get Transcript</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section">
   <div class="wrap">
     <p class="over">ករណីពិតមួយចំនួន</p>
     <div class="results">
       <div class="result">
-        <p class="result__tag">ឆ្នាំដែលមិនបានប្រកាស</p>
-        <p>អតិថិជនម្នាក់ជំពាក់ IRS ប្រហែល ២០.០០០ ដុល្លារ ពីឆ្នាំជាច្រើនដែលគាត់មិនបានប្រកាសពន្ធ។ បន្ទាប់ពីដាក់ឯកសារត្រឹមត្រូវ បំណុលបានបាត់ទាំងស្រុង ហើយគាត់ទទួលបានប្រាក់សងវិញតិចតួច។</p>
+        <p class="result__tag">លិខិត CP2000</p>
+        <p>ឯកសារពន្ធដែលរៀបចំដោយកន្លែងផ្សេង បានរាយការណ៍ចំណូលមិនគ្រប់។ IRS បានផ្ញើលិខិត CP2000 ប្រហែល ១១.០០០ ដុល្លារ រួមទាំងការពិន័យ។ ខ្ញុំបានកែឯកសារ។ បំណុលបានចប់។ គាត់ទទួលបានប្រាក់សងវិញ ៥ ដុល្លារ។</p>
       </div>
       <div class="result">
-        <p class="result__tag">លិខិត CP2000</p>
-        <p>ម្នាក់ទៀតជំពាក់ប្រហែល ១១.០០០ ដុល្លារ រួមទាំងការពិន័យ ដោយសារឯកសារពន្ធដែលរៀបចំដោយកន្លែងផ្សេង បានរាយការណ៍ចំណូលមិនគ្រប់។ ខ្ញុំបានទទួលយករឿងនេះ ហើយដោះស្រាយវារហូតចប់។</p>
+        <p class="result__tag">ការសងវិញការពិន័យ</p>
+        <p>អតិថិជនម្នាក់បានសរសេរនៅ Facebook ថាយើងបានជួយឱ្យគាត់ទទួលបានប្រាក់ពិន័យសងវិញ ទាំងពី IRS និងពន្ធរដ្ឋ California (FTB)។</p>
       </div>
     </div>
-    <p class="disc">រាល់ករណីអាស្រ័យលើកាលៈទេសៈផ្ទាល់ខ្លួន។ លទ្ធផលទាំងនេះមិនមែនជាការធានាសម្រាប់ករណីផ្សេងទេ។ ចែករំលែកដោយមានការអនុញ្ញាតជាលាយលក្ខណ៍អក្សរ ហើយបានលុបព័ត៌មានផ្ទាល់ខ្លួនចេញ។</p>
+    <p class="disc">រាល់ករណីអាស្រ័យលើកាលៈទេសៈផ្ទាល់ខ្លួន។ លទ្ធផលទាំងនេះមិនមែនជាការធានាសម្រាប់ករណីផ្សេងទេ។ ករណី CP2000 ត្រូវបានផ្សាយដោយ Nini Tax ដោយលុបព័ត៌មានផ្ទាល់ខ្លួន។ ការសងវិញការពិន័យមកពីមតិនៅ Facebook ជាសាធារណៈ។</p>
   </div>
 </section>
 
@@ -338,18 +519,22 @@ p{margin:0}
   <div class="wrap">
     <p class="over">មតិអតិថិជន</p>
     <h2 class="h2">អ្វីដែលអតិថិជននិយាយ។</h2>
+    <a class="badge" href="https://www.facebook.com/profile.php?id=100089143062797" rel="noopener noreferrer" target="_blank">
+      <span class="badge__big">100%</span>
+      <span class="badge__txt">Recommend on Facebook<br>14 reviews</span>
+    </a>
     <div class="revs">
       <div class="rev">
-        <p>Nini Tax is professional and highly recommended for all, and especially for Cambodian people.</p>
+        <p>She helped me successfully get my penalty money refunded from both the Franchise Tax Board (FTB) and the Internal Revenue Service (IRS). It’s also a big plus that she speaks Khmer.</p>
+        <div class="rev__by">Sovanrith N.<br><span class="rev__src">Facebook</span></div>
+      </div>
+      <div class="rev">
+        <p>Not only did she suggest ways for me to minimize my tax, she also managed to minimize them from the previous years and got me refunds.</p>
+        <div class="rev__by">Chansopheak H.<br><span class="rev__src">Facebook</span></div>
+      </div>
+      <div class="rev">
+        <p>Nini Tax is professional and highly recommended for all and mostly for Cambodian people who want best explanation on taxes matters in Khmer and English.</p>
         <div class="rev__by">Jason D.<br><span class="rev__src">Facebook</span></div>
-      </div>
-      <div class="rev">
-        <p>I'd highly recommend Nini Tax to anyone looking for tax filing or tax resolution.</p>
-        <div class="rev__by">Visakha S.<br><span class="rev__src">Facebook</span></div>
-      </div>
-      <div class="rev">
-        <p>Best service and very friendly. Recommended.</p>
-        <div class="rev__by">Alex B.<br><span class="rev__src">Facebook</span></div>
       </div>
     </div>
   </div>
@@ -437,6 +622,166 @@ p{margin:0}
   <a href="mailto:sreypok@nini.tax">អ៊ីមែល</a>
   <a class="p" href="tel:+19518897108">ទូរស័ព្ទ (951) 889-7108</a>
 </div>
+
+
+<script>
+(function(){
+  var root = document.getElementById("tools");
+  if(!root) return;
+  var hash = location.hash.replace("#","");
+  if(hash === "tools" || hash === "fee-picker" || hash === "decoder" || hash === "irs-tools"){
+    var jump = document.getElementById(hash) || root;
+    document.documentElement.style.scrollBehavior = "auto";
+    jump.scrollIntoView({block:"start"});
+  }
+  var lang = (document.documentElement.getAttribute("lang") || "en").slice(0,2);
+  var pack = {
+    en: {
+      promptKind: "Tap a return type. Published prep fees update here.",
+      promptStatus: "Choose a filing status.",
+      promptSch: "Tap the schedules that apply.",
+      w2: "Individual 1040, {status} — published starting price.",
+      seOne: "{name} — published starting price.",
+      seMulti: "I’ll quote the rest on the call.",
+      seExtra: "Additional schedules from $329.",
+      from: "from $",
+      plus: ", plus other schedules",
+      biz: "Corporate / partnership returns from $599. Quoted after a look at the books.",
+      books: "Bookkeeping monthly, published on request.",
+      relief: "If you have an IRS letter, use the decoder below. First call is free.",
+      disclaimer: "These are current published prep fees, not a tax refund or what you owe the IRS. Price can change with complexity. I’ll confirm before any work starts.",
+      callK: "Call",
+      book: "Book a time"
+    },
+    km: {
+      promptKind: "ប៉ះប្រភេទឯកសារ។ តម្លៃដែលបានផ្សាយនឹងបង្ហាញនៅទីនេះ។",
+      promptStatus: "ជ្រើសរើស filing status។",
+      promptSch: "ប៉ះ schedule ដែលត្រូវ។",
+      w2: "Individual 1040, {status} — តម្លៃចាប់ផ្តើមដែលបានផ្សាយ។",
+      seOne: "{name} — តម្លៃចាប់ផ្តើមដែលបានផ្សាយ។",
+      seMulti: "តម្លៃ schedule ផ្សេងទៀត ខ្ញុំនឹងប្រាប់នៅពេលពិគ្រោះ។",
+      seExtra: "Additional schedules from $329.",
+      from: "from $",
+      plus: ", plus other schedules",
+      biz: "Corporate / partnership returns from $599. Quoted after a look at the books.",
+      books: "Bookkeeping ប្រចាំខែ តម្លៃប្រាប់តាមសំណើ។",
+      relief: "បើអ្នកមានលិខិត IRS សូមប្រើ decoder ខាងក្រោម។ ការពិគ្រោះលើកដំបូងឥតគិតថ្លៃ។",
+      disclaimer: "ទាំងនេះជាតម្លៃរៀបចំពន្ធដែលបានផ្សាយ មិនមែនជាប្រាក់សងវិញ ឬចំនួនដែលអ្នកជំពាក់ IRS ទេ។ តម្លៃអាចផ្លាស់ប្តូរតាមភាពស្មុគស្មាញ។ ខ្ញុំនឹងបញ្ជាក់មុនពេលចាប់ផ្តើមការងារ។",
+      callK: "ទូរស័ព្ទ",
+      book: "កក់ពេល"
+    }
+  };
+  var T = pack[lang] || pack.en;
+  var PRICES = {single:89, mfs:119, hoh:169, widow:169, mfj:199, c:189, d:229, e:279, f:279};
+  var STATUS_LABEL = {single:"Single", mfs:"MFS", hoh:"HOH", widow:"Widow(er)", mfj:"MFJ"};
+  var SCH_LABEL = {c:"Schedule C", d:"Schedule D", e:"Schedule E", f:"Schedule F"};
+
+  function qs(sel, el){ return (el || root).querySelector(sel); }
+  function qsa(sel, el){ return Array.prototype.slice.call((el || root).querySelectorAll(sel)); }
+  function esc(s){
+    return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
+  }
+  function setPressed(sel, btn){
+    qsa(sel).forEach(function(b){ b.setAttribute("aria-pressed", b === btn ? "true" : "false"); });
+  }
+
+  var kind = null;
+  var status = null;
+  var sch = {};
+  var panelW2 = qs("#fee-w2");
+  var panelSe = qs("#fee-se");
+  var out = qs("#fee-out");
+
+  qsa("[data-kind]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      kind = btn.getAttribute("data-kind");
+      status = null;
+      sch = {};
+      setPressed("[data-kind]", btn);
+      qsa("[data-status]").forEach(function(b){ b.setAttribute("aria-pressed","false"); });
+      qsa("[data-sch]").forEach(function(b){ b.setAttribute("aria-pressed","false"); });
+      if(panelW2) panelW2.hidden = kind !== "w2";
+      if(panelSe) panelSe.hidden = kind !== "se";
+      renderFee();
+    });
+  });
+  qsa("[data-status]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      status = btn.getAttribute("data-status");
+      setPressed("[data-status]", btn);
+      renderFee();
+    });
+  });
+  qsa("[data-sch]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var k = btn.getAttribute("data-sch");
+      sch[k] = !sch[k];
+      btn.setAttribute("aria-pressed", sch[k] ? "true" : "false");
+      renderFee();
+    });
+  });
+  qsa("[data-letter]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var id = btn.getAttribute("data-letter");
+      setPressed("[data-letter]", btn);
+      qsa(".decode-body").forEach(function(p){ p.hidden = true; });
+      var panel = document.getElementById("decode-" + id);
+      if(panel) panel.hidden = false;
+      if(id === "noletter"){
+        var fp = document.getElementById("fee-picker");
+        if(fp) fp.scrollIntoView({behavior:"smooth", block:"start"});
+      }
+    });
+  });
+
+  function renderFee(){
+    if(!out) return;
+    var html = "";
+    if(!kind){
+      html += "<p>" + esc(T.promptKind) + "</p>";
+    } else if(kind === "w2"){
+      if(!status){
+        html += "<p>" + esc(T.promptStatus) + "</p>";
+      } else {
+        html += "<p class=\"fee-out__num\">$" + PRICES[status] + "</p>";
+        html += "<p>" + esc(T.w2.replace("{status}", STATUS_LABEL[status])) + "</p>";
+      }
+    } else if(kind === "se"){
+      var keys = Object.keys(sch).filter(function(k){ return sch[k]; });
+      if(!keys.length){
+        html += "<p>" + esc(T.promptSch) + "</p>";
+      } else {
+        var max = 0, maxK = keys[0];
+        keys.forEach(function(k){
+          if(PRICES[k] > max){ max = PRICES[k]; maxK = k; }
+        });
+        if(keys.length === 1){
+          html += "<p class=\"fee-out__num\">" + esc(T.from) + max + "</p>";
+          html += "<p>" + esc(T.seOne.replace("{name}", SCH_LABEL[maxK])) + "</p>";
+        } else {
+          html += "<p class=\"fee-out__num\">" + esc(T.from) + max + esc(T.plus) + "</p>";
+          html += "<p>" + esc(T.seMulti) + "</p>";
+        }
+      }
+      html += "<p>" + esc(T.seExtra) + "</p>";
+    } else if(kind === "biz"){
+      html += "<p class=\"fee-out__num\">" + esc(T.from) + "599</p>";
+      html += "<p>" + esc(T.biz) + "</p>";
+    }
+    if(kind){
+      html += "<p>" + esc(T.books) + "</p>";
+      html += "<p>" + esc(T.relief) + "</p>";
+      html += "<p class=\"disc\">" + esc(T.disclaimer) + "</p>";
+      html += "<div class=\"fee-cta\">";
+      html += "<a class=\"dial\" href=\"tel:+19518897108\"><span class=\"dial__k\">" + esc(T.callK) + "</span><span class=\"dial__n\">(951) 889-7108</span></a>";
+      html += "<a class=\"btn\" href=\"#book\">" + esc(T.book) + "</a>";
+      html += "</div>";
+    }
+    out.innerHTML = html;
+  }
+  renderFee();
+})();
+</script>
 
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
