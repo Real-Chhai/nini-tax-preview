@@ -283,6 +283,21 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
 .irs-link span{font-family:var(--s);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:.3rem}
 .irs-link::after{content:"↗";position:absolute;right:1rem;top:1rem;color:var(--gold);font-size:.9rem}
 @media (hover:hover){.irs-link:hover{background:#352A20;border-color:var(--gold)}}
+
+.pick--hot{border-color:rgba(226,59,59,.55)}
+.pick--hot em{color:#FF6B6B}
+.pick--hot[aria-pressed="true"]{background:#C41E1E;border-color:#C41E1E;color:#fff;box-shadow:0 8px 18px rgba(196,30,30,.35)}
+.pick--hot[aria-pressed="true"] em{color:#fff}
+@media (hover:hover){
+  .pick--hot:hover{border-color:#FF6B6B;background:rgba(196,30,30,.12)}
+  .pick--hot[aria-pressed="true"]:hover{background:#C41E1E;color:#fff;filter:none}
+}
+.decode-body.is-hot{background:#3A1212;border-color:#E23B3B}
+.decode-body.is-hot .decode-urg{background:#E23B3B;color:#fff}
+.decode-body.is-hot .fee-cta .dial{background:#C41E1E;color:#fff}
+.decode-body.is-hot .dial__k,.decode-body.is-hot .dial__n{color:#fff}
+#decoder .tool-lead{color:#E8B4B4}
+
 @media(max-width:720px){
   .irs-row{grid-template-columns:1fr}
   .picks{grid-template-columns:1fr}
@@ -561,65 +576,66 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
 
       <div class="tool" id="decoder">
         <h3>Letter decoder</h3>
-        <p class="tool-lead">What did the IRS send you? This is plain English, not tax advice. Notices have deadlines.</p>
+        <p class="tool-lead">What did the IRS send you? If you wait, the next letter is usually worse. This is not tax advice. Deadlines are real.</p>
         <div class="picks" role="group" aria-label="IRS letter type">
-          <button type="button" class="pick" data-letter="cp14" aria-pressed="false">CP14 / bill, I owe<em>Has a due date</em></button>
-          <button type="button" class="pick" data-letter="cp504" aria-pressed="false">CP504 or later collection letter<em>This week</em></button>
-          <button type="button" class="pick" data-letter="levy" aria-pressed="false">Levy, garnishment, or bank freeze<em>Call today</em></button>
-          <button type="button" class="pick" data-letter="cp2000" aria-pressed="false">CP2000 / they say I underreported</button>
-          <button type="button" class="pick" data-letter="sfr" aria-pressed="false">Unfiled years / they filed for me (SFR)</button>
-          <button type="button" class="pick" data-letter="unsure" aria-pressed="false">I have a letter, not sure which</button>
+          <button type="button" class="pick pick--hot" data-letter="cp14" aria-pressed="false">CP14 / bill, I owe<em>Due date · interest running</em></button>
+          <button type="button" class="pick pick--hot" data-letter="cp504" aria-pressed="false">CP504 or later collection letter<em>Levy can be next</em></button>
+          <button type="button" class="pick pick--hot" data-letter="levy" aria-pressed="false">Levy, garnishment, or bank freeze<em>They can take the money today</em></button>
+          <button type="button" class="pick pick--hot" data-letter="cp2000" aria-pressed="false">CP2000 / they say I underreported<em>Deadline on the page</em></button>
+          <button type="button" class="pick pick--hot" data-letter="sfr" aria-pressed="false">Unfiled years / they filed for me (SFR)<em>They already filed for you</em></button>
+          <button type="button" class="pick pick--hot" data-letter="unsure" aria-pressed="false">I have a letter, not sure which<em>Don't set it down</em></button>
           <button type="button" class="pick" data-letter="noletter" aria-pressed="false">No letter, I just need a return</button>
         </div>
 
         <div class="decode-body" id="decode-cp14" hidden>
-          <p class="decode-urg">Due date on the notice</p>
-          <p>This is usually a bill: the IRS thinks you have a balance due for a specific year. It is not a levy yet, but it has a due date and interest keeps running.</p>
-          <p>Don’t ignore it, and don’t pay it just because it arrived — the number is sometimes wrong. Urgency is days to a few weeks, not “whenever.”</p>
-          <p>I can pull your transcripts, check whether the assessment is even accurate, and speak to the IRS for you as an Enrolled Agent. First call is free.</p>
+          <p class="decode-urg">Interest is running</p>
+          <p>This is a bill with a due date. Ignore it and the next envelope is collection. Interest does not pause because you were busy.</p>
+          <p>Don’t pay just because they sent a number — it is sometimes wrong. Don’t ignore it either. Days to a few weeks, not “whenever.”</p>
+          <p>I can pull your transcripts, check the assessment, and speak to the IRS for you. First call is free.</p>
           <div class="fee-cta">
             <a class="dial" href="tel:+19518897108"><span class="dial__k">Call</span><span class="dial__n">(951) 889-7108</span></a>
           </div>
         </div>
         <div class="decode-body" id="decode-cp504" hidden>
-          <p class="decode-urg">This week</p>
-          <p>A CP504, and the collection letters that follow it, means the IRS is moving from “you owe” toward taking money. Deadlines here are weeks, not months — a levy can come next.</p>
-          <p>Do not wait this one out. Call today if you have one of these in hand.</p>
-          <p>An Enrolled Agent can request your transcripts, confirm the balance, and open representation so their letters come to me instead of you. First call is free.</p>
+          <p class="decode-urg">Last letters before they take it</p>
+          <p>The IRS is done asking nicely. A wage levy or bank freeze can be next. Weeks, not months.</p>
+          <p>Do not wait this one out. Call today if you have it in hand.</p>
+          <p>I can pull transcripts, confirm the balance, and open representation so their letters come to me. First call is free.</p>
           <div class="fee-cta">
             <a class="dial" href="tel:+19518897108"><span class="dial__k">Call</span><span class="dial__n">(951) 889-7108</span></a>
           </div>
         </div>
         <div class="decode-body" id="decode-levy" hidden>
-          <p class="decode-urg">Call today</p>
-          <p>If wages are being taken or a bank account is frozen, this is active collection. Call today — not next week.</p>
-          <p>I can file a power of attorney, pull the transcripts, and work on stopping the taking, depending on what the record actually shows.</p>
-          <p>I will not promise a specific dollar outcome on this page. First call is free.</p>
+          <p class="decode-urg">They can take the money today</p>
+          <p>Paycheck garnished or bank frozen is not a warning. It is collection, happening now. Waiting a week can mean another check gone.</p>
+          <p>Call today. I can file a power of attorney, pull the transcripts, and work on stopping the taking, depending on what the record shows.</p>
+          <p>I will not promise a dollar outcome on this page. First call is free.</p>
           <div class="fee-cta">
             <a class="dial" href="tel:+19518897108"><span class="dial__k">Call</span><span class="dial__n">(951) 889-7108</span></a>
           </div>
         </div>
         <div class="decode-body" id="decode-cp2000" hidden>
-          <p class="decode-urg">Weeks, not forever</p>
-          <p>A CP2000 means the IRS matched a 1099 or W-2 that wasn’t on your return and proposes extra tax. You typically have weeks to agree, disagree, or send more information — not days, but not forever.</p>
-          <p>Don’t pay it automatically; the match is often incomplete. Don’t ignore the deadline on the notice either.</p>
-          <p>I can read the notice, pull transcripts, and respond for you. First call is free.</p>
+          <p class="decode-urg">Miss the date, they assess it</p>
+          <p>They matched a 1099 or W-2 that wasn’t on the return and proposed extra tax. There is a deadline on the page. Miss it and they can assess it without you.</p>
+          <p>Don’t pay on autopilot. The match is often incomplete. Don’t miss the date either.</p>
+          <p>I can read the notice, pull transcripts, and respond. First call is free.</p>
           <div class="fee-cta">
             <a class="dial" href="tel:+19518897108"><span class="dial__k">Call</span><span class="dial__n">(951) 889-7108</span></a>
           </div>
         </div>
         <div class="decode-body" id="decode-sfr" hidden>
-          <p>When you don’t file, the IRS can file a Substitute for Return using all of your income and none of your deductions. That number is usually higher than what you really owe.</p>
-          <p>Filing the real returns is often the first step, and it can bring the balance down. Don’t ignore collection notices that follow an SFR.</p>
-          <p>I handle unfiled years as representation work. The first call and transcript review are free.</p>
+          <p class="decode-urg">They already filed for you</p>
+          <p>When you don’t file, the IRS can file using all of your income and none of your deductions. That balance is often inflated — and they will collect on it if you do nothing.</p>
+          <p>Filing the real returns is usually the first move. Don’t ignore the collection notices that follow.</p>
+          <p>I handle unfiled years as representation. First call and transcript review are free.</p>
           <div class="fee-cta">
             <a class="dial" href="tel:+19518897108"><span class="dial__k">Call</span><span class="dial__n">(951) 889-7108</span></a>
           </div>
         </div>
         <div class="decode-body" id="decode-unsure" hidden>
-          <p>That’s common — the notice number is in the top right, something like CP14 or CP2000, but the rest of the page is dense.</p>
-          <p>Don’t set it aside. Most notices have a response deadline, and most of them can be answered.</p>
-          <p>Take a photo, call me, and I’ll read it with you. First call is free.</p>
+          <p class="decode-urg">Don't set it down</p>
+          <p>The notice number is in the top right, something like CP14 or CP2000. The rest of the page is dense on purpose. Most of them have a clock.</p>
+          <p>Don’t set it aside. The next letter is usually worse. Take a photo, call me, I’ll read it with you. First call is free.</p>
           <div class="fee-cta">
             <a class="dial" href="tel:+19518897108"><span class="dial__k">Call</span><span class="dial__n">(951) 889-7108</span></a>
           </div>
@@ -628,7 +644,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
           <p>You don’t need the decoder for that. Use the fee picker above for published prep prices.</p>
           <p>If something later arrives from the IRS, come back here or call. First call is still free.</p>
         </div>
-        <p class="decode-foot">This is not tax advice. Notices have deadlines. Call and I’ll read yours.</p>
+        <p class="decode-foot">This is not tax advice. Notices have deadlines. Waiting usually makes the IRS louder. Call and I’ll read yours.</p>
       </div>
 
       <div class="tool" id="irs-tools">
@@ -985,7 +1001,11 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
       setPressed("[data-letter]", btn);
       qsa(".decode-body").forEach(function(p){ p.hidden = true; });
       var panel = document.getElementById("decode-" + id);
-      if(panel) panel.hidden = false;
+      if(panel){
+        panel.hidden = false;
+        var hot = {levy:1, cp504:1, cp14:1, sfr:1, unsure:1, cp2000:1};
+        panel.classList.toggle("is-hot", !!hot[id]);
+      }
       if(id === "noletter"){
         var fp = document.getElementById("fee-picker");
         if(fp) fp.scrollIntoView({behavior:"smooth", block:"start"});
