@@ -282,11 +282,27 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
   .picks{grid-template-columns:1fr}
 }
 
+/* Cambodia flag — thin banner + left edge, Khmer page only */
+.kh-flag-banner{
+  height:4px;
+  background:linear-gradient(to bottom,#032EA1 0 25%,#E00025 25% 75%,#032EA1 75%);
+}
+.kh-flag-edge{
+  position:fixed;
+  top:0;left:0;bottom:0;
+  width:6px;
+  z-index:80;
+  pointer-events:none;
+  background:linear-gradient(#032EA1 0 25%,#E00025 25% 75%,#032EA1 75%);
+}
+@media(max-width:860px){.kh-flag-edge{width:5px}}
+
 </style>
 </head>
 <body>
+<div class="kh-flag-edge" aria-hidden="true"></div>
 
-<nav class="nav"><div class="wrap nav__in">
+<nav class="nav"><div class="kh-flag-banner" aria-hidden="true"></div><div class="wrap nav__in">
   <a href="#top" class="mark"><span class="mark__n">NT</span><span class="mark__w">Nini Tax</span></a>
   <div class="nav__links">
     <a href="#tools">ឧបករណ៍</a>
