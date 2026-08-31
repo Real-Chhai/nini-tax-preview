@@ -282,32 +282,24 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
   .picks{grid-template-columns:1fr}
 }
 
-/* Cambodia flag — thin banner + left edge, Khmer page only */
-.kh-flag-banner{
-  height:4px;
-  background:linear-gradient(to bottom,#032EA1 0 25%,#E00025 25% 75%,#032EA1 75%);
-}
-.kh-flag-edge{
-  position:fixed;
-  top:0;left:0;bottom:0;
-  width:6px;
-  z-index:80;
-  pointer-events:none;
-  background:linear-gradient(#032EA1 0 25%,#E00025 25% 75%,#032EA1 75%);
-}
-@media(max-width:860px){.kh-flag-edge{width:5px}}
+.kh-flag{display:inline-flex;width:22px;height:15px;flex:none;border-radius:2px;overflow:hidden;box-shadow:0 0 0 1px rgba(244,239,228,.22)}
+.kh-flag svg{display:block;width:100%;height:100%}
+@media(max-width:860px){.nav .kh-flag{display:none}}
+.bar{align-items:center}
+.bar::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to bottom,#032EA1 0 25%,#E00025 25% 75%,#032EA1 75%)}
+.bar .kh-flag{width:24px;height:16px;margin:0 .15rem 0 .7rem;box-shadow:0 0 0 1px rgba(26,20,16,.14)}
 
 </style>
 </head>
 <body>
-<div class="kh-flag-edge" aria-hidden="true"></div>
 
-<nav class="nav"><div class="kh-flag-banner" aria-hidden="true"></div><div class="wrap nav__in">
+<nav class="nav"><div class="wrap nav__in">
   <a href="#top" class="mark"><span class="mark__n">NT</span><span class="mark__w">Nini Tax</span></a>
   <div class="nav__links">
     <a href="#tools">ឧបករណ៍</a>
   </div>
   <div class="nav__end">
+    <span class="kh-flag" title="កម្ពុជា" aria-label="កម្ពុជា"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24" focusable="false" aria-hidden="true"><rect width="36" height="24" fill="#032EA1"/><rect y="6" width="36" height="12" fill="#E00025"/><g fill="#F4F4F4"><path d="M4.5 16.4h27v1.6h-27z"/><path d="M18 7.1l1.55 7.2h-3.1z"/><path d="M12.2 9.6l1.2 5.7h-2.4z"/><path d="M23.8 9.6l1.2 5.7h-2.4z"/><path d="M8.4 12.2l.85 4.2H7.55z"/><path d="M27.6 12.2l.85 4.2h-1.7z"/><rect x="14.6" y="13.3" width="6.8" height="3.1"/><rect x="16.2" y="11.6" width="3.6" height="1.7"/></g></svg></span>
     <a href="index.html" class="nav__lang" hreflang="en" lang="en">English</a>
     <a href="tel:+19518897108" class="nav__tel">(951) 889-7108</a>
   </div>
@@ -673,6 +665,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
 </footer>
 
 <div class="bar">
+  <span class="kh-flag" title="កម្ពុជា" aria-label="កម្ពុជា"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24" focusable="false" aria-hidden="true"><rect width="36" height="24" fill="#032EA1"/><rect y="6" width="36" height="12" fill="#E00025"/><g fill="#F4F4F4"><path d="M4.5 16.4h27v1.6h-27z"/><path d="M18 7.1l1.55 7.2h-3.1z"/><path d="M12.2 9.6l1.2 5.7h-2.4z"/><path d="M23.8 9.6l1.2 5.7h-2.4z"/><path d="M8.4 12.2l.85 4.2H7.55z"/><path d="M27.6 12.2l.85 4.2h-1.7z"/><rect x="14.6" y="13.3" width="6.8" height="3.1"/><rect x="16.2" y="11.6" width="3.6" height="1.7"/></g></svg></span>
   <a href="mailto:sreypok@nini.tax">អ៊ីមែល</a>
   <a class="p" href="tel:+19518897108">ទូរស័ព្ទ (951) 889-7108</a>
 </div>
