@@ -284,14 +284,50 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
 
 .kh-flag{display:inline-flex;width:22px;height:15px;flex:none;border-radius:2px;overflow:hidden;box-shadow:0 0 0 1px rgba(244,239,228,.22)}
 .kh-flag svg{display:block;width:100%;height:100%}
-@media(max-width:860px){.nav .kh-flag{display:none}}
+.nav .kh-flag{display:none}
 .bar{align-items:center}
 .bar::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to bottom,#032EA1 0 25%,#E00025 25% 75%,#032EA1 75%)}
 .bar .kh-flag{width:24px;height:16px;margin:0 .15rem 0 .7rem;box-shadow:0 0 0 1px rgba(26,20,16,.14)}
 
+.kh-ribbon{
+  position:fixed;
+  top:64px;
+  right:0;
+  width:92px;
+  height:92px;
+  overflow:hidden;
+  z-index:35;
+  pointer-events:none;
+}
+.kh-ribbon__band{
+  position:absolute;
+  top:16px;
+  right:-34px;
+  width:128px;
+  height:28px;
+  transform:rotate(45deg);
+  background:linear-gradient(to bottom,#032EA1 0 25%,#E00025 25% 75%,#032EA1 75%);
+  box-shadow:0 3px 10px rgba(26,20,16,.22);
+}
+.kh-ribbon__band svg{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:22px;
+  height:14px;
+  transform:translate(-50%,-50%);
+  display:block;
+}
+@media(max-width:860px){
+  .kh-ribbon{top:58px;width:78px;height:78px}
+  .kh-ribbon__band{top:14px;right:-30px;width:112px;height:24px}
+  .kh-ribbon__band svg{width:18px;height:12px}
+}
+
 </style>
 </head>
 <body>
+<div class="kh-ribbon" aria-hidden="true"><span class="kh-ribbon__band"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24" focusable="false"><g fill="#F4F4F4"><path d="M4.5 16.4h27v1.6h-27z"/><path d="M18 7.1l1.55 7.2h-3.1z"/><path d="M12.2 9.6l1.2 5.7h-2.4z"/><path d="M23.8 9.6l1.2 5.7h-2.4z"/><path d="M8.4 12.2l.85 4.2H7.55z"/><path d="M27.6 12.2l.85 4.2h-1.7z"/><rect x="14.6" y="13.3" width="6.8" height="3.1"/><rect x="16.2" y="11.6" width="3.6" height="1.7"/></g></svg></span></div>
 
 <nav class="nav"><div class="wrap nav__in">
   <a href="#top" class="mark"><span class="mark__n">NT</span><span class="mark__w">Nini Tax</span></a>
