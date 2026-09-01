@@ -36,7 +36,7 @@
   "@type": "AccountingService",
   "@id": "https://www.nini.tax/#business",
   "name": "Nini Tax",
-  "url": "https://www.nini.tax/khmer.html",
+  "url": "https://www.nini.tax/",
   "inLanguage": "km",
   "telephone": "+1-951-889-7108",
   "email": "sreypok@nini.tax",
@@ -97,6 +97,7 @@ p{margin:0}
 .nav__links{display:flex;gap:1.6rem;font-size:.95rem;font-weight:500;color:#C9BFB2}
 .nav__links a:hover{color:#F4EFE4}
 @media(max-width:860px){.nav__tel{display:none}.nav__in{height:58px}}
+@media(max-width:720px){.nav__links{display:none}}
 
 @media(max-width:420px){.mark__w{display:none}}
 
@@ -111,6 +112,8 @@ p{margin:0}
 .lede{color:var(--body);max-width:36rem;margin-bottom:1.15rem;font-size:1.125rem;line-height:2}
 .proof{font-size:.9375rem;color:var(--muted);margin:0 0 1.85rem;line-height:1.8}
 .proof a{font-family:var(--s);color:var(--ink);border-bottom:1px solid var(--hair);padding-bottom:1px;font-weight:700;font-size:.8125rem}
+.result-rail{font-size:.9375rem;color:var(--muted);margin:0 0 1.85rem;line-height:1.8}
+.result-rail a{font-family:var(--s);color:var(--ink);border-bottom:1px solid var(--hair);padding-bottom:1px;font-weight:700;font-size:.8125rem}
 .hero__cta{display:flex;flex-wrap:wrap;gap:.85rem;align-items:stretch}
 .dial{display:inline-flex;flex-direction:column;justify-content:center;background:var(--gold);color:var(--gold-ink);padding:1.05rem 1.75rem 1.15rem;min-width:min(100%,20rem);border-radius:6px}
 .dial:hover{filter:brightness(.97)}
@@ -358,7 +361,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
         <a href="https://irs.treasury.gov/rpo/rpo.jsf" rel="noopener noreferrer" target="_blank">IRS directory</a>
         · គ្រប់រដ្ឋទាំង ៥០ · ខ្មែរ និង English
       </p>
-      <p class="result-rail">ឆ្នាំមិនបានប្រកាស៖ បំណុល IRS ច្រើនឆ្នាំត្រូវបានសម្អាត ហើយមានប្រាក់សងវិញ។ <a href="#cases">ករណីពិតពីរ</a></p>
+      <p class="result-rail">ឆ្នាំមិនបានប្រកាស៖ បំណុល IRS ច្រើនឆ្នាំបាត់អស់ ហើយថែមទាំងបានប្រាក់សងវិញទៀត។ <a href="#cases">ករណីពិតពីរ</a></p>
       <div class="hero__cta">
         <a class="dial" href="tel:+19518897108">
           <span class="dial__k">ពិគ្រោះលើកដំបូងឥតគិតថ្លៃ</span>
@@ -468,15 +471,15 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
         <p class="tool-lead">Tap or Click តាមសំណួរ។ តម្លៃចាប់ផ្តើមដែលបានផ្សាយនឹងបង្ហាញភ្លាម។ ខ្ញុំនឹងបញ្ជាក់មុនពេលចាប់ផ្តើមការងារ។</p>
 
         <p class="tool__q">1. ប្រភេទឯកសារពន្ធ?</p>
-        <div class="picks" role="group" aria-label="Kind of return">
+        <div class="picks" role="group" aria-label="ប្រភេទឯកសារពន្ធ">
           <button type="button" class="pick" data-kind="w2" aria-pressed="false">Individual 1040 · W-2 only</button>
           <button type="button" class="pick" data-kind="se" aria-pressed="false">Self-employed / extra schedules</button>
           <button type="button" class="pick" data-kind="biz" aria-pressed="false">Business (1120 / 1120-S / 1065)</button>
         </div>
 
         <div class="tool-sub" id="fee-w2" hidden>
-          <p class="tool__q">2. Filing status</p>
-          <div class="picks" role="group" aria-label="Filing status">
+          <p class="tool__q">2. Filing status មួយណា?</p>
+          <div class="picks" role="group" aria-label="ជ្រើសរើស filing status">
             <button type="button" class="pick" data-status="single" aria-pressed="false">Single · $89</button>
             <button type="button" class="pick" data-status="mfs" aria-pressed="false">MFS · $119</button>
             <button type="button" class="pick" data-status="hoh" aria-pressed="false">HOH · $169</button>
@@ -487,7 +490,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
 
         <div class="tool-sub" id="fee-se" hidden>
           <p class="tool__q">2. Schedule ណាខ្លះ? <span style="font-weight:400">(Tap or Click បានច្រើន)</span></p>
-          <div class="picks" role="group" aria-label="Schedules">
+          <div class="picks" role="group" aria-label="ជ្រើសរើស schedule">
             <button type="button" class="pick" data-sch="c" aria-pressed="false">Sch C · $189</button>
             <button type="button" class="pick" data-sch="d" aria-pressed="false">Sch D · $229</button>
             <button type="button" class="pick" data-sch="e" aria-pressed="false">Sch E · $279</button>
@@ -678,7 +681,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
           <tr><th scope="row">Schedule D</th><td>$229</td></tr>
           <tr><th scope="row">Schedule E</th><td>$279</td></tr>
           <tr><th scope="row">Schedule F</th><td>$279</td></tr>
-          <tr><th scope="row">ឯកសារបន្ថែម <span class="status-km">Additional schedules</span></th><td>ចាប់ពី $329</td></tr>
+          <tr><th scope="row">Additional schedules <span class="status-km">ឯកសារបន្ថែម</span></th><td>ចាប់ពី $329</td></tr>
         </tbody>
       </table>
     </div>
@@ -712,7 +715,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
       </div>
       <div class="sec__i">
         <h3>ចុះហត្ថលេខាពីទូរស័ព្ទ</h3>
-        <p>លិខិត engagement, Form 8879 និង power of attorney (POA) ចុះហត្ថលេខាអេឡិចត្រូនិក។ មិនចាំបាច់ព្រីន ស្កេន ឬបើកឡានទៅណាទេ។</p>
+        <p>Engagement letter, Form 8879 និង power of attorney (POA) ចុះហត្ថលេខាតាមអេឡិចត្រូនិក។ មិនចាំបាច់ព្រីន ស្កេន ឬបើកឡានទៅណាទេ។</p>
       </div>
       <div class="sec__i">
         <h3>មានផែនការសុវត្ថិភាពជាលាយលក្ខណ៍អក្សរ</h3>
@@ -736,8 +739,8 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
         <div class="faq__a"><p>កុំទុកចោល ហើយកុំបង់ភ្លាមៗ គ្រាន់តែព្រោះលិខិតមកដល់។ លិខិតភាគច្រើនមានថ្ងៃកំណត់ ហើយភាគច្រើនអាចឆ្លើយបាន។ ផ្ញើលេខលិខិតមកខ្ញុំ — នៅជ្រុងខាងលើស្តាំ ដូច CP2000 ឬ CP504 — ខ្ញុំនឹងប្រាប់ថាវាមានន័យយ៉ាងណា និងអ្នកមានជម្រើសអ្វី។</p></div>
       </details>
       <details>
-        <summary>និយាយខ្មែរទេ?</summary>
-        <div class="faq__a"><p>និយាយ។ ខ្ញុំនិយាយភាសាខ្មែរ។ ខ្ញុំអាចពន្យល់លិខិត ជម្រើស និងលេខនីមួយៗលើឯកសារពន្ធរបស់អ្នកជាភាសាខ្មែរ ហើយនិយាយជាមួយ IRS ជំនួសអ្នក ដើម្បីកុំឱ្យអ្នកត្រូវនិយាយជាភាសាអង់គ្លេស។</p></div>
+        <summary>អាចធ្វើការទាំងអស់ជាភាសាខ្មែរបានទេ?</summary>
+        <div class="faq__a"><p>បាន។ ខ្ញុំពន្យល់លិខិត ជម្រើស និងលេខនីមួយៗលើឯកសារពន្ធរបស់អ្នកជាភាសាខ្មែរ។ ចំណែកការនិយាយជាមួយ IRS ខ្ញុំធ្វើជំនួសអ្នក ដូច្នេះអ្នកមិនចាំបាច់និយាយជាមួយគេដោយខ្លួនឯងទេ។</p></div>
       </details>
       <details>
         <summary>Enrolled Agent ជាអ្វី ហើយហេតុអ្វីសំខាន់?</summary>
@@ -849,6 +852,8 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
       seMulti: "I’ll quote the rest on the call.",
       seExtra: "Additional schedules from $329.",
       from: "from $",
+      fromWord: "from",
+      kicker: "Published starting fee",
       plus: ", plus other schedules",
       biz: "Corporate / partnership returns from $599. Quoted after a look at the books.",
       books: "Bookkeeping monthly, published on request.",
@@ -864,10 +869,12 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
       w2: "Individual 1040, {status} — តម្លៃចាប់ផ្តើមដែលបានផ្សាយ។",
       seOne: "{name} — តម្លៃចាប់ផ្តើមដែលបានផ្សាយ។",
       seMulti: "តម្លៃ schedule ផ្សេងទៀត ខ្ញុំនឹងប្រាប់នៅពេលពិគ្រោះ។",
-      seExtra: "Additional schedules from $329.",
+      seExtra: "Additional schedules ចាប់ពី $329។",
       from: "from $",
+      fromWord: "ចាប់ពី",
+      kicker: "តម្លៃចាប់ផ្តើមដែលបានផ្សាយ",
       plus: ", plus other schedules",
-      biz: "Corporate / partnership returns from $599. Quoted after a look at the books.",
+      biz: "Corporate / partnership returns ចាប់ពី $599។ តម្លៃប្រាប់ក្រោយពីមើលសៀវភៅគណនី។",
       books: "Bookkeeping ប្រចាំខែ តម្លៃប្រាប់តាមសំណើ។",
       relief: "បើអ្នកមានលិខិត IRS សូមប្រើ decoder ខាងក្រោម។ ការពិគ្រោះលើកដំបូងឥតគិតថ្លៃ។",
       disclaimer: "ទាំងនេះជាតម្លៃរៀបចំពន្ធដែលបានផ្សាយ មិនមែនជាប្រាក់សងវិញ ឬចំនួនដែលអ្នកជំពាក់ IRS ទេ។ តម្លៃអាចផ្លាស់ប្តូរតាមភាពស្មុគស្មាញ។ ខ្ញុំនឹងបញ្ជាក់មុនពេលចាប់ផ្តើមការងារ។",
@@ -953,7 +960,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
         html += "<p>" + esc(T.promptStatus) + "</p>";
       } else {
         on = true;
-        html += "<p class=\"fee-out__kicker\">Published starting fee</p>";
+        html += "<p class=\"fee-out__kicker\">" + esc(T.kicker) + "</p>";
         html += "<p class=\"fee-out__num\">$" + PRICES[status] + "</p>";
         html += "<p>" + esc(T.w2.replace("{status}", STATUS_LABEL[status])) + "</p>";
       }
@@ -967,7 +974,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
           if(PRICES[k] > max){ max = PRICES[k]; maxK = k; }
         });
         on = true;
-        html += "<p class=\"fee-out__kicker\">" + esc(T.from.replace("from $","").replace("from $","").trim() || "from") + "</p>";
+        html += "<p class=\"fee-out__kicker\">" + esc(T.fromWord) + "</p>";
         html += "<p class=\"fee-out__num\">$" + max + "</p>";
         if(keys.length === 1){
           html += "<p>" + esc(T.seOne.replace("{name}", SCH_LABEL[maxK])) + "</p>";
@@ -978,7 +985,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
       html += "<p>" + esc(T.seExtra) + "</p>";
     } else if(kind === "biz"){
       on = true;
-      html += "<p class=\"fee-out__kicker\">from</p>";
+      html += "<p class=\"fee-out__kicker\">" + esc(T.fromWord) + "</p>";
       html += "<p class=\"fee-out__num\">$599</p>";
       html += "<p>" + esc(T.biz) + "</p>";
     }
