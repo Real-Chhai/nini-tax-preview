@@ -309,9 +309,19 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
 }
 
 
-.kh-flag{display:inline-block;width:18px;height:12px;flex:none;border-radius:2px;vertical-align:middle;box-shadow:0 0 0 1px rgba(26,20,16,.16)}
-.nav__lang{display:inline-flex;align-items:center;gap:.4rem}
-.kicker .kh-flag{margin-left:.15rem;box-shadow:0 0 0 1px rgba(26,20,16,.14)}
+.kh-flag{display:block;width:22px;height:15px;flex:none;border-radius:2px;box-shadow:0 0 0 1px rgba(244,239,228,.3)}
+.nav__lang{
+  display:inline-flex;align-items:center;gap:.45rem;
+  min-height:40px;padding:.2rem .7rem .2rem .55rem;
+  border:1px solid rgba(244,239,228,.28);border-radius:6px;
+  color:#F4EFE4;
+}
+.nav__lang:hover{color:#F4EFE4;border-color:rgba(244,239,228,.55)}
+.mark .kh-flag{width:22px;height:15px}
+@media(max-width:860px){
+  .nav__lang{min-height:42px}
+  .nav__end{gap:.6rem}
+}
 
 </style>
 <script type="application/ld+json">
