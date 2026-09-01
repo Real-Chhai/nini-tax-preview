@@ -11,6 +11,7 @@
 <link rel="canonical" href="https://www.nini.tax/">
 <link rel="alternate" hreflang="km" href="https://www.nini.tax/khmer.html">
 <link rel="alternate" hreflang="en" href="https://www.nini.tax/">
+<link rel="alternate" hreflang="x-default" href="https://www.nini.tax/">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nini Tax">
@@ -30,7 +31,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Kantumruy+Pro:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Kantumruy+Pro:wght@400;500;600&family=Noto+Serif+Khmer:wght@400;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 <style>
 :root{
   --page:#E4D9C8;
@@ -44,7 +45,7 @@
   --hair:rgba(26,20,16,.16);
   --d:"Newsreader",Georgia,serif;
   --s:"Atkinson Hyperlegible",system-ui,sans-serif;
-  --km:"Kantumruy Pro",system-ui,sans-serif;
+  --km:"Kantumruy Pro","Noto Serif Khmer",system-ui,sans-serif;
   --wrap:1140px;
   --gutter:clamp(1.35rem,4.5vw,2.75rem);
 }
@@ -82,7 +83,8 @@ p{margin:0}
 .rule{width:2.4rem;height:2px;background:var(--gold);border:0;margin:0 0 1.35rem}
 .hero h1{font-size:clamp(2.35rem,4.6vw,3.5rem);line-height:1.16;max-width:14ch;margin-bottom:.85rem}
 .hero h1 em{font-style:italic;color:var(--gold);font-weight:400}
-.km-line{font-family:var(--km);font-size:1.0625rem;color:var(--gold-deep);line-height:1.85;margin:0 0 1.2rem}
+:lang(km), .khmer-band, .km-line{line-height:1.9}
+.km-line{font-family:var(--km);font-size:1.0625rem;color:var(--gold-deep);line-height:1.9;margin:0 0 1.2rem}
 .lede{color:var(--body);max-width:34rem;margin-bottom:1.15rem;font-size:1.125rem;line-height:1.75}
 .proof{font-size:.875rem;color:var(--muted);margin:0 0 1.85rem;line-height:1.7}
 .proof a{color:var(--ink);border-bottom:1px solid var(--hair);padding-bottom:1px;font-weight:700}
@@ -810,7 +812,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
     <p class="over" lang="km">ជាភាសាខ្មែរ</p>
     <h2 lang="km">ជំពាក់ពន្ធ IRS មែនទេ?</h2>
     <p lang="km">អ្នកប្រហែលជាជំពាក់តិចជាងអ្វីដែល IRS បាននិយាយ។</p>
-    <p lang="km">ខ្ញុំជា Enrolled Agent — មានអាជ្ញាបណ្ណពី IRS ដើម្បីតំណាងឱ្យអ្នកគ្រប់រដ្ឋទាំង ៥០។ ការពិនិត្យលើកដំបូងគឺឥតគិតថ្លៃ។</p>
+    <p lang="km">ខ្ញុំជា Enrolled Agent — មានអាជ្ញាបណ្ណពី IRS ដើម្បីតំណាងឱ្យអ្នកគ្រប់រដ្ឋទាំង ៥០។ ការពិគ្រោះលើកដំបូងឥតគិតថ្លៃ។</p>
     <a href="khmer.html" class="btn">អានជាភាសាខ្មែរ →</a>
   </div>
 </section>
@@ -826,7 +828,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
       </details>
       <details>
         <summary>Do you speak Khmer?</summary>
-        <div class="faq__a"><p>Yes. ខ្ញុំនិយាយភាសាខ្មែរ។ I can explain your notices, your options, and every number on your return in Khmer, and I can deal with the IRS on your behalf so you don’t have to have those conversations in English.</p></div>
+        <div class="faq__a"><p>Yes. <span lang="km">ខ្ញុំនិយាយភាសាខ្មែរ។</span> I can explain your notices, your options, and every number on your return in Khmer, and I can deal with the IRS on your behalf so you don’t have to have those conversations in English.</p></div>
       </details>
       <details>
         <summary>What is an Enrolled Agent, and why does it matter?</summary>
@@ -909,7 +911,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
       </div>
     </div>
     <div class="foot__bot">
-      <span>© 2026 Nini Tax · Sreypok Pen, EA · CTEC-registered</span>
+      <span>© 2026 Nini Tax · Sreypok Pen, EA · IRS Enrolled Agent · CTEC-registered · Menifee, CA</span>
       <span>Menifee, CA · IRS Enrolled Agent</span>
     </div>
   </div>

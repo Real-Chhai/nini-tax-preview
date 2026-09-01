@@ -10,6 +10,7 @@
 <meta name="description" content="ជំពាក់ពន្ធ IRS មែនទេ? ខ្ញុំជា Enrolled Agent មានអាជ្ញាបណ្ណពី IRS ដើម្បីតំណាងឱ្យអ្នកគ្រប់រដ្ឋទាំង ៥០។ ការពិគ្រោះលើកដំបូងឥតគិតថ្លៃ។">
 <link rel="alternate" hreflang="en" href="https://www.nini.tax/">
 <link rel="alternate" hreflang="km" href="https://www.nini.tax/khmer.html">
+<link rel="alternate" hreflang="x-default" href="https://www.nini.tax/">
 <link rel="canonical" href="https://www.nini.tax/khmer.html">
 
 <meta property="og:type" content="website">
@@ -27,7 +28,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Kantumruy+Pro:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Kantumruy+Pro:wght@400;500;600&family=Noto+Serif+Khmer:wght@400;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {
@@ -68,12 +69,13 @@
   --hair:rgba(26,20,16,.16);
   --d:"Newsreader",Georgia,serif;
   --s:"Atkinson Hyperlegible",system-ui,sans-serif;
-  --km:"Kantumruy Pro",system-ui,sans-serif;
+  --km:"Kantumruy Pro","Noto Serif Khmer",system-ui,sans-serif;
   --wrap:1140px;
   --gutter:clamp(1.35rem,4.5vw,2.75rem);
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:80px;background:var(--page)}
+:lang(km){line-height:1.9}
 body{margin:0;font-family:var(--km);font-size:1.125rem;line-height:2.05;color:var(--body);background:var(--page);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
@@ -297,6 +299,22 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
   .nav__end{gap:.6rem}
 }
 
+.price{background:var(--surface);border-block:1px solid var(--hair)}
+.price-board{background:var(--surface);margin-top:2.25rem;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,3.5rem)}
+@media(max-width:720px){.price-board{grid-template-columns:1fr}}
+.ptable{width:100%;border-collapse:collapse;font-size:1.0625rem}
+.ptable caption{caption-side:top;text-align:left;font-family:var(--km);font-size:1.35rem;color:var(--ink);margin-bottom:.85rem;font-weight:500}
+.ptable th{text-align:left;font-weight:500;color:var(--body);padding:.7rem 1rem .7rem 0;border-bottom:1px solid var(--hair);font-family:var(--s)}
+.ptable td{text-align:right;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;padding:.7rem 0;border-bottom:1px solid var(--hair);white-space:nowrap;font-family:var(--s)}
+.ptable tr:last-child th,.ptable tr:last-child td{border-bottom:0}
+.status-km{display:block;font-family:var(--km);font-size:.75rem;font-weight:500;color:var(--muted);margin-top:.2rem;line-height:1.55}
+.notes{display:grid;gap:1.15rem;margin-top:2.25rem}
+.note{padding:1.25rem 0 0;border-top:1px solid var(--hair)}
+.note h3{font-size:1.2rem;margin-bottom:.35rem}
+.note p{font-size:1.0625rem;color:var(--muted);line-height:1.9}
+.note b{color:var(--ink);font-weight:700}
+.price__note{margin-top:2.25rem;max-width:44rem;font-size:1.0625rem;color:var(--muted);padding-left:1.15rem;border-left:1px solid var(--hair);line-height:1.9}
+
 </style>
 </head>
 <body>
@@ -305,6 +323,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
   <a href="#top" class="mark"><span class="mark__n">NT</span><span class="mark__w">Nini Tax</span><svg class="kh-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24" aria-hidden="true" focusable="false"><rect width="36" height="24" fill="#032EA1"/><rect y="6" width="36" height="12" fill="#E00025"/><g fill="#F4F4F4"><path d="M4.5 16.4h27v1.6h-27z"/><path d="M18 7.1l1.55 7.2h-3.1z"/><path d="M12.2 9.6l1.2 5.7h-2.4z"/><path d="M23.8 9.6l1.2 5.7h-2.4z"/><path d="M8.4 12.2l.85 4.2H7.55z"/><path d="M27.6 12.2l.85 4.2h-1.7z"/><rect x="14.6" y="13.3" width="6.8" height="3.1"/><rect x="16.2" y="11.6" width="3.6" height="1.7"/></g></svg></a>
   <div class="nav__links">
     <a href="#tools">ឧបករណ៍</a>
+    <a href="#pricing">តម្លៃ</a>
   </div>
   <div class="nav__end">
     <a href="index.html" class="nav__lang" hreflang="en" lang="en">English</a>
@@ -319,7 +338,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
       <hr class="rule">
       <h1>មិនថាលិខិតនោះនិយាយយ៉ាងណាទេ — <em>រឿងនេះដោះស្រាយបាន។</em></h1>
       <p class="en-line" lang="en">I speak Khmer. IRS debt is fixable.</p>
-      <p class="lede">បើអ្នកជំពាក់ពន្ធ IRS រឿងដំបូងដែលត្រូវដឹងគឺ តើចំនួនប្រាក់នោះត្រឹមត្រូវឬអត់។ ជាញឹកញាប់វាមិនត្រឹមត្រូវទេ។ ការពិគ្រោះលើកដំបូងគឺឥតគិតថ្លៃ។</p>
+      <p class="lede">បើអ្នកជំពាក់ពន្ធ IRS រឿងដំបូងដែលត្រូវពិនិត្យគឺ តើលេខនោះត្រឹមត្រូវឬអត់។ ជាញឹកញាប់វាមិនត្រឹមត្រូវទេ។ ការពិគ្រោះលើកដំបូងឥតគិតថ្លៃ — រួមទាំងការពិនិត្យ transcript ផង។</p>
       <p class="proof">
         EA ·
         <a href="https://irs.treasury.gov/rpo/rpo.jsf" rel="noopener noreferrer" target="_blank">IRS directory</a>
@@ -346,14 +365,14 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
     <p class="over">ស្ថានភាពទូទៅ</p>
     <h2 class="h2">បើមានមួយណាត្រូវនឹងអ្នក — វាមានផ្លូវដោះស្រាយ។</h2>
     <ul class="sym">
-      <li>អ្នកទទួលបានលិខិតពី IRS តែមិនយល់ថាវានិយាយអំពីអ្វី</li>
-      <li>អ្នកជំពាក់ពន្ធចាស់ ហើយមិនអាចបង់អស់ក្នុងពេលតែមួយ</li>
-      <li>មានឆ្នាំខ្លះដែលអ្នកមិនទាន់បានប្រកាសពន្ធ ហើយអ្នកខ្លាចមិនហ៊ានចាប់ផ្តើម</li>
-      <li>IRS បានប្រកាសពន្ធជំនួសអ្នក ហើយចំនួនប្រាក់មើលទៅមិនអាចបង់បាន</li>
-      <li>ប្រាក់ខែរបស់អ្នកត្រូវបានកាត់ ឬគណនីធនាគាររបស់អ្នកត្រូវបានដកប្រាក់</li>
-      <li>អ្នកត្រូវបានគេឱ្យទទួលខុសត្រូវលើបំណុលពន្ធរបស់ប្តី ឬប្រពន្ធ</li>
-      <li>ការពិន័យ និងការប្រាក់ បានកើនលើសពីពន្ធដើម</li>
-      <li>អ្នកបានបង់ប្រាក់ឱ្យក្រុមហ៊ុនដោះស្រាយពន្ធធំៗ តែគ្មានអ្វីកើតឡើងទេ</li>
+      <li>លិខិតមកពី IRS តែអានមិនយល់ថាគេចង់បានអ្វី</li>
+      <li>ជំពាក់ពន្ធពីឆ្នាំមុនៗ តែគ្មានលុយបង់អស់ម្តង</li>
+      <li>មានឆ្នាំខ្លះមិនទាន់បានប្រកាសពន្ធ ហើយខ្លាចមិនហ៊ានចាប់ផ្តើម</li>
+      <li>IRS ប្រកាសពន្ធជំនួសអ្នក (Substitute for Return / SFR) ហើយលេខដែលចេញមកធំពេកមិនអាចបង់បាន</li>
+      <li>គេកំពុងកាត់ប្រាក់ខែអ្នក (garnishment) ឬយកលុយក្នុងធនាគារ (levy)</li>
+      <li>គេឱ្យអ្នកទទួលខុសត្រូវលើបំណុលពន្ធរបស់ប្តី ឬប្រពន្ធ</li>
+      <li>ការពិន័យ និងការប្រាក់ ឡើងលើសពន្ធដើមទៅទៀត</li>
+      <li>បង់លុយឱ្យក្រុមហ៊ុនដោះស្រាយពន្ធធំៗ រួចគ្មានអ្វីកើតឡើងសោះ</li>
     </ul>
   </div>
 </section>
@@ -365,10 +384,10 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
       <h2 class="h2">ការប្រកាសពន្ធ និងការតំណាងឱ្យអ្នក គឺជារឿងពីរផ្សេងគ្នា។</h2>
     </div>
     <div>
-      <p>វាត្រូវការអាជ្ញាបណ្ណពីរផ្សេងគ្នា ហើយអ្នករៀបចំពន្ធភាគច្រើនមានតែមួយប៉ុណ្ណោះ។</p>
+      <p>វាត្រូវការអាជ្ញាបណ្ណពីរផ្សេងគ្នា ហើយអ្នករៀបចំពន្ធភាគច្រើនមានតែមួយទេ។</p>
       <p>មានតែ <strong>Enrolled Agent, CPA និងមេធាវី</strong> ប៉ុណ្ណោះ ដែលអាចតំណាងឱ្យអ្នកនៅចំពោះមុខ IRS ដោយគ្មានដែនកំណត់។ អ្នករៀបចំពន្ធភាគច្រើនគ្មានអាជ្ញាបណ្ណទាំងនេះទេ។ ពួកគេអាចបំពេញឯកសារឱ្យអ្នក តែពេល IRS មានបញ្ហា ពួកគេមិនអាចនិយាយជំនួសអ្នកបានទេ។</p>
-      <p>ខ្ញុំជា Enrolled Agent និងអ្នករៀបចំពន្ធចុះឈ្មោះ CTEC ដែលមានអាជ្ញាបណ្ណពីសហព័ន្ធ បន្ទាប់ពីប្រឡងជាប់ការប្រឡងបីផ្នែករបស់ IRS។ ខ្ញុំធ្វើការងារនេះជាងបួនឆ្នាំហើយ។ ខ្ញុំអាចទាញយកកំណត់ត្រា transcript ពេញលេញរបស់អ្នក ដឹងច្បាស់ថា IRS បានគិតប្រាក់អ្វីខ្លះ និងហេតុអ្វី ហើយទាក់ទងជាមួយ IRS ជំនួសអ្នក — <strong>គ្រប់រដ្ឋទាំង ៥០</strong>។</p>
-      <p>ខ្ញុំធ្វើការជាមួយអតិថិជននៅទូទាំងសហរដ្ឋអាមេរិក ពីការិយាល័យរបស់ខ្ញុំនៅ Menifee រដ្ឋ California ជាភាសាអង់គ្លេស និងភាសាខ្មែរ។</p>
+      <p>ខ្ញុំឈ្មោះ ប៉ែន ស្រីប៉ុក។ ខ្ញុំជា Enrolled Agent និងអ្នករៀបចំពន្ធចុះឈ្មោះ CTEC ដែលមានអាជ្ញាបណ្ណពីសហព័ន្ធ បន្ទាប់ពីប្រឡងជាប់ការប្រឡងបីផ្នែករបស់ IRS។ ខ្ញុំធ្វើការងារនេះជាងបួនឆ្នាំហើយ។ ខ្ញុំអាចទាញ transcript ពេញលេញរបស់អ្នកចេញមក មើលច្បាស់ថា IRS គិតលុយអ្វីខ្លះ និងហេតុអ្វី ហើយទាក់ទងជាមួយ IRS ជំនួសអ្នក — <strong>គ្រប់រដ្ឋទាំង ៥០</strong>។</p>
+      <p>ខ្ញុំធ្វើការជាមួយអតិថិជននៅទូទាំងសហរដ្ឋអាមេរិក ពីការិយាល័យរបស់ខ្ញុំនៅ Menifee រដ្ឋ California ជាភាសាអង់គ្លេស និងភាសាខ្មែរ។ អតិថិជនភាគច្រើនរបស់ខ្ញុំមកពីការណែនាំគ្នា។ ការពិគ្រោះលើកដំបូង និងការពិនិត្យ transcript ឥតគិតថ្លៃ។</p>
       <a href="https://irs.treasury.gov/rpo/rpo.jsf" class="dir" rel="noopener noreferrer" target="_blank">ពិនិត្យឈ្មោះខ្ញុំក្នុងបញ្ជី IRS</a>
     </div>
   </div>
@@ -427,11 +446,11 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
   <div class="wrap">
     <p class="over">ឧបករណ៍</p>
     <h2 class="h2">ប៉ះដើម្បីមើលតម្លៃ ឬមើលថាលិខិត IRS មានន័យយ៉ាងណា។</h2>
-    <p class="lead">មិនមែនជាការគណនាប្រាក់សងវិញ ឬចំនួនដែលអ្នកជំពាក់ IRS ទេ។ ការដោះស្រាយ IRS ប្រាប់តម្លៃបន្ទាប់ពីខ្ញុំអានកំណត់ត្រា។ ការពិគ្រោះលើកដំបូងឥតគិតថ្លៃ។</p>
+    <p class="lead">នេះមិនមែនជាការគណនាប្រាក់សងវិញ ហើយក៏មិនមែនជាចំនួនដែលអ្នកជំពាក់ IRS ដែរ។ សម្រាប់ការដោះស្រាយបំណុល IRS ខ្ញុំនឹងប្រាប់តម្លៃបន្ទាប់ពីបានអាន transcript របស់អ្នក។ ការពិគ្រោះលើកដំបូងឥតគិតថ្លៃ។</p>
 
     <div class="tool-stack">
       <div class="tool" id="fee-picker">
-        <h3 lang="en">Prep fee picker</h3>
+        <h3>មើលតម្លៃរៀបចំពន្ធ</h3>
         <p class="tool-lead">ប៉ះតាមសំណួរ។ តម្លៃចាប់ផ្តើមដែលបានផ្សាយនឹងបង្ហាញភ្លាម។ ខ្ញុំនឹងបញ្ជាក់មុនពេលចាប់ផ្តើមការងារ។</p>
 
         <p class="tool__q">1. ប្រភេទឯកសារពន្ធ?</p>
@@ -469,9 +488,9 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
         <h3>លិខិត IRS មានន័យយ៉ាងណា</h3>
         <p class="tool-lead">IRS ផ្ញើអ្វីមកអ្នក? បើរង់ចាំ លិខិតបន្ទាប់ជាធម្មតាអាក្រក់ជាង។ នេះមិនមែនជាការណែនាំពន្ធទេ។ ថ្ងៃកំណត់ជាការពិត។</p>
         <div class="picks" role="group" aria-label="ប្រភេទលិខិត IRS">
-          <button type="button" class="pick" data-letter="cp14" aria-pressed="false">CP14 / វិក្កយបត្រ ខ្ញុំជំពាក់<em>ការប្រាក់កំពុងកើន</em></button>
-          <button type="button" class="pick pick--hot" data-letter="cp504" aria-pressed="false">CP504 ឬលិខិតប្រមូលប្រាក់ក្រោយ<em>levy អាចមកបន្ទាប់</em></button>
-          <button type="button" class="pick pick--hot" data-letter="levy" aria-pressed="false">Levy, កាត់ប្រាក់ខែ ឬបង្កកគណនី<em>គេអាចយកប្រាក់ថ្ងៃនេះ</em></button>
+          <button type="button" class="pick" data-letter="cp14" aria-pressed="false">CP14 / វិក្កយបត្រ ខ្ញុំជំពាក់<em>មានថ្ងៃកំណត់ · ការប្រាក់កំពុងកើន</em></button>
+          <button type="button" class="pick pick--hot" data-letter="cp504" aria-pressed="false">CP504 ឬលិខិតប្រមូលប្រាក់ក្រោយ<em>Levy អាចមកបន្ទាប់</em></button>
+          <button type="button" class="pick pick--hot" data-letter="levy" aria-pressed="false">Levy, garnishment (កាត់ប្រាក់ខែ) ឬបង្កកគណនី<em>គេអាចយកប្រាក់ថ្ងៃនេះ</em></button>
           <button type="button" class="pick" data-letter="cp2000" aria-pressed="false">CP2000 / គេនិយាយថាខ្ញុំរាយការណ៍មិនគ្រប់<em>មានថ្ងៃកំណត់</em></button>
           <button type="button" class="pick" data-letter="sfr" aria-pressed="false">ឆ្នាំមិនបានប្រកាស / គេប្រកាសជំនួស (SFR)<em>គេបានប្រកាសជំនួសអ្នកហើយ</em></button>
           <button type="button" class="pick" data-letter="unsure" aria-pressed="false">មានលិខិត តែមិនច្បាស់ថាមួយណា<em>កុំទុកចោល</em></button>
@@ -556,11 +575,11 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
     <div class="results">
       <div class="result">
         <p class="result__tag">ឆ្នាំដែលមិនបានប្រកាស</p>
-        <p>អតិថិជនម្នាក់ជំពាក់ IRS ប្រហែល ២០.០០០ ដុល្លារ ពីឆ្នាំជាច្រើនដែលគាត់មិនបានប្រកាសពន្ធ។ បន្ទាប់ពីដាក់ឯកសារត្រឹមត្រូវ បំណុលបានបាត់ ហើយមានប្រាក់សងវិញ។</p>
+        <p>អតិថិជនម្នាក់ជំពាក់ IRS ប្រហែល $20,000 ពីឆ្នាំជាច្រើនដែលគាត់មិនបានប្រកាសពន្ធ។ ក្រោយពីដាក់ឯកសារពិតចូលទៅ បំណុលបាត់អស់ ហើយថែមទាំងបានប្រាក់សងវិញទៀត។</p>
       </div>
       <div class="result">
         <p class="result__tag">លិខិត CP2000</p>
-        <p>ឯកសារពន្ធដែលរៀបចំដោយកន្លែងផ្សេង បានរាយការណ៍ចំណូលមិនគ្រប់។ IRS បានផ្ញើលិខិត CP2000 ប្រហែល ១១.០០០ ដុល្លារ រួមទាំងការពិន័យ។ ខ្ញុំបានកែឯកសារ។ បំណុលបានចប់។</p>
+        <p>ឯកសារពន្ធដែលរៀបចំដោយកន្លែងផ្សេង រាយការណ៍ចំណូលមិនគ្រប់។ IRS ផ្ញើលិខិត CP2000 ប្រហែល $11,000 រួមទាំងការពិន័យ។ ខ្ញុំបានដាក់ amended return។ បំណុលត្រូវបានលុបចោល។</p>
       </div>
     </div>
     <p class="disc">រាល់ករណីអាស្រ័យលើកាលៈទេសៈផ្ទាល់ខ្លួន។ លទ្ធផលទាំងនេះមិនមែនជាការធានាសម្រាប់ករណីផ្សេងទេ។ បានលុបព័ត៌មានផ្ទាល់ខ្លួន។ ករណី CP2000 ត្រូវបានផ្សាយដោយ Nini Tax។</p>
@@ -622,6 +641,51 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
   </div>
 </section>
 
+
+<section class="section price" id="pricing">
+  <div class="wrap">
+    <p class="over">តម្លៃ</p>
+    <h2 class="h2">អ្នកនឹងដឹងតម្លៃមុនពេលខ្ញុំចាប់ផ្តើម។</h2>
+    <div class="price-board">
+      <table class="ptable">
+        <caption>ឯកសារពន្ធបុគ្គល · W-2</caption>
+        <tbody>
+          <tr><th scope="row">Single <span class="status-km">នៅលីវ</span></th><td>$89</td></tr>
+          <tr><th scope="row">Married filing separately <span class="status-km">រៀបការ ប្រកាសដាច់ដោយឡែក</span></th><td>$119</td></tr>
+          <tr><th scope="row">Head of household <span class="status-km">មេគ្រួសារ</span></th><td>$169</td></tr>
+          <tr><th scope="row">Qualifying widow(er) <span class="status-km">មេម៉ាយដែលមានសិទ្ធិ</span></th><td>$169</td></tr>
+          <tr><th scope="row">Married filing jointly <span class="status-km">រៀបការ ប្រកាសរួមគ្នា</span></th><td>$199</td></tr>
+        </tbody>
+      </table>
+      <table class="ptable">
+        <caption>ធ្វើការឯករាជ្យ (Self-employed)</caption>
+        <tbody>
+          <tr><th scope="row">Schedule C</th><td>$189</td></tr>
+          <tr><th scope="row">Schedule D</th><td>$229</td></tr>
+          <tr><th scope="row">Schedule E</th><td>$279</td></tr>
+          <tr><th scope="row">Schedule F</th><td>$279</td></tr>
+          <tr><th scope="row">ឯកសារបន្ថែម <span class="status-km">Additional schedules</span></th><td>ចាប់ពី $329</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="notes">
+      <div class="note">
+        <h3>ឯកសារពន្ធអាជីវកម្ម</h3>
+        <p><b>ចាប់ពី $599</b> · Partnership, S-corp ឬ corporate returns។ តម្លៃអាចប្រែប្រួលតាមភាពស្មុគស្មាញ។</p>
+      </div>
+      <div class="note">
+        <h3>Bookkeeping</h3>
+        <p><b>ប្រចាំខែ តាមការស្នើសុំ</b> · ការកត់ត្រាគណនីប្រចាំខែ, quarterly estimates និង S-corp payroll។ តម្លៃអាស្រ័យលើបរិមាណ — ខ្ញុំនឹងប្រាប់តម្លៃក្រោយពីបានមើលសៀវភៅគណនី។</p>
+      </div>
+      <div class="note">
+        <h3>ការដោះស្រាយបំណុលពន្ធ</h3>
+        <p><b>តម្លៃថេរ ក្រោយពិនិត្យឥតគិតថ្លៃ</b> · ខ្ញុំប្រាប់តម្លៃក្រោយពីបានអាន transcript របស់អ្នក ហើយដឹងថាករណីនេះពាក់ព័ន្ធនឹងអ្វីខ្លះ។ ខ្ញុំមិនយកលុយច្រើនមុនពេលបានឃើញកំណត់ត្រាទេ។</p>
+      </div>
+    </div>
+    <p class="price__note">អ្វីដែលខ្ញុំមិនធ្វើ៖ ខ្ញុំមិនយកលុយច្រើនមុនពេលបានឃើញ transcript របស់អ្នកទេ មិនគិតថ្លៃជាភាគរយនៃប្រាក់សងវិញរបស់អ្នកទេ ហើយក៏មិនសន្យាថានឹងដោះស្រាយបាន ដើម្បីឱ្យអ្នកឈប់សួរដែរ។ បើក្រុមហ៊ុនណាមួយប្រាប់តម្លៃរាប់ពាន់ដុល្លារមុនពេលមើលកំណត់ត្រារបស់អ្នក សូមសួរមតិទីពីរ — ពីខ្ញុំ ឬពីអ្នកណាក៏បាន។</p>
+  </div>
+</section>
+
 <section class="section" id="book">
   <div class="wrap cta__grid">
     <div>
@@ -632,7 +696,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
         <div class="deet"><dt>ទូរស័ព្ទ</dt><dd><a href="tel:+19518897108">(951) 889-7108</a></dd></div>
         <div class="deet"><dt>អ៊ីមែល</dt><dd><a href="mailto:sreypok@nini.tax">sreypok@nini.tax</a></dd></div>
         <div class="deet"><dt>ទីតាំង</dt><dd>Menifee, California</dd></div>
-        <div class="deet"><dt>បម្រើសេវា</dt><dd>គ្រប់រដ្ឋទាំង ៥០</dd></div>
+        <div class="deet"><dt>បម្រើសេវា</dt><dd>គ្រប់រដ្ឋទាំង ៥០ (តាមអនឡាញ)</dd></div>
         <div class="deet"><dt>ភាសា</dt><dd>ខ្មែរ · English</dd></div>
         <div class="deet"><dt>Client portal</dt><dd><a href="https://ninitax.taxdome.com/" rel="noopener noreferrer" target="_blank">ninitax.taxdome.com</a></dd></div>
       </dl>
@@ -657,7 +721,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
     <div class="foot__in">
       <div>
         <a href="#top" class="mark"><span class="mark__n">NT</span><span class="mark__w">Nini Tax</span></a>
-        <p class="foot__note">ប៉ែន ស្រីប៉ុក, EA · ការតំណាងនៅចំពោះមុខ IRS ការកត់ត្រាបញ្ជី និងការប្រកាសពន្ធ សម្រាប់អតិថិជនទូទាំងសហរដ្ឋអាមេរិក ជាភាសាខ្មែរ និងអង់គ្លេស។</p>
+        <p class="foot__note">ប៉ែន ស្រីប៉ុក, EA · ការតំណាងនៅចំពោះមុខ IRS, bookkeeping និងការប្រកាសពន្ធ សម្រាប់អតិថិជនទូទាំងសហរដ្ឋអាមេរិក ជាភាសាខ្មែរ និងអង់គ្លេស។</p>
       </div>
       <div class="foot__links">
         <a href="index.html" hreflang="en" lang="en">Read in English</a>
@@ -665,8 +729,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
       </div>
     </div>
     <div class="foot__bot">
-      <span>© 2026 Nini Tax</span>
-      <span>IRS Enrolled Agent · CTEC-registered</span>
+      <span>© 2026 Nini Tax · ប៉ែន ស្រីប៉ុក, EA · IRS Enrolled Agent · CTEC-registered · Menifee, CA</span>
     </div>
   </div>
 </footer>
