@@ -282,47 +282,34 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
   .picks{grid-template-columns:1fr}
 }
 
-.kh-ribbon{
+.kh-corner{
   position:fixed;
-  top:0;
+  top:64px;
   right:0;
-  width:128px;
-  height:128px;
-  overflow:hidden;
-  z-index:50;
+  width:168px;
+  height:168px;
+  z-index:30;
   pointer-events:none;
+  clip-path:polygon(0 0,100% 0,100% 100%);
+  background:linear-gradient(#032EA1 0 25%,#E00025 25% 75%,#032EA1 75%);
 }
-.kh-ribbon__band{
+.kh-corner svg{
   position:absolute;
-  top:26px;
-  right:-42px;
-  width:180px;
-  height:36px;
-  transform:rotate(45deg);
-  background:linear-gradient(to bottom,#032EA1 0 25%,#E00025 25% 75%,#032EA1 75%);
-  box-shadow:0 3px 10px rgba(26,20,16,.22);
-}
-.kh-ribbon__band svg{
-  position:absolute;
-  left:50%;
-  top:50%;
-  width:26px;
-  height:16px;
-  transform:translate(-50%,-50%);
+  top:32%;
+  right:11%;
+  width:42%;
+  height:auto;
   display:block;
+  filter:drop-shadow(0 1px 0 rgba(0,0,0,.12));
 }
-.nav__end{padding-right:3.5rem}
 @media(max-width:860px){
-  .kh-ribbon{width:110px;height:110px}
-  .kh-ribbon__band{top:22px;right:-36px;width:156px;height:32px}
-  .kh-ribbon__band svg{width:22px;height:14px}
-  .nav__end{padding-right:2.75rem}
+  .kh-corner{top:58px;width:min(48vw,196px);height:min(48vw,196px)}
 }
 
 </style>
 </head>
 <body>
-<div class="kh-ribbon" aria-hidden="true"><span class="kh-ribbon__band"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24" focusable="false"><g fill="#F4F4F4"><path d="M4.5 16.4h27v1.6h-27z"/><path d="M18 7.1l1.55 7.2h-3.1z"/><path d="M12.2 9.6l1.2 5.7h-2.4z"/><path d="M23.8 9.6l1.2 5.7h-2.4z"/><path d="M8.4 12.2l.85 4.2H7.55z"/><path d="M27.6 12.2l.85 4.2h-1.7z"/><rect x="14.6" y="13.3" width="6.8" height="3.1"/><rect x="16.2" y="11.6" width="3.6" height="1.7"/></g></svg></span></div>
+<div class="kh-corner" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24" focusable="false"><g fill="#F4F4F4"><path d="M4.5 16.4h27v1.6h-27z"/><path d="M18 7.1l1.55 7.2h-3.1z"/><path d="M12.2 9.6l1.2 5.7h-2.4z"/><path d="M23.8 9.6l1.2 5.7h-2.4z"/><path d="M8.4 12.2l.85 4.2H7.55z"/><path d="M27.6 12.2l.85 4.2h-1.7z"/><rect x="14.6" y="13.3" width="6.8" height="3.1"/><rect x="16.2" y="11.6" width="3.6" height="1.7"/></g></svg></div>
 
 <nav class="nav"><div class="wrap nav__in">
   <a href="#top" class="mark"><span class="mark__n">NT</span><span class="mark__w">Nini Tax</span></a>

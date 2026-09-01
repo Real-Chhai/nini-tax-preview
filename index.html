@@ -308,6 +308,30 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
   .picks{grid-template-columns:1fr}
 }
 
+.kh-corner{
+  position:fixed;
+  top:64px;
+  right:0;
+  width:168px;
+  height:168px;
+  z-index:30;
+  pointer-events:none;
+  clip-path:polygon(0 0,100% 0,100% 100%);
+  background:linear-gradient(#032EA1 0 25%,#E00025 25% 75%,#032EA1 75%);
+}
+.kh-corner svg{
+  position:absolute;
+  top:32%;
+  right:11%;
+  width:42%;
+  height:auto;
+  display:block;
+  filter:drop-shadow(0 1px 0 rgba(0,0,0,.12));
+}
+@media(max-width:860px){
+  .kh-corner{top:58px;width:min(48vw,196px);height:min(48vw,196px)}
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -410,6 +434,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
 </script>
 </head>
 <body>
+<div class="kh-corner" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24" focusable="false"><g fill="#F4F4F4"><path d="M4.5 16.4h27v1.6h-27z"/><path d="M18 7.1l1.55 7.2h-3.1z"/><path d="M12.2 9.6l1.2 5.7h-2.4z"/><path d="M23.8 9.6l1.2 5.7h-2.4z"/><path d="M8.4 12.2l.85 4.2H7.55z"/><path d="M27.6 12.2l.85 4.2h-1.7z"/><rect x="14.6" y="13.3" width="6.8" height="3.1"/><rect x="16.2" y="11.6" width="3.6" height="1.7"/></g></svg></div>
 
 <nav class="nav"><div class="wrap nav__in">
   <a href="#top" class="mark"><span class="mark__n">NT</span><span class="mark__w">Nini Tax</span></a>
