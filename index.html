@@ -18,15 +18,15 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="km_KH">
 <meta property="og:url" content="https://www.nini.tax/">
-<meta property="og:title" content="Whatever the letter says, this is fixable.">
-<meta property="og:description" content="Sreypok Pen, EA — an IRS Enrolled Agent licensed in all 50 states. Free transcript review. ខ្ញុំនិយាយភាសាខ្មែរ។">
+<meta property="og:title" content="IRS tax problems. A clear path forward.">
+<meta property="og:description" content="Work directly with Sreypok Pen, Enrolled Agent, in English or Khmer. Free first call and transcript review.">
 <meta property="og:image" content="https://www.nini.tax/owner.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Sreypok Pen, Enrolled Agent at Nini Tax">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Whatever the letter says, this is fixable.">
-<meta name="twitter:description" content="Sreypok Pen, EA — IRS Enrolled Agent. Free transcript review. English and Khmer.">
+<meta name="twitter:title" content="IRS tax problems. A clear path forward.">
+<meta name="twitter:description" content="Sreypok Pen, EA — IRS Enrolled Agent. Free first call. English and Khmer.">
 <meta name="twitter:image" content="https://www.nini.tax/owner.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,14 +34,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Kantumruy+Pro:wght@400;500;600&family=Noto+Serif+Khmer:wght@400;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --page:#E4D9C8;
-  --surface:#F0E6D8;
+  --page:#F5EDE0;
+  --surface:#FFF8EE;
   --ink:#1A1410;
   --body:#2F2A25;
   --muted:#5C554C;
-  --gold:#E0A81A;
+  --gold:#F9C349;
+  --gold-hot:#FFB100;
   --gold-ink:#1A1410;
-  --gold-deep:#8A6410;
+  --gold-deep:#7A5808;
   --hair:rgba(26,20,16,.16);
   --d:"Newsreader",Georgia,serif;
   --s:"Atkinson Hyperlegible",system-ui,sans-serif;
@@ -56,207 +57,226 @@ img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 h1,h2,h3{margin:0;font-family:var(--d);font-weight:400;color:var(--ink);line-height:1.22;font-optical-sizing:auto}
 p{margin:0}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+:focus-visible{outline:2px solid var(--gold-hot);outline-offset:3px}
 .wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
 .h2 em{font-style:italic;font-weight:400}
 
-/* nav — light, Atkinson wordmark, gold NT square */
-.nav{background:#241C16;color:#F4EFE4;position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(224,168,26,.28)}
-.nav__in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem}
-.mark{display:inline-flex;align-items:center;gap:.7rem}
+.nav{background:#241C16;color:#F4EFE4;position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(249,195,73,.28)}
+.nav__in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:.75rem}
+.mark{display:inline-flex;align-items:center;gap:.7rem;min-width:0}
 .mark__n{width:34px;height:34px;display:grid;place-items:center;background:var(--gold);color:var(--gold-ink);font-family:var(--d);font-size:.78rem;font-weight:600;flex:none}
-.mark__w{font-family:var(--s);font-size:.95rem;font-weight:700;color:#F4EFE4;letter-spacing:0}
-.nav__links{display:flex;gap:1.6rem;font-size:.875rem;font-weight:400;color:#C9BFB2}
+.mark__w{font-family:var(--s);font-size:.95rem;font-weight:700;color:#F4EFE4;letter-spacing:0;white-space:nowrap}
+.nav__links{display:flex;gap:1.35rem;font-size:.875rem;font-weight:400;color:#C9BFB2}
 .nav__links a:hover{color:#F4EFE4}
-.nav__end{display:flex;align-items:center;gap:1.15rem}
-.nav__lang{font-family:var(--km);font-size:.95rem;color:#C9BFB2}
-.nav__lang:hover{color:#F4EFE4}
-.nav__tel{font-size:.875rem;font-weight:700;color:#F4EFE4}
-@media(max-width:860px){.nav__links a:not([href="#tools"]){display:none}.nav__tel{display:none}.nav__in{height:58px}}
-@media(max-width:420px){.mark__w{display:none}}
+.nav__end{display:flex;align-items:center;gap:.85rem;flex:none}
+.nav__tel{font-size:.875rem;font-weight:700;color:#F4EFE4;white-space:nowrap}
+.nav__toggle{
+  display:none;appearance:none;-webkit-appearance:none;
+  width:42px;height:42px;border:1px solid rgba(244,239,228,.28);border-radius:6px;
+  background:transparent;color:#F4EFE4;cursor:pointer;padding:0;align-items:center;justify-content:center;
+}
+.nav__toggle svg{display:block}
+.nav__drawer{display:none;background:#1A1410;border-bottom:1px solid rgba(249,195,73,.22)}
+.nav__drawer .wrap{padding-block:.85rem 1.1rem;display:grid;gap:.15rem}
+.nav__drawer a{display:block;padding:.7rem .2rem;font-size:1rem;font-weight:700;color:#F4EFE4;border-bottom:1px solid rgba(244,239,228,.1)}
+.nav__drawer a:last-child{border-bottom:0}
+.nav.is-open .nav__drawer{display:block}
+@media(max-width:860px){
+  .nav__links{display:none}
+  .nav__tel{display:none}
+  .nav__toggle{display:inline-flex}
+  .nav__in{height:58px}
+}
+@media(max-width:390px){.mark__w{font-size:.88rem}}
 
-/* hero — photograph on the warm page */
-.hero{padding:clamp(2.25rem,5.5vw,4rem) 0 clamp(3rem,7vw,5.25rem)}
-.hero__grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(2.25rem,6vw,5rem);align-items:center}
-.kicker{display:flex;align-items:center;gap:.65rem;flex-wrap:wrap;font-size:.9375rem;font-weight:700;color:var(--ink);margin-bottom:1rem}
+.hero{padding:clamp(1.75rem,4.5vw,3.25rem) 0 clamp(2.5rem,6vw,4.25rem)}
+.hero__grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(1.75rem,5vw,4.5rem);align-items:center}
+.kicker{display:flex;align-items:center;gap:.65rem;flex-wrap:wrap;font-size:.9375rem;font-weight:700;color:var(--ink);margin-bottom:.85rem}
 .ea{display:inline-flex;align-items:center;background:var(--gold);color:var(--gold-ink);font-size:.625rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.22rem .48rem;line-height:1.2}
-.rule{width:2.4rem;height:2px;background:var(--gold);border:0;margin:0 0 1.35rem}
-.hero h1{font-size:clamp(2.35rem,4.6vw,3.5rem);line-height:1.16;max-width:14ch;margin-bottom:.85rem}
-.hero h1 em{font-style:italic;color:var(--gold);font-weight:400}
+.rule{width:2.4rem;height:2px;background:var(--gold-hot);border:0;margin:0 0 1.1rem}
+.hero h1{font-size:clamp(2.15rem,4.4vw,3.25rem);line-height:1.14;max-width:16ch;margin-bottom:.75rem}
+.hero h1 em{font-style:italic;color:var(--gold-deep);font-weight:400}
 :lang(km), .khmer-band, .km-line{line-height:1.9}
-.km-line{font-family:var(--km);font-size:1.0625rem;color:var(--gold-deep);line-height:1.9;margin:0 0 1.2rem}
-.lede{color:var(--body);max-width:34rem;margin-bottom:1.15rem;font-size:1.125rem;line-height:1.75}
-.proof{font-size:.875rem;color:var(--muted);margin:0 0 1.85rem;line-height:1.7}
+.km-line{font-family:var(--km);font-size:1.0625rem;color:var(--gold-deep);line-height:1.9;margin:0 0 .85rem}
+.lede{color:var(--body);max-width:34rem;margin-bottom:.85rem;font-size:1.125rem;line-height:1.7}
+.proof{font-size:.8125rem;color:var(--muted);margin:0 0 1.15rem;line-height:1.65}
 .proof a{color:var(--ink);border-bottom:1px solid var(--hair);padding-bottom:1px;font-weight:700}
-.result-rail{margin:0 0 1.6rem;padding-top:1rem;border-top:1px solid var(--hair);font-size:.95rem;color:var(--body);max-width:34rem;line-height:1.55}
-.result-rail a{font-weight:700;color:var(--ink);border-bottom:1px solid var(--ink)}
 .proof a:hover{border-color:var(--ink)}
-.hero__cta{display:flex;flex-wrap:wrap;gap:.85rem;align-items:stretch}
-.dial{display:inline-flex;flex-direction:column;justify-content:center;background:var(--gold);color:var(--gold-ink);padding:1.05rem 1.75rem 1.15rem;min-width:min(100%,20rem);border-radius:6px}
+.hero__cta{display:flex;flex-wrap:wrap;gap:.75rem;align-items:stretch;margin-bottom:1.15rem}
+.dial{display:inline-flex;flex-direction:column;justify-content:center;background:var(--gold);color:var(--gold-ink);padding:1rem 1.6rem 1.1rem;min-width:min(100%,18.5rem);border-radius:6px}
 .dial:hover{filter:brightness(.97)}
 .dial__k{font-size:.75rem;font-weight:700;margin-bottom:.1rem}
-.dial__n{font-size:clamp(1.7rem,3.1vw,2.2rem);font-weight:700;letter-spacing:-.03em;line-height:1.1}
-.btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--s);font-size:.9375rem;font-weight:700;padding:1.15rem 1.5rem;border:1px solid var(--ink);color:var(--ink);background:transparent;border-radius:6px}
+.dial__n{font-size:clamp(1.55rem,3vw,2rem);font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--s);font-size:.9375rem;font-weight:700;padding:1.05rem 1.4rem;border:1px solid var(--ink);color:var(--ink);background:transparent;border-radius:6px}
 .btn:hover{background:var(--ink);color:var(--page)}
+.btn--gold{background:var(--gold);border-color:var(--gold);color:var(--gold-ink)}
+.btn--gold:hover{filter:brightness(.97);background:var(--gold);color:var(--gold-ink)}
+.case-teaser{margin:0;padding-top:1rem;border-top:1px solid var(--hair);font-size:.95rem;color:var(--body);max-width:34rem;line-height:1.55}
+.case-teaser a{font-weight:700;color:var(--ink);border-bottom:1px solid var(--ink)}
 .portrait{margin:0}
-.portrait img{width:100%;height:auto;max-height:min(36rem,62vh);aspect-ratio:4/5;object-fit:cover;object-position:center 16%;box-shadow:0 22px 48px rgba(26,20,16,.1)}
-.portrait figcaption{margin-top:.8rem;font-size:.6875rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.portrait img{width:100%;height:auto;max-height:min(34rem,58vh);aspect-ratio:4/5;object-fit:cover;object-position:center 16%;box-shadow:0 22px 48px rgba(26,20,16,.1)}
+.portrait figcaption{margin-top:.75rem;font-size:.6875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 @media(max-width:860px){
-  .hero__grid{grid-template-columns:1fr;gap:2.25rem}
+  .hero__grid{grid-template-columns:1fr;gap:1.85rem}
   .dial,.btn{width:100%}
   .hero h1{max-width:none}
 }
 
-/* sections */
-.section{padding:clamp(4rem,8.5vw,6.75rem) 0}
-.over{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:1.05rem}
-.h2{font-size:clamp(1.85rem,3.5vw,2.6rem);max-width:20ch;margin-bottom:1.2rem}
-.lead{color:var(--muted);max-width:38rem;font-size:1.125rem}
+.section{padding:clamp(3.25rem,7vw,5.75rem) 0}
+.over{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+.h2{font-size:clamp(1.75rem,3.3vw,2.45rem);max-width:22ch;margin-bottom:1rem}
+.lead{color:var(--muted);max-width:38rem;font-size:1.0625rem}
 
-/* symptoms — stacked list, not a roman grid */
-.sym{list-style:none;margin:2.5rem 0 0;padding:0;max-width:36rem}
-.sym li{padding:1.15rem 0;border-bottom:1px solid var(--hair);font-size:1.125rem;color:var(--body);line-height:1.55}
-.sym li:first-child{border-top:1px solid var(--hair)}
+.trust{padding:clamp(2rem,5vw,3rem) 0;background:var(--surface);border-block:1px solid var(--hair)}
+.trust__grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.5rem,4vw,3rem);align-items:start}
+.trust__quote{font-family:var(--d);font-size:clamp(1.2rem,2.4vw,1.45rem);line-height:1.5;color:var(--ink);margin:0 0 1rem}
+.trust__by{font-size:.875rem;color:var(--ink);margin-bottom:.35rem}
+.trust__src{font-size:.75rem;color:var(--muted)}
+.trust__case{padding:1.25rem 1.2rem 1.3rem;border:1px solid var(--hair);background:var(--page);border-radius:8px}
+.trust__case .result__tag{margin-bottom:.55rem}
+.trust__case p{font-family:var(--d);font-size:1.15rem;line-height:1.5;color:var(--ink)}
+.trust__meta{display:flex;flex-wrap:wrap;gap:.85rem 1.35rem;align-items:center;margin-top:1.35rem;font-size:.875rem}
+.trust__meta a{font-weight:700;border-bottom:1px solid var(--ink)}
+.disc{font-size:.8125rem;color:var(--muted);line-height:1.7;margin-top:1rem;max-width:46rem}
+@media(max-width:760px){.trust__grid{grid-template-columns:1fr}}
 
-/* about */
+.sym-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.sym-card{background:var(--surface);border:1px solid var(--hair);padding:1.25rem 1.2rem 1.35rem;border-radius:8px}
+.sym-card h3{font-size:1.2rem;margin-bottom:.55rem}
+.sym-card ul{list-style:none;margin:0;padding:0}
+.sym-card li{padding:.28rem 0;font-size:1rem;color:var(--body);line-height:1.5;padding-left:1rem;position:relative}
+.sym-card li::before{content:"";position:absolute;left:0;top:.7em;width:.4rem;height:.4rem;border-radius:50%;background:var(--gold-hot)}
+@media(max-width:700px){.sym-grid{grid-template-columns:1fr}}
+
+.decode-panel{margin-top:2.25rem}
+.decode-panel > summary{
+  list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:1rem 1.15rem;background:var(--ink);color:#F4EFE4;border-radius:10px;font-weight:700;
+}
+.decode-panel > summary::-webkit-details-marker{display:none}
+.decode-panel > summary span{font-size:.8125rem;font-weight:400;color:#C9C0B5}
+.decode-panel[open] > summary{border-radius:10px 10px 0 0}
+.decode-panel .tool{border-radius:0 0 10px 10px;margin:0}
+
 .about{background:var(--surface);border-block:1px solid var(--hair)}
-.about .wrap{display:grid;grid-template-columns:minmax(0,22rem) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:start}
-.about p{margin-bottom:1.1rem;max-width:40rem}
+.about .wrap{display:grid;grid-template-columns:minmax(0,20rem) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+.about p{margin-bottom:1rem;max-width:40rem}
 .about p:last-of-type{margin-bottom:0}
 .about strong{font-weight:700;color:var(--ink)}
-.dir{display:inline-block;margin-top:1.45rem;font-size:.875rem;font-weight:700;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:2px}
+.dir{display:inline-block;margin-top:1.2rem;font-size:.875rem;font-weight:700;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:2px}
 .dir:hover{opacity:.7}
 @media(max-width:760px){.about .wrap{grid-template-columns:1fr}}
 
-/* services — white cards, 3px gold left edge */
-.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.35rem;margin-top:2.75rem}
-.svc{background:var(--surface);padding:1.85rem 1.6rem 1.9rem 1.7rem;border-left:3px solid var(--gold);display:flex;flex-direction:column;box-shadow:0 1px 0 var(--hair)}
-.svc h3{font-size:1.45rem;margin-bottom:.5rem}
-.svc p{font-size:1.0625rem;color:var(--muted);line-height:1.65}
-.svc ul{list-style:none;margin:1rem 0 0;padding:0;font-size:1rem;color:var(--body);line-height:1.55}
-.svc li{padding:.22rem 0}
-.svc__meta{display:block;margin-top:auto;padding-top:1rem;margin-top:1.15rem;border-top:1px solid var(--hair);font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-@media(max-width:760px){.svcs{grid-template-columns:1fr}}
+.svcs{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:1.15rem;margin-top:2.25rem}
+.svc{background:var(--surface);padding:1.6rem 1.4rem 1.7rem 1.55rem;border-left:3px solid var(--gold);display:flex;flex-direction:column;box-shadow:0 1px 0 var(--hair)}
+.svc--lead{background:var(--ink);color:#E8E0D4;border-left-color:var(--gold);box-shadow:0 18px 36px rgba(26,20,16,.12)}
+.svc--lead h3{color:#F4EFE4;font-size:1.65rem}
+.svc--lead p,.svc--lead li{color:#C9C0B5}
+.svc--lead .svc__meta{color:var(--gold);border-top-color:rgba(244,239,228,.16)}
+.svc h3{font-size:1.35rem;margin-bottom:.45rem}
+.svc p{font-size:1.02rem;color:var(--muted);line-height:1.6}
+.svc ul{list-style:none;margin:.85rem 0 0;padding:0;font-size:.98rem;color:var(--body);line-height:1.5}
+.svc li{padding:.18rem 0}
+.svc__meta{display:block;margin-top:auto;padding-top:.9rem;margin-top:1rem;border-top:1px solid var(--hair);font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+@media(max-width:860px){.svcs{grid-template-columns:1fr}}
 
-/* cases — stay light */
-.results{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,3.5rem);margin-top:.5rem}
-@media(max-width:740px){.results{grid-template-columns:1fr}}
 .result__tag{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.85rem;font-weight:700}
-.results .result p{font-family:var(--d);font-size:1.3rem;line-height:1.55;color:var(--ink);font-optical-sizing:auto}
-.disc{font-size:.8125rem;color:var(--muted);line-height:1.75;margin-top:2.25rem;max-width:46rem}
 
-/* reviews */
-.revs-sec{background:var(--surface);border-block:1px solid var(--hair)}
-.badge{display:inline-flex;align-items:center;gap:.9rem;border:1px solid var(--hair);padding:.8rem 1.25rem;margin-bottom:2.5rem;background:var(--page)}
-.badge__big{font-family:var(--d);font-size:1.7rem;color:var(--ink);line-height:1}
-.badge__txt{font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);line-height:1.7}
-.revs{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:clamp(2rem,4vw,3rem)}
-.rev{display:flex;flex-direction:column}
-.rev p{font-family:var(--d);font-size:1.25rem;line-height:1.55;color:var(--ink);margin:0 0 1.2rem;font-optical-sizing:auto}
-.rev__by{margin-top:auto;font-size:.875rem;color:var(--ink)}
-.rev__src{font-size:.75rem;color:var(--muted)}
-.fb-all{display:block;margin:0 0 2.25rem;font-size:.9375rem;font-weight:700;color:var(--ink)}
-.fb-all a{border-bottom:1px solid var(--ink)}
-.fb-all a:hover{color:var(--gold-deep);border-bottom-color:var(--gold-deep)}
-.badge{margin-bottom:.85rem}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(13.5rem,1fr));gap:clamp(1.5rem,3.5vw,2.75rem);margin-top:2.25rem}
+.step__n{font-family:var(--d);font-style:italic;font-size:1.75rem;color:var(--muted);line-height:1;display:block;margin-bottom:.75rem}
+.step h3{font-size:1.25rem;margin-bottom:.4rem}
+.step p{font-size:1.02rem;color:var(--muted);line-height:1.7}
 
-/* steps */
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(13.5rem,1fr));gap:clamp(2rem,4vw,3rem);margin-top:2.75rem}
-.step__n{font-family:var(--d);font-style:italic;font-size:1.85rem;color:var(--muted);line-height:1;display:block;margin-bottom:.9rem}
-.step h3{font-size:1.3rem;margin-bottom:.5rem}
-.step p{font-size:1.0625rem;color:var(--muted);line-height:1.75}
-
-/* pricing — white table, high contrast */
 .price{background:var(--surface);border-block:1px solid var(--hair)}
-.price-board{background:var(--surface);margin-top:2.25rem;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,3.5rem)}
+.price-board{background:transparent;margin-top:1.85rem;display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3rem)}
 @media(max-width:720px){.price-board{grid-template-columns:1fr}}
-.ptable{width:100%;border-collapse:collapse;font-size:1.0625rem}
-.ptable caption{caption-side:top;text-align:left;font-family:var(--d);font-size:1.4rem;color:var(--ink);margin-bottom:.85rem;font-optical-sizing:auto}
-.ptable th{text-align:left;font-weight:400;color:var(--body);padding:.7rem 1rem .7rem 0;border-bottom:1px solid var(--hair)}
-.ptable td{text-align:right;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;padding:.7rem 0;border-bottom:1px solid var(--hair);white-space:nowrap}
+.ptable{width:100%;border-collapse:collapse;font-size:1.02rem}
+.ptable caption{caption-side:top;text-align:left;font-family:var(--d);font-size:1.3rem;color:var(--ink);margin-bottom:.75rem;font-optical-sizing:auto}
+.ptable th{text-align:left;font-weight:400;color:var(--body);padding:.65rem 1rem .65rem 0;border-bottom:1px solid var(--hair)}
+.ptable td{text-align:right;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;padding:.65rem 0;border-bottom:1px solid var(--hair);white-space:nowrap}
 .ptable tr:last-child th,.ptable tr:last-child td{border-bottom:0}
-.notes{display:grid;gap:1.15rem;margin-top:2.25rem}
-.note{padding:1.25rem 0 0;border-top:1px solid var(--hair)}
-.note h3{font-size:1.25rem;margin-bottom:.35rem}
-.note p{font-size:1.0625rem;color:var(--muted);line-height:1.7}
+.notes{display:grid;gap:1rem;margin-top:1.85rem}
+.note{padding:1.1rem 0 0;border-top:1px solid var(--hair)}
+.note h3{font-size:1.15rem;margin-bottom:.3rem}
+.note p{font-size:1.02rem;color:var(--muted);line-height:1.65}
 .note b{color:var(--ink);font-weight:700;font-family:var(--s)}
-.price__note{margin-top:2.25rem;max-width:44rem;font-size:1.0625rem;color:var(--muted);padding-left:1.15rem;border-left:1px solid var(--hair);line-height:1.8}
+.price__note{margin-top:1.85rem;max-width:44rem;font-size:1.02rem;color:var(--muted);padding-left:1.1rem;border-left:1px solid var(--hair);line-height:1.75}
+.price-tools{margin-top:2.25rem}
 
-/* security */
-.sec__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:2.5rem;margin-top:2.75rem}
-.sec__i h3{font-size:1.25rem;margin-bottom:.5rem}
-.sec__i p{font-size:1.0625rem;color:var(--muted);line-height:1.75}
-
-/* khmer band — light */
 .khmer-band{text-align:center;border-block:1px solid var(--hair);background:var(--surface)}
-.khmer-band h2{font-family:var(--km);font-weight:500;font-size:clamp(1.45rem,3.2vw,2.05rem);line-height:1.7;margin-bottom:1.25rem}
-.khmer-band p{font-family:var(--km);margin-bottom:.85rem;line-height:2;max-width:32rem;margin-inline:auto;color:var(--body)}
-.khmer-band .btn{margin-top:1.5rem;font-family:var(--km);font-weight:500}
+.khmer-band h2{font-family:var(--km);font-weight:500;font-size:clamp(1.35rem,3vw,1.9rem);line-height:1.7;margin-bottom:1rem}
+.khmer-band p{font-family:var(--km);margin-bottom:.75rem;line-height:2;max-width:32rem;margin-inline:auto;color:var(--body)}
+.khmer-band .btn{margin-top:1.25rem;font-family:var(--km);font-weight:500}
 
-/* faq */
 .faq details{border-bottom:1px solid var(--hair)}
 .faq details:first-of-type{border-top:1px solid var(--hair)}
-.faq summary{list-style:none;cursor:pointer;padding:1.4rem 2.5rem 1.4rem 0;position:relative;font-family:var(--d);font-size:1.3rem;color:var(--ink);line-height:1.4;font-optical-sizing:auto}
+.faq summary{list-style:none;cursor:pointer;padding:1.3rem 2.5rem 1.3rem 0;position:relative;font-family:var(--d);font-size:1.25rem;color:var(--ink);line-height:1.4;font-optical-sizing:auto}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"+";position:absolute;right:.25rem;top:50%;transform:translateY(-50%);font-family:var(--s);font-size:1.35rem;color:var(--muted);line-height:1}
 .faq details[open] summary::after{content:"−"}
-.faq__a{padding:0 3rem 1.6rem 0;color:var(--muted);max-width:52rem;font-size:1.0625rem;line-height:1.8}
-.faq__a p+p{margin-top:.85rem}
+.faq__a{padding:0 3rem 1.5rem 0;color:var(--muted);max-width:52rem;font-size:1.02rem;line-height:1.8}
+.faq__a p+p{margin-top:.8rem}
+.faq__a a{font-weight:700;color:var(--ink);border-bottom:1px solid var(--ink)}
 
-/* book — stays light */
-.cta__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2.25rem,5vw,4rem);align-items:start}
-.deets{margin:1.85rem 0 0;padding:0}
-.deet{display:flex;justify-content:space-between;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--hair);font-size:1.0625rem}
+.cta__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.75rem,4.5vw,3.5rem);align-items:start}
+.deets{margin:1.5rem 0 0;padding:0}
+.deet{display:flex;justify-content:space-between;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--hair);font-size:1.02rem}
 .deet:first-child{border-top:1px solid var(--hair)}
 .deet dt{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:.25rem;font-weight:700}
 .deet dd{margin:0;color:var(--ink);text-align:right;font-weight:700}
 .deet a:hover{border-bottom:1px solid var(--ink)}
-.cta-card{background:var(--surface);padding:1.5rem 1.35rem 1.25rem;border:1px solid var(--hair)}
-.cta-card > p{color:var(--body);margin-bottom:1.15rem}
-.cta-card .dial{width:100%;margin-bottom:.75rem}
-.cta-card .btn{width:100%;margin-bottom:.75rem}
-.embed{overflow:hidden;background:#fff;min-height:24rem;border:1px solid var(--hair)}
+.cta-card{background:var(--surface);padding:1.35rem 1.25rem 1.15rem;border:1px solid var(--hair)}
+.cta-card > p{color:var(--body);margin-bottom:1rem;font-size:1.02rem}
+.cta-card .dial{width:100%;margin-bottom:.65rem}
+.cta-card .btn{width:100%;margin-bottom:.65rem}
+.book-alts{display:grid;gap:.55rem;margin-bottom:1rem}
+.book-alts a{display:block;text-align:center;font-weight:700;padding:.95rem 1rem;border-radius:6px}
+.embed{overflow:hidden;background:#fff;min-height:24rem;border:1px solid var(--hair);position:relative}
 .embed iframe,.embed .calendly-inline-widget{min-width:280px;height:680px;width:100%;display:block}
+.cal-loading{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.65rem;
+  background:var(--page);color:var(--muted);font-size:.95rem;font-weight:700;z-index:1;padding:1.5rem;text-align:center;
+}
+.cal-loading[hidden]{display:none !important}
+.cal-loading__spin{
+  width:1.5rem;height:1.5rem;border:2px solid var(--hair);border-top-color:var(--gold-hot);border-radius:50%;
+  animation:spin .8s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
 .cal-fallback{display:block;text-align:center;padding:1rem;font-size:.875rem;font-weight:700;color:var(--ink);background:var(--page);border-top:1px solid var(--hair)}
 .cal-fallback:hover{background:var(--ink);color:var(--page)}
 @media(max-width:800px){.cta__grid{grid-template-columns:1fr}}
 
-/* footer — the only dark band */
-.foot{background:var(--ink);color:#C9C0B5;padding:2.75rem 0 6.25rem;font-size:.9375rem}
+.foot{background:var(--ink);color:#C9C0B5;padding:2.5rem 0 6.25rem;font-size:.9375rem}
 .foot__in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem}
 .foot a:hover{color:#FBF8F3}
 .foot__note{max-width:24rem;line-height:1.85;margin-top:1rem;color:#C9C0B5}
 .foot .mark__w{color:#FBF8F3}
-.foot__links{display:flex;flex-wrap:wrap;gap:1.35rem;font-size:.875rem;align-items:flex-start;color:#C9C0B5}
-.foot__bot{border-top:1px solid rgba(251,248,243,.12);margin-top:2rem;padding-top:1.5rem;font-size:.75rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;color:#9A9288}
+.foot__links{display:flex;flex-wrap:wrap;gap:1.2rem;font-size:.875rem;align-items:flex-start;color:#C9C0B5}
+.foot__bot{border-top:1px solid rgba(251,248,243,.12);margin-top:1.75rem;padding-top:1.35rem;font-size:.75rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;color:#9A9288}
 
-/* sticky mobile bar — white, gold Call */
 .bar{position:fixed;bottom:0;left:0;right:0;z-index:50;display:none;background:var(--surface);border-top:1px solid var(--hair)}
 .bar a{flex:1;padding:1rem .5rem;text-align:center;font-size:.8125rem;font-weight:700;color:var(--ink)}
 .bar a.p{background:var(--gold);color:var(--gold-ink)}
 @media(max-width:860px){.bar{display:flex}body{padding-bottom:4.25rem}html{scroll-padding-top:70px}}
-/* tools — dark band, gold result */
-.tools{background:var(--ink);color:#F4EFE4;border:0}
-.tools .h2{color:#F4EFE4}
-.tools .lead{color:#C9C0B5;max-width:38rem}
-.tools .over{color:var(--gold)}
-.tool-stack{display:grid;gap:1.35rem;margin-top:2.5rem}
-.tool{background:#2C241C;padding:1.75rem 1.5rem 1.85rem;border:1px solid rgba(224,168,26,.28);border-radius:10px;box-shadow:0 22px 40px rgba(0,0,0,.28)}
-.tool h3{font-size:1.55rem;margin-bottom:.4rem;color:#F4EFE4}
-.tool > .tool-lead{font-size:1.0625rem;color:#C9C0B5;margin-bottom:1.15rem;line-height:1.65;max-width:40rem}
-.tool__q{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:1.25rem 0 .7rem}
+
+.tools-anchor{scroll-margin-top:80px}
+.tool{background:#2C241C;padding:1.55rem 1.35rem 1.65rem;border:1px solid rgba(249,195,73,.28);border-radius:10px;box-shadow:0 18px 36px rgba(0,0,0,.22);color:#F4EFE4}
+.tool h3{font-size:1.4rem;margin-bottom:.35rem;color:#F4EFE4}
+.tool > .tool-lead{font-size:1rem;color:#C9C0B5;margin-bottom:1rem;line-height:1.6;max-width:40rem}
+.tool__q{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:1.1rem 0 .65rem}
 html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:500;font-size:.875rem}
-.picks{display:grid;grid-template-columns:repeat(auto-fit,minmax(11.5rem,1fr));gap:.6rem}
+.picks{display:grid;grid-template-columns:repeat(auto-fit,minmax(11.5rem,1fr));gap:.55rem}
 .pick{
   appearance:none;-webkit-appearance:none;
   display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
-  min-height:56px;padding:.85rem 1.05rem;gap:.15rem;
+  min-height:52px;padding:.8rem 1rem;gap:.15rem;
   border:1.5px solid rgba(244,239,228,.28);background:transparent;color:#F4EFE4;
-  font-family:inherit;font-size:1.02rem;font-weight:700;line-height:1.3;
+  font-family:inherit;font-size:1rem;font-weight:700;line-height:1.3;
   border-radius:8px;cursor:pointer;text-align:left;transition:background .15s ease,border-color .15s ease,transform .15s ease;
 }
-.pick em{font-style:normal;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--gold)}
-.pick[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--gold-ink);transform:translateY(-1px);box-shadow:0 8px 18px rgba(224,168,26,.28)}
+.pick em{font-style:normal;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.pick[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--gold-ink);transform:translateY(-1px);box-shadow:0 8px 18px rgba(249,195,73,.28)}
 .pick[aria-pressed="true"] em{color:var(--gold-ink)}
 @media (hover:hover){
   .pick:hover{border-color:#F4EFE4;background:rgba(244,239,228,.06)}
@@ -264,32 +284,32 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
 }
 .tool-sub{margin-top:.15rem}
 .tool-sub[hidden],.decode-body[hidden]{display:none !important}
-.fee-out{margin-top:1.35rem;padding:1.35rem 1.3rem 1.4rem;background:var(--gold);color:var(--gold-ink);border-radius:10px}
-.fee-out:empty,.fee-out:not(.is-on){background:transparent;padding:1.1rem 0 0;border-top:1px solid rgba(244,239,228,.12);border-radius:0;color:#C9C0B5}
+.fee-out{margin-top:1.2rem;padding:1.2rem 1.15rem 1.25rem;background:var(--gold);color:var(--gold-ink);border-radius:10px}
+.fee-out:empty,.fee-out:not(.is-on){background:transparent;padding:1rem 0 0;border-top:1px solid rgba(244,239,228,.12);border-radius:0;color:#C9C0B5}
 .fee-out__kicker{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:0 0 .15rem}
-.fee-out__num{font-family:var(--d);font-size:clamp(3rem,9vw,4.4rem);color:inherit;line-height:.95;margin:0 0 .45rem;font-optical-sizing:auto;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
-.fee-out p{color:inherit;font-size:1.05rem;margin:0 0 .55rem;line-height:1.65;opacity:.92}
-.fee-out .disc{margin-top:.55rem;margin-bottom:.1rem;opacity:.78;font-size:.8125rem}
-.fee-cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.05rem}
-.fee-cta .dial{min-width:0;flex:1 1 14rem;padding:.9rem 1.25rem 1rem;background:#1A1410;color:#F4EFE4;border:0}
+.fee-out__num{font-family:var(--d);font-size:clamp(2.75rem,8vw,4rem);color:inherit;line-height:.95;margin:0 0 .4rem;font-optical-sizing:auto;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.fee-out p{color:inherit;font-size:1rem;margin:0 0 .5rem;line-height:1.6;opacity:.92}
+.fee-out .disc{margin-top:.5rem;margin-bottom:.1rem;opacity:.78;font-size:.8125rem}
+.fee-cta{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:.95rem}
+.fee-cta .dial{min-width:0;flex:1 1 14rem;padding:.85rem 1.15rem .95rem;background:#1A1410;color:#F4EFE4;border:0}
 .fee-cta .dial__k{color:var(--gold)}
-.fee-cta .dial__n{font-size:clamp(1.45rem,3vw,1.85rem);color:#F4EFE4}
+.fee-cta .dial__n{font-size:clamp(1.35rem,2.8vw,1.75rem);color:#F4EFE4}
 .fee-out.is-on .fee-cta .btn{min-width:0;flex:1 1 10rem;min-height:48px;border-color:#1A1410;color:#1A1410;background:transparent}
 .fee-out.is-on .fee-cta .btn:hover{background:#1A1410;color:#F4EFE4}
-.decode-body{margin-top:1.15rem;padding:1.25rem 1.2rem 1.3rem;background:#1A1410;border-radius:10px;border:1px solid rgba(224,168,26,.35)}
-.decode-body p{margin:0 0 .75rem;color:#E8E0D4;line-height:1.7;font-size:1.0625rem;max-width:40rem}
-.decode-urg{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--gold);color:var(--gold-ink);padding:.28rem .55rem;margin:0 0 .85rem;border-radius:4px}
-.decode-foot{margin-top:1.15rem;font-size:.8125rem;color:#9A9288;line-height:1.75;max-width:40rem}
-.irs-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-top:.25rem}
+.decode-body{margin-top:1rem;padding:1.15rem 1.1rem 1.2rem;background:#1A1410;border-radius:10px;border:1px solid rgba(249,195,73,.35)}
+.decode-body p{margin:0 0 .7rem;color:#E8E0D4;line-height:1.65;font-size:1.02rem;max-width:40rem}
+.decode-urg{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:var(--gold-ink);padding:.28rem .55rem;margin:0 0 .75rem;border-radius:4px}
+.decode-foot{margin-top:1rem;font-size:.8125rem;color:#9A9288;line-height:1.7;max-width:40rem}
+.irs-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-top:1.5rem}
 .irs-link{
   display:flex;flex-direction:column;justify-content:center;
-  min-height:72px;padding:1.05rem 1.15rem;
-  background:#1A1410;border:1px solid rgba(224,168,26,.4);
-  font-weight:700;color:#F4EFE4;font-size:1.05rem;line-height:1.35;border-radius:8px;
+  min-height:68px;padding:.95rem 1.05rem;
+  background:#1A1410;border:1px solid rgba(249,195,73,.4);
+  font-weight:700;color:#F4EFE4;font-size:1rem;line-height:1.35;border-radius:8px;
   position:relative
 }
-.irs-link span{font-family:var(--s);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:.3rem}
-.irs-link::after{content:"↗";position:absolute;right:1rem;top:1rem;color:var(--gold);font-size:.9rem}
+.irs-link span{font-family:var(--s);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:.25rem}
+.irs-link::after{content:"↗";position:absolute;right:.9rem;top:.9rem;color:var(--gold);font-size:.9rem}
 @media (hover:hover){.irs-link:hover{background:#352A20;border-color:var(--gold)}}
 
 .pick--hot{border-color:rgba(167,84,62,.5)}
@@ -310,7 +330,6 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
   .picks{grid-template-columns:1fr}
 }
 
-
 .kh-flag{display:block;width:22px;height:15px;flex:none;border-radius:2px;box-shadow:0 0 0 1px rgba(244,239,228,.3)}
 .nav__lang{
   display:inline-flex;align-items:center;gap:.45rem;
@@ -319,10 +338,9 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
   color:#F4EFE4;
 }
 .nav__lang:hover{color:#F4EFE4;border-color:rgba(244,239,228,.55)}
-.mark .kh-flag{width:22px;height:15px}
 @media(max-width:860px){
   .nav__lang{min-height:42px}
-  .nav__end{gap:.6rem}
+  .nav__end{gap:.55rem}
 }
 
 </style>
@@ -413,7 +431,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
         {
           "@type": "Question",
           "name": "How do I know my information is safe?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Documents move through an encrypted client portal, never email. A Written Information Security Plan is kept on file as the IRS requires of paid preparers, and records stay encrypted in storage and in transit." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Documents move through an encrypted TaxDome client portal, never email. W-2s, IDs, and anything with your Social Security number stay out of your inbox. Engagement letters, Form 8879, and the power of attorney are signed electronically. A Written Information Security Plan is kept on file as the IRS requires of paid preparers, and records stay encrypted in storage and in transit. Past returns and notices remain available in your portal year round." }
         },
         {
           "@type": "Question",
@@ -428,43 +446,60 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
 </head>
 <body>
 
-<nav class="nav"><div class="wrap nav__in">
+<nav class="nav" id="site-nav"><div class="wrap nav__in">
   <a href="#top" class="mark"><span class="mark__n">NT</span><span class="mark__w">Nini Tax</span></a>
-  <div class="nav__links">
+  <div class="nav__links" aria-label="Primary">
+    <a href="#problems">Problems</a>
+    <a href="#how">How it works</a>
     <a href="#services">Services</a>
-    <a href="#tools">Tools</a>
-    <a href="#about">About</a>
     <a href="#pricing">Pricing</a>
-    <a href="#reviews">Reviews</a>
+    <a href="#about">About</a>
     <a href="#faq">FAQ</a>
+    <a href="#book">Book</a>
   </div>
   <div class="nav__end">
     <a href="khmer.html" class="nav__lang" lang="km" hreflang="km"><svg class="kh-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24" aria-hidden="true" focusable="false"><rect width="36" height="24" fill="#032EA1"/><rect y="6" width="36" height="12" fill="#E00025"/><g fill="#F4F4F4"><path d="M4.5 16.4h27v1.6h-27z"/><path d="M18 7.1l1.55 7.2h-3.1z"/><path d="M12.2 9.6l1.2 5.7h-2.4z"/><path d="M23.8 9.6l1.2 5.7h-2.4z"/><path d="M8.4 12.2l.85 4.2H7.55z"/><path d="M27.6 12.2l.85 4.2h-1.7z"/><rect x="14.6" y="13.3" width="6.8" height="3.1"/><rect x="16.2" y="11.6" width="3.6" height="1.7"/></g></svg> ខ្មែរ</a>
     <a href="tel:+19518897108" class="nav__tel">(951) 889-7108</a>
+    <button type="button" class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu">
+      <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M3 5h14v1.5H3zm0 4.25h14v1.5H3zM3 13.5h14V15H3z"/></svg>
+    </button>
   </div>
-</div></nav>
+</div>
+<div class="nav__drawer" id="nav-drawer" hidden>
+  <div class="wrap" role="navigation" aria-label="Mobile sections">
+    <a href="#problems">Problems</a>
+    <a href="#how">How it works</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#about">About</a>
+    <a href="#faq">FAQ</a>
+    <a href="#book">Book</a>
+    <a href="tel:+19518897108">Call (951) 889-7108</a>
+  </div>
+</div>
+</nav>
 
 <header class="hero" id="top">
   <div class="wrap hero__grid">
     <div>
       <p class="kicker">Sreypok Pen, EA <span class="ea">Enrolled Agent</span></p>
       <hr class="rule">
-      <h1>Whatever the letter says, <em>this is fixable.</em></h1>
-      <p class="km-line" lang="km">ខ្ញុំនិយាយភាសាខ្មែរ។ ជំពាក់ពន្ធ IRS មែនទេ?</p>
-      <p class="lede">If you owe the IRS, the first thing to find out is whether the number is even right. Often it isn’t. The first call is free — transcript review included.</p>
+      <h1>IRS tax problems. <em>A clear path forward.</em></h1>
+      <p class="lede">Work directly with Sreypok Pen, Enrolled Agent, in English or Khmer.</p>
+      <p class="lede" style="margin-bottom:1rem">Free first call — transcript review included.</p>
       <p class="proof">
         EA ·
         <a href="https://irs.treasury.gov/rpo/rpo.jsf" rel="noopener noreferrer" target="_blank">IRS directory</a>
-        · 50 states · Khmer &amp; English
+        · 50 states · over eight years
       </p>
-      <p class="result-rail">Unfiled years: a multi-year IRS balance was cleared, and a refund came back. <a href="#cases">Two recent cases</a></p>
       <div class="hero__cta">
         <a class="dial" href="tel:+19518897108">
-          <span class="dial__k">Free first call</span>
+          <span class="dial__k">Call now</span>
           <span class="dial__n">(951) 889-7108</span>
         </a>
         <a class="btn" href="https://calendly.com/nini_tax/30min" rel="noopener noreferrer" target="_blank">Book a time</a>
       </div>
+      <p class="case-teaser" id="cases">Unfiled years: about $20,000 cleared, and a refund came back. <a href="#trust">See proof</a></p>
     </div>
     <figure class="portrait">
       <img src="owner.png" alt="Sreypok Pen, Enrolled Agent at Nini Tax" width="880" height="1100">
@@ -473,35 +508,148 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
   </div>
 </header>
 
-<section class="section" id="symptoms">
+<section class="trust" id="trust">
   <div class="wrap">
-    <p class="over">Sound familiar?</p>
-    <h2 class="h2">If any of this is you, <em>there’s a process for it.</em></h2>
-    <ul class="sym">
-      <li>A letter came from the IRS and you don’t know what it means</li>
-      <li>You owe back taxes and can’t pay the full amount</li>
-      <li>There are years you never filed and you’ve been afraid to start</li>
-      <li>The IRS filed a return for you and the balance looks impossible</li>
-      <li>Your wages are being garnished or your account was levied</li>
-      <li>You’re being held responsible for a spouse’s tax debt</li>
-      <li>Penalties and interest have grown past the original tax</li>
-      <li>You paid a national relief company and nothing happened</li>
-    </ul>
+    <p class="over">Proof</p>
+    <div class="trust__grid">
+      <div>
+        <p class="trust__quote">“She helped me successfully get my penalty money refunded from both the Franchise Tax Board (FTB) and the Internal Revenue Service (IRS). It’s also a big plus that she speaks Khmer.”</p>
+        <p class="trust__by">Sovanrith N.</p>
+        <p class="trust__src">Facebook review</p>
+      </div>
+      <div class="trust__case">
+        <p class="result__tag">Unfiled returns</p>
+        <p>A client owed about twenty thousand dollars across several unfiled years. Once the real returns went in, the balance was gone — and a refund came back.</p>
+      </div>
+    </div>
+    <div class="trust__meta">
+      <a href="https://www.facebook.com/profile.php?id=100089143062797&sk=reviews" rel="noopener noreferrer" target="_blank">100% recommend on Facebook · 14 reviews</a>
+      <span>Also: Chansopheak H., Jason D.</span>
+    </div>
+    <p class="disc">Every case turns on its own facts. These are not a prediction or a guarantee. Identifying details removed. A separate CP2000 matter ended with the balance cleared after an amended return.</p>
   </div>
 </section>
 
-<section class="section about" id="about">
+<section class="section" id="problems">
   <div class="wrap">
-    <div>
-      <p class="over">About me</p>
-      <h2 class="h2">Filing a return and speaking for you are two different licenses.</h2>
+    <p class="over">Sound familiar?</p>
+    <h2 class="h2">If any of this is you, <em>there’s a process for it.</em></h2>
+    <div class="sym-grid">
+      <article class="sym-card">
+        <h3>Notices &amp; letters</h3>
+        <ul>
+          <li>A letter came and you don’t know what it means</li>
+          <li>CP2000 or underreporter notice</li>
+          <li>Penalties and interest past the original tax</li>
+        </ul>
+      </article>
+      <article class="sym-card">
+        <h3>Balances you can’t pay</h3>
+        <ul>
+          <li>Back taxes you can’t pay in full</li>
+          <li>The IRS filed a return and the balance looks impossible</li>
+          <li>A national relief company took money and nothing happened</li>
+        </ul>
+      </article>
+      <article class="sym-card">
+        <h3>Unfiled years</h3>
+        <ul>
+          <li>Years you never filed and you’ve been afraid to start</li>
+          <li>You’re ready to catch up but don’t know where to begin</li>
+        </ul>
+      </article>
+      <article class="sym-card">
+        <h3>Collection pressure</h3>
+        <ul>
+          <li>Wages garnished or a bank account levied</li>
+          <li>Held responsible for a spouse’s tax debt</li>
+        </ul>
+      </article>
     </div>
-    <div>
-      <p>They need two different licenses, and most tax preparers only have the first one.</p>
-      <p>Only Enrolled Agents, CPAs, and attorneys can represent you before the IRS without limits. Most preparers hold none of those. They can fill out your forms — but if the IRS pushes back, they can’t act for you.</p>
-      <p>I’m Sreypok Pen, an IRS Enrolled Agent and CTEC-registered tax preparer, licensed federally after passing the IRS three-part exam. I’ve been doing this work for over eight years. That means I can pull your full transcripts, find out exactly what’s been assessed and why, and deal with the IRS directly on your behalf — <strong>in all fifty states</strong>.</p>
-      <p>I work with people all over the country from my office in Menifee, California, in <strong>English and Khmer</strong>. Most of my clients come from someone who sent them. The first call and transcript review are free.</p>
-      <a class="dir" href="https://irs.treasury.gov/rpo/rpo.jsf" rel="noopener noreferrer" target="_blank">Look me up in the IRS directory</a>
+
+    <details class="decode-panel" id="tools">
+      <summary>What does my IRS letter mean? <span>Letter decoder · optional</span></summary>
+      <div class="tool" id="decoder">
+        <h3>Letter decoder</h3>
+        <p class="tool-lead">Pick the closest match. This is plain-language orientation, not tax advice. Deadlines on the notice still matter.</p>
+        <div class="picks" role="group" aria-label="IRS letter type">
+          <button type="button" class="pick" data-letter="cp14" aria-pressed="false">CP14 / bill, I owe<em>Due date · interest running</em></button>
+          <button type="button" class="pick pick--hot" data-letter="cp504" aria-pressed="false">CP504 or later collection letter<em>Levy can be next</em></button>
+          <button type="button" class="pick pick--hot" data-letter="levy" aria-pressed="false">Levy, garnishment, or bank freeze<em>Collection may already be underway</em></button>
+          <button type="button" class="pick" data-letter="cp2000" aria-pressed="false">CP2000 / they say I underreported<em>Deadline on the page</em></button>
+          <button type="button" class="pick" data-letter="sfr" aria-pressed="false">Unfiled years / they filed for me (SFR)<em>They already filed for you</em></button>
+          <button type="button" class="pick" data-letter="unsure" aria-pressed="false">I have a letter, not sure which<em>Don’t set it aside</em></button>
+          <button type="button" class="pick" data-letter="noletter" aria-pressed="false">No letter, I just need a return</button>
+        </div>
+
+        <div class="decode-body" id="decode-cp14" hidden>
+          <p class="decode-urg">Interest is running</p>
+          <p>This is a bill with a due date. Interest does not pause because you were busy. The next envelope is often collection.</p>
+          <p>Don’t pay just because they sent a number — it is sometimes wrong. Don’t ignore it either. Days to a few weeks, not “whenever.”</p>
+          <p>I can pull your transcripts, check the assessment, and speak to the IRS for you.</p>
+          <div class="fee-cta">
+            <a class="dial" href="tel:+19518897108"><span class="dial__k">Call</span><span class="dial__n">(951) 889-7108</span></a>
+          </div>
+        </div>
+        <div class="decode-body" id="decode-cp504" hidden>
+          <p class="decode-urg">Collection is getting closer</p>
+          <p>The IRS has escalated. A wage levy or bank freeze can be next. Weeks matter more than months.</p>
+          <p>Call soon if you have this letter in hand. I can pull transcripts, confirm the balance, and open representation so their letters come to me.</p>
+          <div class="fee-cta">
+            <a class="dial" href="tel:+19518897108"><span class="dial__k">Call</span><span class="dial__n">(951) 889-7108</span></a>
+          </div>
+        </div>
+        <div class="decode-body" id="decode-levy" hidden>
+          <p class="decode-urg">Act promptly</p>
+          <p>A paycheck garnishment or frozen bank account means collection is underway. Waiting can mean another check or transfer is taken.</p>
+          <p>Call today. I can file a power of attorney, pull the transcripts, and work on stopping the taking, depending on what the record shows. I will not promise a dollar outcome on this page.</p>
+          <div class="fee-cta">
+            <a class="dial" href="tel:+19518897108"><span class="dial__k">Call</span><span class="dial__n">(951) 889-7108</span></a>
+          </div>
+        </div>
+        <div class="decode-body" id="decode-cp2000" hidden>
+          <p class="decode-urg">Miss the date, they assess it</p>
+          <p>They matched a 1099 or W-2 that wasn’t on the return and proposed extra tax. There is a deadline on the page. Miss it and they can assess it without you.</p>
+          <p>Don’t pay on autopilot — the match is often incomplete. Don’t miss the date either. I can read the notice, pull transcripts, and respond.</p>
+          <div class="fee-cta">
+            <a class="dial" href="tel:+19518897108"><span class="dial__k">Call</span><span class="dial__n">(951) 889-7108</span></a>
+          </div>
+        </div>
+        <div class="decode-body" id="decode-sfr" hidden>
+          <p class="decode-urg">They already filed for you</p>
+          <p>When you don’t file, the IRS can file using all of your income and none of your deductions. That balance is often inflated — and they will collect on it if you do nothing.</p>
+          <p>Filing the real returns is usually the first move. I handle unfiled years as representation.</p>
+          <div class="fee-cta">
+            <a class="dial" href="tel:+19518897108"><span class="dial__k">Call</span><span class="dial__n">(951) 889-7108</span></a>
+          </div>
+        </div>
+        <div class="decode-body" id="decode-unsure" hidden>
+          <p class="decode-urg">Don’t set it aside</p>
+          <p>The notice number is in the top right, something like CP14 or CP2000. Most notices have a clock.</p>
+          <p>Take a photo, call me, and I’ll read it with you.</p>
+          <div class="fee-cta">
+            <a class="dial" href="tel:+19518897108"><span class="dial__k">Call</span><span class="dial__n">(951) 889-7108</span></a>
+          </div>
+        </div>
+        <div class="decode-body" id="decode-noletter" hidden>
+          <p>You don’t need the decoder for that. Use the fee picker in Pricing for published prep prices.</p>
+          <p>If something later arrives from the IRS, come back here or call.</p>
+        </div>
+        <p class="decode-foot">This is not tax advice. Notices have deadlines. Call and I’ll read yours.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="wrap">
+    <p class="over">How it works</p>
+    <h2 class="h2">Four steps. The first is free.</h2>
+    <div class="steps">
+      <div class="step"><span class="step__n">1</span><h3>I look</h3><p>We talk about what’s going on, then I pull your IRS transcripts and read the actual record.</p></div>
+      <div class="step"><span class="step__n">2</span><h3>Straight answer</h3><p>What you really owe, what you qualify for, and what each option costs. If I can’t help, I’ll tell you.</p></div>
+      <div class="step"><span class="step__n">3</span><h3>You decide</h3><p>A flat fee, quoted up front. Nothing starts until you say yes, and the price doesn’t change after.</p></div>
+      <div class="step"><span class="step__n">4</span><h3>I handle the IRS</h3><p>I become the point of contact. Their letters come to me; you get plain updates in English or Khmer.</p></div>
     </div>
   </div>
 </section>
@@ -509,12 +657,12 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
 <section class="section" id="services">
   <div class="wrap">
     <p class="over">What I handle</p>
-    <h2 class="h2">Three kinds of work, year round.</h2>
-    <p class="lead">Tax relief, bookkeeping, and preparation — from an Enrolled Agent, not a seasonal preparer.</p>
+    <h2 class="h2">Tax relief first. Prep and books when you need them.</h2>
+    <p class="lead">Year-round representation from an Enrolled Agent — not a seasonal counter.</p>
     <div class="svcs">
-      <article class="svc">
+      <article class="svc svc--lead">
         <h3>Tax relief</h3>
-        <p>For when you need someone licensed to speak for you.</p>
+        <p>When you need someone licensed to speak for you.</p>
         <ul>
           <li>Unfiled returns</li>
           <li>Offer in Compromise</li>
@@ -525,11 +673,11 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
           <li>Currently Not Collectible</li>
           <li>Levy and garnishment release</li>
         </ul>
-        <span class="svc__meta">Flat fee after review</span>
+        <span class="svc__meta">Flat fee after free review</span>
       </article>
       <article class="svc">
         <h3>Bookkeeping</h3>
-        <p>So the numbers are right before tax season instead of during it.</p>
+        <p>So the numbers are right before tax season.</p>
         <ul>
           <li>Monthly bookkeeping</li>
           <li>Quarterly estimates</li>
@@ -540,200 +688,17 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
       </article>
       <article class="svc">
         <h3>Tax preparation</h3>
-        <p>Prepared and signed by an Enrolled Agent, not a seasonal preparer.</p>
+        <p>Prepared and signed by an Enrolled Agent.</p>
         <ul>
           <li>Individual returns</li>
           <li>Self-employed, Schedule C</li>
-          <li>Rentals and farms, Schedule E and F</li>
+          <li>Rentals and farms, E and F</li>
           <li>Business returns</li>
           <li>Multi-state filing</li>
           <li>Prior year returns</li>
         </ul>
         <span class="svc__meta">Published pricing</span>
       </article>
-    </div>
-  </div>
-</section>
-
-<section class="section tools" id="tools">
-  <div class="wrap">
-    <p class="over">Tools</p>
-    <h2 class="h2">Published prep fees, and what that letter usually means.</h2>
-    <p class="lead">Not a refund estimator, and not what you owe the IRS. Relief is quoted after I read the record. First call is free.</p>
-
-    <div class="tool-stack">
-      <div class="tool" id="fee-picker">
-        <h3>Prep fee picker</h3>
-        <p class="tool-lead">Tap through. The published starting price updates as you go. I’ll confirm before any work starts.</p>
-
-        <p class="tool__q">1. What kind of return?</p>
-        <div class="picks" role="group" aria-label="Kind of return">
-          <button type="button" class="pick" data-kind="w2" aria-pressed="false">Individual 1040 · W-2 only</button>
-          <button type="button" class="pick" data-kind="se" aria-pressed="false">Self-employed / extra schedules</button>
-          <button type="button" class="pick" data-kind="biz" aria-pressed="false">Business (1120 / 1120-S / 1065)</button>
-        </div>
-
-        <div class="tool-sub" id="fee-w2" hidden>
-          <p class="tool__q">2. Filing status</p>
-          <div class="picks" role="group" aria-label="Filing status">
-            <button type="button" class="pick" data-status="single" aria-pressed="false">Single · $89</button>
-            <button type="button" class="pick" data-status="mfs" aria-pressed="false">MFS · $119</button>
-            <button type="button" class="pick" data-status="hoh" aria-pressed="false">HOH · $169</button>
-            <button type="button" class="pick" data-status="widow" aria-pressed="false">Widow(er) · $169</button>
-            <button type="button" class="pick" data-status="mfj" aria-pressed="false">MFJ · $199</button>
-          </div>
-        </div>
-
-        <div class="tool-sub" id="fee-se" hidden>
-          <p class="tool__q">2. Which schedules apply? <span style="font-weight:400;letter-spacing:0;text-transform:none">(tap all that do)</span></p>
-          <div class="picks" role="group" aria-label="Schedules">
-            <button type="button" class="pick" data-sch="c" aria-pressed="false">Sch C · $189</button>
-            <button type="button" class="pick" data-sch="d" aria-pressed="false">Sch D · $229</button>
-            <button type="button" class="pick" data-sch="e" aria-pressed="false">Sch E · $279</button>
-            <button type="button" class="pick" data-sch="f" aria-pressed="false">Sch F · $279</button>
-          </div>
-        </div>
-
-        <div class="fee-out" id="fee-out" aria-live="polite"></div>
-      </div>
-
-      <div class="tool" id="decoder">
-        <h3>Letter decoder</h3>
-        <p class="tool-lead">What did the IRS send you? If you wait, the next letter is usually worse. This is not tax advice. Deadlines are real.</p>
-        <div class="picks" role="group" aria-label="IRS letter type">
-          <button type="button" class="pick" data-letter="cp14" aria-pressed="false">CP14 / bill, I owe<em>Due date · interest running</em></button>
-          <button type="button" class="pick pick--hot" data-letter="cp504" aria-pressed="false">CP504 or later collection letter<em>Levy can be next</em></button>
-          <button type="button" class="pick pick--hot" data-letter="levy" aria-pressed="false">Levy, garnishment, or bank freeze<em>They can take the money today</em></button>
-          <button type="button" class="pick" data-letter="cp2000" aria-pressed="false">CP2000 / they say I underreported<em>Deadline on the page</em></button>
-          <button type="button" class="pick" data-letter="sfr" aria-pressed="false">Unfiled years / they filed for me (SFR)<em>They already filed for you</em></button>
-          <button type="button" class="pick" data-letter="unsure" aria-pressed="false">I have a letter, not sure which<em>Don't set it down</em></button>
-          <button type="button" class="pick" data-letter="noletter" aria-pressed="false">No letter, I just need a return</button>
-        </div>
-
-        <div class="decode-body" id="decode-cp14" hidden>
-          <p class="decode-urg">Interest is running</p>
-          <p>This is a bill with a due date. Ignore it and the next envelope is collection. Interest does not pause because you were busy.</p>
-          <p>Don’t pay just because they sent a number — it is sometimes wrong. Don’t ignore it either. Days to a few weeks, not “whenever.”</p>
-          <p>I can pull your transcripts, check the assessment, and speak to the IRS for you. First call is free.</p>
-          <div class="fee-cta">
-            <a class="dial" href="tel:+19518897108"><span class="dial__k">Call</span><span class="dial__n">(951) 889-7108</span></a>
-          </div>
-        </div>
-        <div class="decode-body" id="decode-cp504" hidden>
-          <p class="decode-urg">Last letters before they take it</p>
-          <p>The IRS is done asking nicely. A wage levy or bank freeze can be next. Weeks, not months.</p>
-          <p>Do not wait this one out. Call today if you have it in hand.</p>
-          <p>I can pull transcripts, confirm the balance, and open representation so their letters come to me. First call is free.</p>
-          <div class="fee-cta">
-            <a class="dial" href="tel:+19518897108"><span class="dial__k">Call</span><span class="dial__n">(951) 889-7108</span></a>
-          </div>
-        </div>
-        <div class="decode-body" id="decode-levy" hidden>
-          <p class="decode-urg">They can take the money today</p>
-          <p>Paycheck garnished or bank frozen is not a warning. It is collection, happening now. Waiting a week can mean another check gone.</p>
-          <p>Call today. I can file a power of attorney, pull the transcripts, and work on stopping the taking, depending on what the record shows.</p>
-          <p>I will not promise a dollar outcome on this page. First call is free.</p>
-          <div class="fee-cta">
-            <a class="dial" href="tel:+19518897108"><span class="dial__k">Call</span><span class="dial__n">(951) 889-7108</span></a>
-          </div>
-        </div>
-        <div class="decode-body" id="decode-cp2000" hidden>
-          <p class="decode-urg">Miss the date, they assess it</p>
-          <p>They matched a 1099 or W-2 that wasn’t on the return and proposed extra tax. There is a deadline on the page. Miss it and they can assess it without you.</p>
-          <p>Don’t pay on autopilot. The match is often incomplete. Don’t miss the date either.</p>
-          <p>I can read the notice, pull transcripts, and respond. First call is free.</p>
-          <div class="fee-cta">
-            <a class="dial" href="tel:+19518897108"><span class="dial__k">Call</span><span class="dial__n">(951) 889-7108</span></a>
-          </div>
-        </div>
-        <div class="decode-body" id="decode-sfr" hidden>
-          <p class="decode-urg">They already filed for you</p>
-          <p>When you don’t file, the IRS can file using all of your income and none of your deductions. That balance is often inflated — and they will collect on it if you do nothing.</p>
-          <p>Filing the real returns is usually the first move. Don’t ignore the collection notices that follow.</p>
-          <p>I handle unfiled years as representation. First call and transcript review are free.</p>
-          <div class="fee-cta">
-            <a class="dial" href="tel:+19518897108"><span class="dial__k">Call</span><span class="dial__n">(951) 889-7108</span></a>
-          </div>
-        </div>
-        <div class="decode-body" id="decode-unsure" hidden>
-          <p class="decode-urg">Don't set it down</p>
-          <p>The notice number is in the top right, something like CP14 or CP2000. The rest of the page is dense on purpose. Most of them have a clock.</p>
-          <p>Don’t set it aside. The next letter is usually worse. Take a photo, call me, I’ll read it with you. First call is free.</p>
-          <div class="fee-cta">
-            <a class="dial" href="tel:+19518897108"><span class="dial__k">Call</span><span class="dial__n">(951) 889-7108</span></a>
-          </div>
-        </div>
-        <div class="decode-body" id="decode-noletter" hidden>
-          <p>You don’t need the decoder for that. Use the fee picker above for published prep prices.</p>
-          <p>If something later arrives from the IRS, come back here or call. First call is still free.</p>
-        </div>
-        <p class="decode-foot">This is not tax advice. Notices have deadlines. Waiting usually makes the IRS louder. Call and I’ll read yours.</p>
-      </div>
-
-      <div class="tool" id="irs-tools">
-        <h3>Official IRS tools</h3>
-        <p class="tool-lead">These are IRS sites, not Nini Tax tools. They open in a new tab.</p>
-        <div class="irs-row">
-          <a class="irs-link" href="https://apps.irs.gov/app/tax-withholding-estimator" target="_blank" rel="noopener noreferrer"><span>IRS</span>Tax withholding estimator</a>
-          <a class="irs-link" href="https://www.irs.gov/refunds" target="_blank" rel="noopener noreferrer"><span>IRS</span>Where’s My Refund</a>
-          <a class="irs-link" href="https://www.irs.gov/individuals/get-transcript" target="_blank" rel="noopener noreferrer"><span>IRS</span>Get Transcript</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="cases">
-  <div class="wrap">
-    <p class="over">A couple of recent cases</p>
-    <div class="results">
-      <div class="result">
-        <p class="result__tag">Unfiled returns</p>
-        <p>A client owed about twenty thousand dollars across several years he’d never filed. Once the real returns went in, the balance was gone, and a refund came back.</p>
-      </div>
-      <div class="result">
-        <p class="result__tag">CP2000 notice</p>
-        <p>A return prepared elsewhere underreported income. The IRS sent a CP2000 for about $11,000, including penalty. I amended the return. The balance was cleared.</p>
-      </div>
-    </div>
-    <p class="disc">Every case turns on its own facts. These are not a prediction or a guarantee. Identifying details removed. The CP2000 outcome was posted by Nini Tax.</p>
-  </div>
-</section>
-
-<section class="section revs-sec" id="reviews">
-  <div class="wrap">
-    <p class="over">What clients say</p>
-    <a class="badge" href="https://www.facebook.com/profile.php?id=100089143062797&sk=reviews" rel="noopener noreferrer" target="_blank">
-      <span class="badge__big">100%</span>
-      <span class="badge__txt">Recommend on Facebook<br>14 reviews</span>
-    </a>
-    <p class="fb-all"><a href="https://www.facebook.com/profile.php?id=100089143062797&sk=reviews" rel="noopener noreferrer" target="_blank">Read all reviews on Facebook</a></p>
-    <div class="revs">
-      <div class="rev">
-        <p>She helped me successfully get my penalty money refunded from both the Franchise Tax Board (FTB) and the Internal Revenue Service (IRS). It’s also a big plus that she speaks Khmer.</p>
-        <div class="rev__by">Sovanrith N.<br><span class="rev__src">Facebook</span></div>
-      </div>
-      <div class="rev">
-        <p>Not only did she suggest ways for me to minimize my tax, she also managed to minimize them from the previous years and got me refunds.</p>
-        <div class="rev__by">Chansopheak H.<br><span class="rev__src">Facebook</span></div>
-      </div>
-      <div class="rev">
-        <p>Nini Tax is professional and highly recommended for all and mostly for Cambodian people who want best explanation on taxes matters in Khmer and English.</p>
-        <div class="rev__by">Jason D.<br><span class="rev__src">Facebook</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="how">
-  <div class="wrap">
-    <p class="over">How it works</p>
-    <h2 class="h2">Four steps, and the first is free.</h2>
-    <div class="steps">
-      <div class="step"><span class="step__n">1</span><h3>I look</h3><p>We talk about what’s going on, then I pull your IRS transcripts and read the actual record. Most people have never seen theirs.</p></div>
-      <div class="step"><span class="step__n">2</span><h3>You get a straight answer</h3><p>What you really owe, what you qualify for, and what each option costs. If I can’t help, I’ll tell you.</p></div>
-      <div class="step"><span class="step__n">3</span><h3>You decide</h3><p>A flat fee, quoted up front. Nothing starts until you say yes, and the price doesn’t change after.</p></div>
-      <div class="step"><span class="step__n">4</span><h3>I handle the IRS</h3><p>I become the point of contact. Their letters come to me, and you get plain updates in English or Khmer.</p></div>
     </div>
   </div>
 </section>
@@ -771,38 +736,70 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
       </div>
       <div class="note">
         <h3>Bookkeeping</h3>
-        <p><b>Monthly, on request</b> · Monthly books, quarterly estimates, and S-corp payroll. Rate depends on volume — I’ll quote it after we look at the books.</p>
+        <p><b>Monthly, on request</b> · Monthly books, quarterly estimates, and S-corp payroll. Rate depends on volume.</p>
       </div>
       <div class="note">
         <h3>Tax relief</h3>
-        <p><b>Flat fee after a free review</b> · Quoted once I’ve read your transcripts and know what the case involves. No large retainer before I’ve seen the record.</p>
+        <p><b>Flat fee after a free review</b> · Quoted once I’ve read your transcripts. No large retainer before I’ve seen the record.</p>
       </div>
     </div>
-    <p class="price__note">What I won’t do: take a large retainer before I’ve seen your transcripts, charge a percentage of your refund, or promise you a settlement to get you off the phone. If a company has quoted you thousands upfront without looking at your record, get a second opinion — from me or from anyone.</p>
+    <p class="price__note">I won’t take a large retainer before I’ve seen your transcripts, charge a percentage of your refund, or promise a settlement to get you off the phone.</p>
+
+    <div class="price-tools tools-anchor" id="fee-tools">
+      <div class="tool" id="fee-picker">
+        <h3>Prep fee picker</h3>
+        <p class="tool-lead">Tap through. The published starting price updates as you go. I’ll confirm before any work starts.</p>
+
+        <p class="tool__q">1. What kind of return?</p>
+        <div class="picks" role="group" aria-label="Kind of return">
+          <button type="button" class="pick" data-kind="w2" aria-pressed="false">Individual 1040 · W-2 only</button>
+          <button type="button" class="pick" data-kind="se" aria-pressed="false">Self-employed / extra schedules</button>
+          <button type="button" class="pick" data-kind="biz" aria-pressed="false">Business (1120 / 1120-S / 1065)</button>
+        </div>
+
+        <div class="tool-sub" id="fee-w2" hidden>
+          <p class="tool__q">2. Filing status</p>
+          <div class="picks" role="group" aria-label="Filing status">
+            <button type="button" class="pick" data-status="single" aria-pressed="false">Single · $89</button>
+            <button type="button" class="pick" data-status="mfs" aria-pressed="false">MFS · $119</button>
+            <button type="button" class="pick" data-status="hoh" aria-pressed="false">HOH · $169</button>
+            <button type="button" class="pick" data-status="widow" aria-pressed="false">Widow(er) · $169</button>
+            <button type="button" class="pick" data-status="mfj" aria-pressed="false">MFJ · $199</button>
+          </div>
+        </div>
+
+        <div class="tool-sub" id="fee-se" hidden>
+          <p class="tool__q">2. Which schedules apply? <span style="font-weight:400;letter-spacing:0;text-transform:none">(tap all that do)</span></p>
+          <div class="picks" role="group" aria-label="Schedules">
+            <button type="button" class="pick" data-sch="c" aria-pressed="false">Sch C · $189</button>
+            <button type="button" class="pick" data-sch="d" aria-pressed="false">Sch D · $229</button>
+            <button type="button" class="pick" data-sch="e" aria-pressed="false">Sch E · $279</button>
+            <button type="button" class="pick" data-sch="f" aria-pressed="false">Sch F · $279</button>
+          </div>
+        </div>
+
+        <div class="fee-out" id="fee-out" aria-live="polite"></div>
+      </div>
+
+      <div class="irs-row" id="irs-tools" style="margin-top:1.15rem">
+        <a class="irs-link" href="https://apps.irs.gov/app/tax-withholding-estimator" target="_blank" rel="noopener noreferrer"><span>IRS</span>Tax withholding estimator</a>
+        <a class="irs-link" href="https://www.irs.gov/refunds" target="_blank" rel="noopener noreferrer"><span>IRS</span>Where’s My Refund</a>
+        <a class="irs-link" href="https://www.irs.gov/individuals/get-transcript" target="_blank" rel="noopener noreferrer"><span>IRS</span>Get Transcript</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="section" id="security">
+<section class="section about" id="about">
   <div class="wrap">
-    <p class="over">Your documents</p>
-    <h2 class="h2">Everything moves through an encrypted portal.</h2>
-    <div class="sec__grid">
-      <div class="sec__i">
-        <h3>Never over email</h3>
-        <p>W-2s, IDs, and anything with your Social Security number go through the secure client portal, not your inbox. Email isn’t safe for tax documents and I won’t ask you to use it.</p>
-      </div>
-      <div class="sec__i">
-        <h3>Sign from your phone</h3>
-        <p>Engagement letters, Form 8879, and the power of attorney are all signed electronically. You never need to print, scan, or drive anywhere.</p>
-      </div>
-      <div class="sec__i">
-        <h3>A written security plan</h3>
-        <p>I keep a Written Information Security Plan on file as the IRS requires of paid preparers, and your records stay encrypted at rest and in transit.</p>
-      </div>
-      <div class="sec__i">
-        <h3>Your records stay yours</h3>
-        <p>Past returns, notices, and correspondence stay available in your <a class="dir" style="margin-top:0" href="https://ninitax.taxdome.com/" rel="noopener noreferrer" target="_blank">TaxDome portal</a> year round, so you’re never chasing paperwork when you need it.</p>
-      </div>
+    <div>
+      <p class="over">About</p>
+      <h2 class="h2">Licensed to represent you — not only to file.</h2>
+    </div>
+    <div>
+      <p>I’m Sreypok Pen, an IRS Enrolled Agent and CTEC-registered tax preparer. I’ve done this work for <strong>over eight years</strong>. I can pull your transcripts, explain what’s been assessed, and deal with the IRS on your behalf — <strong>in all fifty states</strong>, in <strong>English and Khmer</strong>.</p>
+      <p>Most clients are referrals. Based in Menifee, California; work is handled remotely when that fits.</p>
+      <a class="dir" href="https://irs.treasury.gov/rpo/rpo.jsf" rel="noopener noreferrer" target="_blank">Look me up in the IRS directory</a>
     </div>
   </div>
 </section>
@@ -811,7 +808,6 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
   <div class="wrap">
     <p class="over" lang="km">ជាភាសាខ្មែរ</p>
     <h2 lang="km">ជំពាក់ពន្ធ IRS មែនទេ?</h2>
-    <p lang="km">អ្នកប្រហែលជាជំពាក់តិចជាងអ្វីដែល IRS បាននិយាយ។</p>
     <p lang="km">ខ្ញុំជា Enrolled Agent — មានអាជ្ញាបណ្ណពី IRS ដើម្បីតំណាងឱ្យអ្នកគ្រប់រដ្ឋទាំង ៥០។ ការពិគ្រោះលើកដំបូងឥតគិតថ្លៃ។</p>
     <a href="khmer.html" class="btn">អានជាភាសាខ្មែរ →</a>
   </div>
@@ -821,42 +817,46 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
   <div class="wrap">
     <p class="over">Questions</p>
     <h2 class="h2">Things people ask before they call.</h2>
-    <div style="margin-top:2.5rem">
+    <div style="margin-top:2.25rem">
       <details>
         <summary>I just got a letter from the IRS. What should I do first?</summary>
-        <div class="faq__a"><p>Don’t ignore it, and don’t pay it just because it arrived. Most notices have a response deadline, and most of them can be answered. Send me the notice number — it’s in the top right corner, something like CP2000 or CP504 — and I’ll tell you what it actually means and what your options are.</p></div>
+        <div class="faq__a"><p>Don’t ignore it, and don’t pay it just because it arrived. Most notices have a response deadline. Send me the notice number — top right, something like CP2000 or CP504 — and I’ll tell you what it means and what your options are.</p></div>
       </details>
       <details>
         <summary>Do you speak Khmer?</summary>
-        <div class="faq__a"><p>Yes. <span lang="km">ខ្ញុំនិយាយភាសាខ្មែរ។</span> I can explain your notices, your options, and every number on your return in Khmer, and I can deal with the IRS on your behalf so you don’t have to have those conversations in English.</p></div>
+        <div class="faq__a"><p>Yes. <span lang="km">ខ្ញុំនិយាយភាសាខ្មែរ។</span> I can explain notices, options, and every number on your return in Khmer, and deal with the IRS so you don’t have to have those conversations in English.</p></div>
       </details>
       <details>
         <summary>What is an Enrolled Agent, and why does it matter?</summary>
-        <div class="faq__a"><p>An Enrolled Agent is a tax professional licensed directly by the IRS, after passing a three-part exam covering individual tax, business tax, and representation. It’s a federal credential, so it’s valid in all fifty states.</p><p>It matters because only Enrolled Agents, CPAs, and attorneys can represent you before the IRS without limits. Most tax preparers can file your return but cannot argue your case.</p></div>
+        <div class="faq__a"><p>An Enrolled Agent is licensed directly by the IRS after a three-part exam covering individual tax, business tax, and representation. It’s valid in all fifty states.</p><p>Only Enrolled Agents, CPAs, and attorneys can represent you before the IRS without limits. Most preparers can file a return but cannot argue your case.</p></div>
       </details>
       <details>
         <summary>I haven’t filed in years. Am I in serious trouble?</summary>
-        <div class="faq__a"><p>Usually less than you think. Unfiled years are the most common problem I see and often the most fixable — when you don’t file, the IRS can file for you using all of your income and none of your deductions, which produces a balance far higher than what’s really owed. Filing the real returns frequently reduces it substantially, and sometimes eliminates it.</p></div>
+        <div class="faq__a"><p>Usually less than you think. When you don’t file, the IRS can file for you using all of your income and none of your deductions — often a balance far higher than what’s really owed. Filing the real returns frequently reduces it substantially, and sometimes eliminates it.</p></div>
       </details>
       <details>
         <summary>Can you help if I don’t live in California?</summary>
-        <div class="faq__a"><p>Yes. The Enrolled Agent credential is federal, so I can represent taxpayers in every state. I work with clients across the country by phone, video, and secure portal. Everything can be handled remotely.</p></div>
+        <div class="faq__a"><p>Yes. The Enrolled Agent credential is federal. I work with clients across the country by phone, video, and secure portal.</p></div>
       </details>
       <details>
         <summary>Will I have to talk to the IRS myself?</summary>
-        <div class="faq__a"><p>No. Once you sign a power of attorney, I become the point of contact. Their correspondence comes to me, I make the calls, and I attend the audit if there is one. You’ll hear what’s happening from me, in plain language.</p></div>
+        <div class="faq__a"><p>No. Once you sign a power of attorney, I become the point of contact. Their correspondence comes to me, I make the calls, and I attend the audit if there is one.</p></div>
       </details>
       <details>
         <summary>How much will it cost?</summary>
-        <div class="faq__a"><p>Preparation prices are published above. Relief work is quoted as a flat fee after a free review of your transcripts, because the honest answer depends on what your case actually involves. You’ll always know the full price before any work begins, and it doesn’t change afterward.</p></div>
+        <div class="faq__a"><p>Preparation prices are published above. Relief work is a flat fee after a free transcript review. You’ll know the full price before any work begins, and it doesn’t change afterward.</p></div>
       </details>
       <details>
         <summary>How do I know my information is safe?</summary>
-        <div class="faq__a"><p>Documents move through an encrypted client portal, never email. I keep a Written Information Security Plan on file as the IRS requires of paid preparers, and your records stay encrypted both in storage and in transit.</p></div>
+        <div class="faq__a">
+          <p>Documents move through an encrypted <a href="https://ninitax.taxdome.com/" rel="noopener noreferrer" target="_blank">TaxDome client portal</a>, never email. W-2s, IDs, and anything with your Social Security number stay out of your inbox.</p>
+          <p>Engagement letters, Form 8879, and the power of attorney are signed electronically — no printing or driving required.</p>
+          <p>I keep a Written Information Security Plan on file as the IRS requires of paid preparers. Records stay encrypted in storage and in transit, and past returns stay available in your portal year round.</p>
+        </div>
       </details>
       <details>
         <summary>What do you need from me to get started?</summary>
-        <div class="faq__a"><p>For a free review, just any notices you’ve received and permission to pull your IRS transcripts. That’s it. I’ll have a much clearer picture after reading the record than either of us can get from guessing.</p></div>
+        <div class="faq__a"><p>For a free review: any notices you’ve received and permission to pull your IRS transcripts.</p></div>
       </details>
     </div>
   </div>
@@ -866,8 +866,8 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
   <div class="wrap cta__grid">
     <div>
       <p class="over">Get started</p>
-      <h2 class="h2">Let’s find out what you actually owe.</h2>
-      <p class="lede" style="margin-top:1rem">Thirty minutes on the phone. No cost, no obligation. You’ll understand your IRS record better than you do now, whether or not you hire me.</p>
+      <h2 class="h2">Book a free first call.</h2>
+      <p class="lede" style="margin-top:1rem">Thirty minutes. No cost, no obligation. You’ll understand your IRS record better than you do now.</p>
       <dl class="deets">
         <div class="deet"><dt>Phone</dt><dd><a href="tel:+19518897108">(951) 889-7108</a></dd></div>
         <div class="deet"><dt>Email</dt><dd><a href="mailto:sreypok@nini.tax">sreypok@nini.tax</a></dd></div>
@@ -878,16 +878,22 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
       </dl>
     </div>
     <div class="cta-card">
-      <p>The first call is free. If you have a letter in hand, call now — most notices have a deadline.</p>
-      <a class="dial" href="tel:+19518897108">
-        <span class="dial__k">Free first call</span>
-        <span class="dial__n">(951) 889-7108</span>
-      </a>
-      <a class="btn" href="mailto:sreypok@nini.tax">Email Sreypok</a>
-      <div class="embed" aria-label="Book a 30 minute tax consultation">
-        <div class="calendly-inline-widget" data-url="https://calendly.com/nini_tax/30min?hide_gdpr_banner=1&amp;background_color=fbf8f3&amp;text_color=1a1410&amp;primary_color=e0a81a" style="min-width:280px;height:680px;"></div>
+      <p>Prefer the calendar, or call if you already have a letter.</p>
+      <div class="book-alts">
+        <a class="btn btn--gold" href="https://calendly.com/nini_tax/30min" rel="noopener noreferrer" target="_blank">Open Calendly directly</a>
+        <a class="dial" href="tel:+19518897108">
+          <span class="dial__k">Or call</span>
+          <span class="dial__n">(951) 889-7108</span>
+        </a>
       </div>
-      <a class="cal-fallback" href="https://calendly.com/nini_tax/30min" rel="noopener noreferrer" target="_blank">Or pick a time on Calendly</a>
+      <div class="embed" aria-label="Book a 30 minute tax consultation">
+        <div class="cal-loading" id="cal-loading" role="status">
+          <span class="cal-loading__spin" aria-hidden="true"></span>
+          Loading calendar…
+        </div>
+        <div class="calendly-inline-widget" data-url="https://calendly.com/nini_tax/30min?hide_gdpr_banner=1&amp;background_color=fbf8f3&amp;text_color=1a1410&amp;primary_color=f9c349" style="min-width:280px;height:680px;"></div>
+      </div>
+      <a class="cal-fallback" href="https://calendly.com/nini_tax/30min" rel="noopener noreferrer" target="_blank">If the embed doesn’t load, pick a time on Calendly</a>
     </div>
   </div>
 </section>
@@ -902,9 +908,8 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
       <div class="foot__links">
         <a href="#about">About</a>
         <a href="#services">Services</a>
-        <a href="#tools">Tools</a>
         <a href="#pricing">Pricing</a>
-        <a href="#reviews">Reviews</a>
+        <a href="#problems">Problems</a>
         <a href="#faq">FAQ</a>
         <a href="#book">Contact</a>
         <a href="proof-en.html">Print / proofread</a>
@@ -923,16 +928,45 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
   <a class="p" href="tel:+19518897108">Call (951) 889-7108</a>
 </div>
 
+<script>
+(function(){
+  var nav = document.getElementById("site-nav");
+  var toggle = document.getElementById("nav-toggle");
+  var drawer = document.getElementById("nav-drawer");
+  if(toggle && drawer && nav){
+    function setOpen(open){
+      nav.classList.toggle("is-open", open);
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      drawer.hidden = !open;
+    }
+    toggle.addEventListener("click", function(){
+      setOpen(!nav.classList.contains("is-open"));
+    });
+    drawer.querySelectorAll("a").forEach(function(a){
+      a.addEventListener("click", function(){ setOpen(false); });
+    });
+    document.addEventListener("keydown", function(e){
+      if(e.key === "Escape") setOpen(false);
+    });
+  }
+})();
+</script>
 
 <script>
 (function(){
-  var root = document.getElementById("tools");
-  if(!root) return;
   var hash = location.hash.replace("#","");
-  if(hash === "tools" || hash === "fee-picker" || hash === "decoder" || hash === "irs-tools"){
-    var jump = document.getElementById(hash) || root;
-    document.documentElement.style.scrollBehavior = "auto";
-    jump.scrollIntoView({block:"start"});
+  var jumpIds = {tools:1, "fee-picker":1, decoder:1, "irs-tools":1, problems:1, pricing:1};
+  if(jumpIds[hash]){
+    var jump = document.getElementById(hash);
+    if(jump){
+      document.documentElement.style.scrollBehavior = "auto";
+      if(hash === "decoder" || hash === "tools"){
+        var panel = document.getElementById("tools");
+        if(panel && panel.tagName === "DETAILS") panel.open = true;
+      }
+      jump.scrollIntoView({block:"start"});
+    }
   }
   var lang = (document.documentElement.getAttribute("lang") || "en").slice(0,2);
   var pack = {
@@ -948,7 +982,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
       plus: ", plus other schedules",
       biz: "Corporate / partnership returns from $599. Quoted after a look at the books.",
       books: "Bookkeeping monthly, published on request.",
-      relief: "If you have an IRS letter, use the decoder below. First call is free.",
+      relief: "If you have an IRS letter, open the letter decoder under Problems.",
       disclaimer: "These are current published prep fees, not a tax refund or what you owe the IRS. Price can change with complexity. I’ll confirm before any work starts.",
       callK: "Call",
       book: "Book a time"
@@ -965,7 +999,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
       plus: ", plus other schedules",
       biz: "Corporate / partnership returns from $599. Quoted after a look at the books.",
       books: "Bookkeeping ប្រចាំខែ តម្លៃប្រាប់តាមសំណើ។",
-      relief: "បើអ្នកមានលិខិត IRS សូមប្រើ decoder ខាងក្រោម។ ការពិគ្រោះលើកដំបូងឥតគិតថ្លៃ។",
+      relief: "បើអ្នកមានលិខិត IRS សូមប្រើ decoder នៅផ្នែក Problems។",
       disclaimer: "ទាំងនេះជាតម្លៃរៀបចំពន្ធដែលបានផ្សាយ មិនមែនជាប្រាក់សងវិញ ឬចំនួនដែលអ្នកជំពាក់ IRS ទេ។ តម្លៃអាចផ្លាស់ប្តូរតាមភាពស្មុគស្មាញ។ ខ្ញុំនឹងបញ្ជាក់មុនពេលចាប់ផ្តើមការងារ។",
       callK: "ទូរស័ព្ទ",
       book: "កក់ពេល"
@@ -976,8 +1010,8 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
   var STATUS_LABEL = {single:"Single", mfs:"MFS", hoh:"HOH", widow:"Widow(er)", mfj:"MFJ"};
   var SCH_LABEL = {c:"Schedule C", d:"Schedule D", e:"Schedule E", f:"Schedule F"};
 
-  function qs(sel, el){ return (el || root).querySelector(sel); }
-  function qsa(sel, el){ return Array.prototype.slice.call((el || root).querySelectorAll(sel)); }
+  function qs(sel, el){ return (el || document).querySelector(sel); }
+  function qsa(sel, el){ return Array.prototype.slice.call((el || document).querySelectorAll(sel)); }
   function esc(s){
     return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
   }
@@ -1063,7 +1097,7 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
           if(PRICES[k] > max){ max = PRICES[k]; maxK = k; }
         });
         on = true;
-        html += "<p class=\"fee-out__kicker\">" + esc(T.from.replace("from $","").replace("from $","").trim() || "from") + "</p>";
+        html += "<p class=\"fee-out__kicker\">from</p>";
         html += "<p class=\"fee-out__num\">$" + max + "</p>";
         if(keys.length === 1){
           html += "<p>" + esc(T.seOne.replace("{name}", SCH_LABEL[maxK])) + "</p>";
@@ -1091,6 +1125,29 @@ html[lang="km"] .tool__q{text-transform:none;letter-spacing:.03em;font-weight:50
     out.innerHTML = html;
   }
   renderFee();
+})();
+</script>
+
+<script>
+(function(){
+  var loading = document.getElementById("cal-loading");
+  if(!loading) return;
+  function hide(){ loading.hidden = true; }
+  var tries = 0;
+  var timer = setInterval(function(){
+    tries += 1;
+    var iframe = document.querySelector(".calendly-inline-widget iframe, .embed iframe");
+    if(iframe){
+      hide();
+      clearInterval(timer);
+    } else if(tries > 40){
+      hide();
+      clearInterval(timer);
+    }
+  }, 250);
+  window.addEventListener("load", function(){
+    setTimeout(hide, 8000);
+  });
 })();
 </script>
 
