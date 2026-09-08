@@ -224,12 +224,18 @@ p{margin:0}
 .faq__a p+p{margin-top:.8rem}
 .faq__a a{font-weight:700;color:var(--ink);border-bottom:1px solid var(--ink)}
 
-.cta__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.75rem,4.5vw,3.5rem);align-items:start}
+.cta__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.75rem,4.5vw,3.5rem);align-items:start;min-width:0}
+.cta__grid > div{min-width:0;max-width:100%}
 .deets{margin:1.5rem 0 0;padding:0}
-.deet{display:flex;justify-content:space-between;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--hair);font-size:1.02rem}
+.deets{min-width:0;max-width:100%}
+.deet{display:flex;justify-content:space-between;gap:.65rem 1rem;padding:.8rem 0;border-bottom:1px solid var(--hair);font-size:1.02rem;min-width:0;flex-wrap:wrap}
+.deet dt{flex:0 1 auto;min-width:0;font-size:.8125rem;color:var(--muted);padding-top:.25rem;font-weight:600}
+.deet dd{margin:0;color:var(--ink);text-align:right;font-weight:700;font-family:var(--s);min-width:0;flex:1 1 10rem;overflow-wrap:anywhere;word-break:normal}
 .deet:first-child{border-top:1px solid var(--hair)}
-.deet dt{font-size:.8125rem;color:var(--muted);padding-top:.25rem;font-weight:600}
-.deet dd{margin:0;color:var(--ink);text-align:right;font-weight:700;font-family:var(--s)}
+@media(max-width:420px){
+  .deet{flex-direction:column;align-items:flex-start;gap:.2rem}
+  .deet dd{text-align:left;width:100%}
+}
 .deet a:hover{border-bottom:1px solid var(--ink)}
 .cta-card{background:var(--surface);padding:1.35rem 1.25rem 1.15rem;border:1px solid var(--hair)}
 .cta-card > p{color:var(--body);margin-bottom:1rem;font-size:1.02rem;line-height:1.85}
@@ -406,7 +412,7 @@ p{margin:0}
   <a href="#top" class="mark"><span class="mark__n">NT</span><span class="mark__w">Nini Tax</span><svg class="kh-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24" aria-hidden="true" focusable="false"><rect width="36" height="24" fill="#032EA1"/><rect y="6" width="36" height="12" fill="#E00025"/><g fill="#F4F4F4"><path d="M4.5 16.4h27v1.6h-27z"/><path d="M18 7.1l1.55 7.2h-3.1z"/><path d="M12.2 9.6l1.2 5.7h-2.4z"/><path d="M23.8 9.6l1.2 5.7h-2.4z"/><path d="M8.4 12.2l.85 4.2H7.55z"/><path d="M27.6 12.2l.85 4.2h-1.7z"/><rect x="14.6" y="13.3" width="6.8" height="3.1"/><rect x="16.2" y="11.6" width="3.6" height="1.7"/></g></svg></a>
   <div class="nav__links" aria-label="Primary">
     <a href="#services">សេវាកម្ម</a>
-    <a href="#tools">ឧបករណ៍ជំនួយ</a>
+    <a href="#tools">លិខិត IRS</a>
     <a href="#about">អំពីខ្ញុំ</a>
     <a href="#pricing">តម្លៃសេវា</a>
     <a href="#reviews">មតិអតិថិជន</a>
@@ -425,7 +431,7 @@ p{margin:0}
 <div class="nav__drawer" id="nav-drawer" hidden>
   <div class="wrap" role="navigation" aria-label="Mobile sections">
     <a href="#services">សេវាកម្ម</a>
-    <a href="#tools">ឧបករណ៍ជំនួយ</a>
+    <a href="#tools">លិខិត IRS</a>
     <a href="#about">អំពីខ្ញុំ</a>
     <a href="#pricing">តម្លៃសេវា</a>
     <a href="#reviews">មតិអតិថិជន</a>
@@ -445,11 +451,7 @@ p{margin:0}
       <hr class="rule">
       <h1>មានបញ្ហាពន្ធជាមួយ IRS មែនទេ? <em>ខ្ញុំជួយអ្នកស្វែងរកផ្លូវដោះស្រាយ។</em></h1>
       <p class="lede">ពន្យល់ច្បាស់ៗជាភាសាខ្មែរ ដើម្បីឱ្យអ្នកដឹងថាគួរធ្វើអ្វីបន្ទាប់។</p>
-      <p class="lede">បើ IRS បញ្ជាក់ថាអ្នកជំពាក់ពន្ធ យើងគួរចាប់ផ្តើមដោយពិនិត្យថាចំនួនប្រាក់នោះត្រឹមត្រូវឬអត់។ ខ្ញុំអាចជួយអ្នកអានលិខិត ពិនិត្យកំណត់ត្រាពន្ធពី IRS (transcript) និងស្វែងយល់ពីជម្រើសរបស់អ្នក។ ការពិគ្រោះលើកដំបូង និងការពិនិត្យកំណត់ត្រាពន្ធ ឥតគិតថ្លៃ។</p>
-      <p class="proof">
-        Enrolled Agent · គ្រប់រដ្ឋទាំង ៥០ · ភាសាខ្មែរ និងអង់គ្លេស ·
-        <a href="https://irs.treasury.gov/rpo/rpo.jsf" rel="noopener noreferrer" target="_blank">ពិនិត្យឈ្មោះខ្ញុំក្នុងបញ្ជី IRS</a>
-      </p>
+      <p class="lede">ខ្ញុំអាចជួយអ្នកអានលិខិតពី IRS ពិនិត្យចំនួនប្រាក់ជំពាក់ និងពន្យល់ជម្រើសដោះស្រាយ។ ការពិគ្រោះលើកដំបូង និងការពិនិត្យកំណត់ត្រាពន្ធ ឥតគិតថ្លៃ។</p>
       <div class="hero__cta">
         <a class="dial" href="tel:+19518897108">
           <span class="dial__k">ពិគ្រោះលើកដំបូងឥតគិតថ្លៃ</span>
@@ -457,7 +459,11 @@ p{margin:0}
         </a>
         <a class="btn" href="https://calendly.com/nini_tax/30min" rel="noopener noreferrer" target="_blank">កក់ពេលពិគ្រោះ</a>
       </div>
-      <p class="case-teaser">អតិថិជនម្នាក់មានបំណុលពន្ធពីឆ្នាំដែលមិនបានប្រកាសពន្ធ។ ក្រោយដាក់លិខិតប្រកាសពន្ធសម្រាប់ឆ្នាំទាំងនោះ គាត់លែងមានប្រាក់ជំពាក់ ហើយថែមទាំងទទួលបានប្រាក់ពន្ធសងត្រឡប់មកវិញ។ <a href="#reviews">អានករណីអតិថិជនពីរ</a></p>
+      <p class="proof">
+        Enrolled Agent · គ្រប់រដ្ឋទាំង ៥០ · ភាសាខ្មែរ និងអង់គ្លេស ·
+        <a href="https://irs.treasury.gov/rpo/rpo.jsf" rel="noopener noreferrer" target="_blank">ពិនិត្យឈ្មោះខ្ញុំក្នុងបញ្ជី IRS</a>
+      </p>
+      <p class="case-teaser">អតិថិជនម្នាក់មានបំណុលពន្ធពីឆ្នាំដែលមិនបានប្រកាសពន្ធ។ ក្រោយដាក់លិខិតប្រកាសពន្ធសម្រាប់ឆ្នាំទាំងនោះ គាត់លែងមានប្រាក់ជំពាក់ ហើយថែមទាំងទទួលបានប្រាក់ពន្ធសងត្រឡប់មកវិញ។ <a href="#cases-more">អានករណីអតិថិជនពីរ</a></p>
     </div>
     <figure class="portrait">
       <img src="owner.png" alt="ប៉ែន ស្រីប៉ុក អ្នកជំនាញពន្ធ Enrolled Agent របស់ Nini Tax" width="880" height="1100">
@@ -491,7 +497,7 @@ p{margin:0}
       <span>Chansopheak H. · Jason D.</span>
       <a href="https://www.facebook.com/profile.php?id=100089143062797&sk=reviews" rel="noopener noreferrer" target="_blank">អានមតិទាំងអស់នៅលើ Facebook</a>
     </div>
-    <details style="margin-top:1.25rem">
+    <details id="cases-more" style="margin-top:1.25rem">
       <summary style="cursor:pointer;font-weight:600;color:var(--ink)">មតិបន្ថែម និងករណីទីពីរ</summary>
       <div style="margin-top:1rem;display:grid;gap:1.25rem">
         <div>
@@ -542,7 +548,7 @@ p{margin:0}
         </ul>
       </article>
       <article class="sym-card">
-        <h3>ឆ្នាំមិនបានប្រកាស</h3>
+        <h3>ឆ្នាំដែលមិនទាន់បានប្រកាសពន្ធ</h3>
         <ul>
           <li>អ្នកមិនបានប្រកាសពន្ធអស់ប៉ុន្មានឆ្នាំ ហើយបារម្ភមិនដឹងចាប់ផ្តើមពីណា។</li>
         </ul>
@@ -666,7 +672,7 @@ p{margin:0}
           <li>តំណាងអតិថិជនក្នុងការត្រួតពិនិត្យពន្ធរបស់ IRS។</li>
           <li>ស្នើសុំការលើកលែងការទទួលខុសត្រូវលើបំណុលពន្ធរួម ក្នុងករណីដែលបំពេញលក្ខខណ្ឌ (Innocent Spouse Relief)។</li>
           <li>ស្នើសុំផ្អាកការប្រមូលបំណុលជាបណ្តោះអាសន្ន ដោយសារការលំបាកផ្នែកហិរញ្ញវត្ថុ (Currently Not Collectible)។</li>
-          <li>ស្នើសុំដោះលែងការរឹបអូសប្រាក់ ឬទ្រព្យសម្បត្តិ និងបញ្ឈប់ការកាត់ប្រាក់ខែដើម្បីសងបំណុលពន្ធ។</li>
+          <li>ស្នើសុំដកវិធានការរឹបអូសប្រាក់ ឬទ្រព្យសម្បត្តិ និងបញ្ឈប់ការកាត់ប្រាក់ខែដើម្បីសងបំណុលពន្ធ។</li>
         </ul>
         <span class="svc__meta">តម្លៃថេរ បញ្ជាក់ក្រោយពិនិត្យករណី</span>
       </article>
@@ -749,9 +755,9 @@ p{margin:0}
     </div>
 
     <div class="price-tools tools-anchor" id="fee-tools">
-      <p class="over" style="margin-top:0">ឧបករណ៍ជំនួយ</p>
-      <h2 class="h2" style="max-width:28ch">មើលតម្លៃសេវា និងស្វែងយល់អំពីលិខិត IRS។</h2>
-      <p class="lead" style="margin-bottom:1rem">ជ្រើសរើសប្រភេទលិខិតប្រកាសពន្ធ ដើម្បីមើលតម្លៃចាប់ផ្តើម ឬជ្រើសរើសលិខិត IRS ដែលអ្នកទទួលបាន ដើម្បីអានការពន្យល់ទូទៅ។</p>
+      <p class="over" style="margin-top:0">តម្លៃរៀបចំពន្ធ</p>
+      <h2 class="h2" style="max-width:28ch">មើលតម្លៃសេវារៀបចំពន្ធ</h2>
+      <p class="lead" style="margin-bottom:1rem">ជ្រើសរើសប្រភេទលិខិតប្រកាសពន្ធ ដើម្បីមើលតម្លៃចាប់ផ្តើម។ <a href="#tools" style="font-weight:700;border-bottom:1px solid var(--ink)">មើលការពន្យល់អំពីលិខិត IRS</a></p>
       <p class="lead" style="font-size:.9rem;margin-bottom:1.25rem">តម្លៃដែលបង្ហាញគឺថ្លៃសេវារៀបចំពន្ធ មិនមែនជាចំនួនពន្ធដែលអ្នកត្រូវបង់ ឬប្រាក់ពន្ធដែលអ្នកនឹងទទួលបានត្រឡប់មកវិញទេ។ សម្រាប់ការដោះស្រាយបញ្ហាពន្ធជាមួយ IRS ខ្ញុំនឹងប្រាប់តម្លៃក្រោយពិនិត្យករណីរបស់អ្នក។</p>
 
       <div class="tool" id="fee-picker">
@@ -806,9 +812,8 @@ p{margin:0}
       <h2 class="h2">អ្នកមានអ្នកជំនាញម្នាក់ ជួយពន្យល់ និងតំណាងឱ្យអ្នក។</h2>
     </div>
     <div>
-      <p>ខ្ញុំឈ្មោះ ប៉ែន ស្រីប៉ុក ជា Enrolled Agent (EA) ដែលមានអាជ្ញាបណ្ណពី IRS។ ខ្ញុំក៏ជាអ្នករៀបចំពន្ធដែលបានចុះបញ្ជីជាមួយ CTEC នៅរដ្ឋ California ផងដែរ។ ខ្ញុំមានបទពិសោធន៍ក្នុងការងារពន្ធ<strong>ជាង ៨ ឆ្នាំ</strong>។</p>
-      <p>IRS គឺជាស្ថាប័នពន្ធដារសហព័ន្ធអាមេរិក។ ក្នុងនាមជា Enrolled Agent ខ្ញុំអាចតំណាងឱ្យអតិថិជនក្នុងបញ្ហាពន្ធជាមួយ IRS រួមទាំងការត្រួតពិនិត្យពន្ធ ការប្រមូលបំណុល និងបណ្តឹងឧទ្ធរណ៍។ ខ្ញុំទទួលបានអាជ្ញាបណ្ណនេះបន្ទាប់ពីប្រឡងជាប់ការប្រឡងបីផ្នែករបស់ IRS។</p>
-      <p>បន្ទាប់ពីអ្នកផ្តល់ការអនុញ្ញាត ខ្ញុំអាចស្នើសុំកំណត់ត្រាពន្ធរបស់អ្នក ពិនិត្យមូលហេតុដែល IRS គិតថាអ្នកជំពាក់ប្រាក់ និងទាក់ទងជាមួយ IRS ជំនួសអ្នក។ ខ្ញុំនឹងពន្យល់ឱ្យអ្នកយល់ពីស្ថានភាពរបស់ខ្លួន មុនពេលសម្រេចចិត្តថាត្រូវធ្វើអ្វីបន្ត។</p>
+      <p>ខ្ញុំឈ្មោះ ប៉ែន ស្រីប៉ុក ជា Enrolled Agent (EA) ដែលមានអាជ្ញាបណ្ណពី IRS បន្ទាប់ពីប្រឡងជាប់បីផ្នែក ហើយចុះបញ្ជី CTEC នៅរដ្ឋ California។ ខ្ញុំមានបទពិសោធន៍ក្នុងការងារពន្ធ<strong>ជាង ៨ ឆ្នាំ</strong>។ EA អាចតំណាងឱ្យអតិថិជនក្នុងបញ្ហាពន្ធជាមួយ IRS រួមទាំងការត្រួតពិនិត្យពន្ធ ការប្រមូលបំណុល និងបណ្តឹងឧទ្ធរណ៍។</p>
+      <p>បន្ទាប់ពីអ្នកផ្តល់ការអនុញ្ញាត ខ្ញុំអាចស្នើសុំកំណត់ត្រាពន្ធរបស់អ្នក ពិនិត្យមូលហេតុដែល IRS គិតថាអ្នកជំពាក់ប្រាក់ និងទាក់ទងជាមួយ IRS ជំនួសអ្នក — រួចពន្យល់ឱ្យអ្នកយល់មុនសម្រេចចិត្ត។</p>
       <p>ខ្ញុំធ្វើការពីការិយាល័យនៅ Menifee រដ្ឋ California និងបម្រើអតិថិជន<strong>គ្រប់រដ្ឋទាំង ៥០</strong> តាមទូរស័ព្ទ និងអនឡាញ។ អ្នកអាចពិគ្រោះជាមួយខ្ញុំជា<strong>ភាសាខ្មែរ ឬអង់គ្លេស</strong>។ អតិថិជនភាគច្រើនរបស់ខ្ញុំមកតាមការណែនាំពីអ្នកដែលធ្លាប់ប្រើសេវា។</p>
       <p>ការពិគ្រោះលើកដំបូង និងការពិនិត្យកំណត់ត្រាពន្ធ ឥតគិតថ្លៃ។</p>
       <a class="dir" href="https://irs.treasury.gov/rpo/rpo.jsf" rel="noopener noreferrer" target="_blank">ពិនិត្យឈ្មោះខ្ញុំក្នុងបញ្ជីអ្នកជំនាញពន្ធរបស់ IRS</a>
@@ -965,7 +970,7 @@ p{margin:0}
         <a href="index.html" hreflang="en" lang="en">Read in English</a>
         <a href="#about">អំពីខ្ញុំ</a>
         <a href="#services">សេវាកម្ម</a>
-        <a href="#tools">ឧបករណ៍ជំនួយ</a>
+        <a href="#tools">លិខិត IRS</a>
         <a href="#pricing">តម្លៃសេវា</a>
         <a href="#reviews">មតិអតិថិជន</a>
         <a href="#faq">សំណួរញឹកញាប់</a>
@@ -1034,7 +1039,8 @@ p{margin:0}
     w2: "លិខិតប្រកាសពន្ធបុគ្គល Form 1040 — {filing_status_km}។",
     seOne: "{schedule_name} — តម្លៃចាប់ផ្តើមសម្រាប់ជម្រើសនេះ។",
     seMulti: "អ្នកបានជ្រើសរើសតារាងពន្ធច្រើន។ ចំនួនដែលបង្ហាញមិនមែនជាតម្លៃសរុបសម្រាប់តារាងទាំងអស់ទេ។ ខ្ញុំនឹងបញ្ជាក់តម្លៃសរុប ក្រោយពិនិត្យឯកសាររបស់អ្នក។",
-    seExtra: "តារាងពន្ធបន្ថែម៖ ចាប់ពី $329។",
+    seExtra: "តារាងពន្ធបន្ថែមផ្សេងទៀត៖ ចាប់ពី $329 (មិនមែនផលបូកជាមួយតួលេខខាងលើទេ)។",
+    multiExplain: "តួលេខខាងលើគឺតម្លៃចាប់ផ្តើមសម្រាប់តារាងដែលមានតម្លៃខ្ពស់បំផុតក្នុងជម្រើសរបស់អ្នក — មិនមែនផលបូកនៃតារាងទាំងអស់ទេ។ តម្លៃសរុបនឹងប្រាប់ក្រោយពិនិត្យឯកសារ។",
     fromWord: "ចាប់ពី",
     kicker: "តម្លៃចាប់ផ្តើម",
     multiKicker: "តម្លៃចាប់ផ្តើម មិនមែនតម្លៃសរុប",
@@ -1150,6 +1156,7 @@ p{margin:0}
           html += "<p class=\"fee-out__kicker\">" + esc(T.multiKicker) + "</p>";
           html += "<p class=\"fee-out__num\">$" + max + "</p>";
           html += "<p>" + esc(T.seMulti) + "</p>";
+          html += "<p>" + esc(T.multiExplain) + "</p>";
         }
       }
       html += "<p>" + esc(T.seExtra) + "</p>";
@@ -1199,5 +1206,23 @@ p{margin:0}
 </script>
 
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+<script>
+(function(){
+  function openHash(){
+    var id = (location.hash || "").slice(1);
+    if(!id) return;
+    var el = document.getElementById(id);
+    if(!el) return;
+    if(el.tagName === "DETAILS") el.open = true;
+    var parent = el.closest && el.closest("details");
+    if(parent) parent.open = true;
+  }
+  window.addEventListener("hashchange", openHash);
+  if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", openHash);
+  else openHash();
+})();
+</script>
+
 </body>
 </html>
